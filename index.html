@@ -32,7 +32,7 @@
         }
 
         /* TIPOGRAFÍA */
-        .titillium-base { font-family: 'Titillium Web', sans-serif; font-weight: 400; letter-spacing: -0.01em; line-height: 1; }
+        .titillium-base { font-family: 'Titillium Web', sans-serif; font-weight: 400; letter-spacing: -0.01em; line-height: 1.2; }
         .montserrat-black-caps { font-family: 'Montserrat', sans-serif; text-transform: uppercase; letter-spacing: 0.02em; font-weight: 900; }
         .montserrat-caps { font-family: 'Montserrat', sans-serif; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 800; }
         
@@ -47,7 +47,7 @@
             line-height: 1;
         }
 
-        /* --- NAVEGACIÓN FIXED ADAPTATIVA --- */
+        /* --- NAVEGACIÓN --- */
         #main-nav {
             position: fixed !important;
             top: 0 !important;
@@ -82,7 +82,7 @@
             border-bottom: 2px solid var(--brand-green);
         }
 
-        /* Menú Móvil Overlay */
+        /* Menú Móvil */
         #mobile-menu {
             position: fixed;
             top: 0;
@@ -109,17 +109,23 @@
 
         /* --- HERO --- */
         #hero {
-            background-image: url('https://friendly-gecko-ce7396.netlify.app/images/marker-bg.jpg');
+            background-image: url('https://project-s9rxa.vercel.app/images/marker-bg.jpg');
             background-size: cover;
             background-position: center;
             background-color: var(--bg-gray-mid);
         }
 
-        .hero-headline-container { display: flex; justify-content: center; width: 100%; position: relative; }
+        .hero-headline-container { 
+            display: flex; 
+            justify-content: center; 
+            width: 100%; 
+            position: relative; 
+        }
         
         .hero-headline { 
             display: inline-flex; 
             align-items: baseline; 
+            justify-content: center;
             position: relative; 
             transition: all 0.7s cubic-bezier(0.65, 0, 0.35, 1); 
         }
@@ -152,23 +158,24 @@
             position: relative;
         }
 
-        /* Capa de Aditamentos (Layer para Asterisco y Tag) */
+        /* Aditamentos */
         #addons-layer {
             position: absolute;
             pointer-events: none;
             z-index: 50;
             opacity: 0;
             transition: opacity 0.5s ease-out;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
         }
-        #addons-layer.active {
-            opacity: 1;
-        }
+        #addons-layer.active { opacity: 1; }
 
-        /* Verde corporativo */
         .text-brand-accent { color: var(--brand-green) !important; }
 
         @keyframes bounceDown {
-            0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+            0%, 20%, 50%, 80%, 1000% {transform: translateY(0);}
             40% {transform: translateY(8px);}
             60% {transform: translateY(4px);}
         }
@@ -176,6 +183,22 @@
 
         .project-card { transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1); }
         .project-card:hover { transform: translateY(-10px); }
+
+        .case-image-container {
+            width: 100%;
+            aspect-ratio: 1/1;
+            overflow: hidden;
+            background-color: rgba(0,0,0,0.05);
+            border: 1px solid rgba(0,0,0,0.05);
+            margin-bottom: 1rem;
+        }
+        .case-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+        .project-card:hover .case-image-container img { transform: scale(1.05); }
     </style>
 </head>
 <body class="text-slate-900 overflow-x-hidden">
@@ -188,9 +211,8 @@
             </a>
             
             <div id="nav-links" class="hidden lg:flex space-x-12 items-center text-[11px] montserrat-caps text-slate-700 transition-colors duration-500">
-                <a href="#credo" class="nav-link" data-i18n="nav-credo">Credo</a>
+                <a href="#manifiesto" class="nav-link" data-i18n="nav-manifiesto">Manifiesto</a>
                 <a href="#proyectos" class="nav-link" data-i18n="nav-portfolio">Portafolio</a>
-                <a href="#herramientas" class="nav-link" data-i18n="nav-tools">Herramientas</a>
                 <a href="#contacto" class="nav-link" data-i18n="nav-contact">Contacto</a>
                 
                 <div class="flex space-x-2 ml-4 border-l border-black/10 pl-6 h-4 items-center" id="lang-selector-desktop">
@@ -200,24 +222,18 @@
                 </div>
             </div>
 
-            <button id="nav-toggle" class="lg:hidden text-2xl text-slate-800 focus:outline-none transition-colors duration-500" aria-label="Menu">
+            <button id="nav-toggle" class="lg:hidden text-2xl text-slate-800 focus:outline-none transition-colors duration-500">
                 <i class="fa-solid fa-bars"></i>
             </button>
         </div>
     </nav>
 
-    <!-- Menú Móvil Overlay -->
+    <!-- Menú Móvil -->
     <div id="mobile-menu" class="lg:hidden bg-white/90">
         <div class="flex flex-col space-y-10 text-center">
-            <a href="#credo" class="mobile-nav-link text-2xl montserrat-black-caps" data-i18n="nav-credo">Credo</a>
+            <a href="#manifiesto" class="mobile-nav-link text-2xl montserrat-black-caps" data-i18n="nav-manifiesto">Manifiesto</a>
             <a href="#proyectos" class="mobile-nav-link text-2xl montserrat-black-caps" data-i18n="nav-portfolio">Portafolio</a>
-            <a href="#herramientas" class="mobile-nav-link text-2xl montserrat-black-caps" data-i18n="nav-tools">Herramientas</a>
             <a href="#contacto" class="mobile-nav-link text-2xl montserrat-black-caps" data-i18n="nav-contact">Contacto</a>
-            
-            <div class="flex justify-center space-x-6 pt-10 border-t border-black/5 mx-20">
-                <span class="lang-btn-mobile montserrat-black-caps text-sm" onclick="setLanguage('es')">ESPAÑOL</span>
-                <span class="lang-btn-mobile montserrat-black-caps text-sm" onclick="setLanguage('en')">ENGLISH</span>
-            </div>
         </div>
     </div>
 
@@ -226,7 +242,6 @@
         <div class="max-w-7xl mx-auto w-full z-10 flex flex-col h-full">
             <div class="flex-grow"></div>
 
-            <!-- Título Principal Animado Adaptativo -->
             <div class="mb-12 md:mb-16 lg:mb-20 w-full flex justify-center">
                 <div class="hero-headline-container">
                     <h1 class="text-4xl md:text-6xl lg:text-7xl text-slate-900 lowercase hero-headline" id="hero-headline">
@@ -234,11 +249,8 @@
                             <span class="titillium-base" id="fixed-word" data-i18n="hero-design">diseño</span>
                         </div>
                         <div class="flip-viewport order-2" id="flip-viewport">
-                            <ul class="flip-list" id="flip-list">
-                                <!-- Dinámico vía JS -->
-                            </ul>
+                            <ul class="flip-list" id="flip-list"></ul>
                         </div>
-                        <!-- Capa dedicada para el asterisco y polite (Layer independiente) -->
                         <div id="addons-layer"></div>
                     </h1>
                 </div>
@@ -247,13 +259,13 @@
             <div class="w-full flex flex-col md:flex-row items-center md:items-center justify-center gap-8 md:gap-12 max-w-4xl mx-auto mb-12 md:mb-20 lg:mb-24">
                 <div class="shrink-0">
                     <div class="w-24 h-24 md:w-28 md:h-28 rounded-full overflow-hidden border-2 border-black/5 shadow-2xl">
-                        <img src="https://friendly-gecko-ce7396.netlify.app/images/profile.jpg" alt="Francisco Cortés Arce" class="w-full h-full object-cover scale-110" onerror="this.src='https://via.placeholder.com/200/cacccb/1e293b?text=FC'">
+                        <img src="https://project-s9rxa.vercel.app/images/profile.jpg" alt="Francisco Cortés Arce" class="w-full h-full object-cover scale-110" onerror="this.src='https://via.placeholder.com/200/cacccb/1e293b?text=FC'">
                     </div>
                 </div>
 
                 <div class="flex flex-col items-center md:items-start max-w-xl">
                     <p class="text-lg md:text-xl lg:text-xl text-slate-800 font-light leading-relaxed garamond-accent italic text-center md:text-left mb-8 max-w-[22rem] md:max-w-[28rem] lg:max-w-[36rem]" data-i18n="hero-intro"></p>
-                    <a href="#credo" class="scroll-indicator inline-flex items-center gap-4 text-slate-900 hover:text-brand-accent transition-colors py-2 group">
+                    <a href="#manifiesto" class="scroll-indicator inline-flex items-center gap-4 text-slate-900 hover:text-brand-accent transition-colors py-2 group">
                         <span class="text-[12px] montserrat-black-caps border-b-2 border-slate-900 group-hover:border-brand-accent pb-1" data-i18n="hero-scroll"></span>
                         <i class="fa-solid fa-arrow-down text-xl"></i>
                     </a>
@@ -264,94 +276,78 @@
         </div>
     </header>
 
-    <!-- SECCIÓN 1: CREDO -->
-    <section id="credo" class="py-40 px-10 md:px-16 lg:px-20 border-y border-black/5 section-target" style="background-color: var(--bg-gray-light);">
+    <!-- MANIFIESTO -->
+    <section id="manifiesto" class="py-40 px-10 md:px-16 lg:px-20 border-y border-black/5 section-target" style="background-color: var(--bg-gray-light);">
         <div class="max-w-7xl mx-auto">
-            <div class="grid lg:grid-cols-12 gap-24 items-start">
-                <div class="lg:col-span-4 lg:sticky lg:top-32 relative mb-12 lg:mb-0">
-                    <h3 class="text-3xl md:text-4xl leading-[1.1] montserrat-black-caps tracking-tighter text-slate-900" id="credo-title"></h3>
+            <div class="grid lg:grid-cols-12 gap-12 lg:gap-24 items-start mb-24">
+                <div class="lg:col-span-4 lg:sticky lg:top-32 relative">
+                    <h3 class="text-3xl md:text-4xl leading-[1.1] montserrat-black-caps tracking-tighter text-slate-900" id="manifiesto-title"></h3>
                 </div>
-                <div class="lg:col-span-8 space-y-16">
-                    <p class="text-2xl md:text-4xl font-extralight leading-[1.3] text-slate-800" data-i18n="credo-p1"></p>
-                    <div class="grid md:grid-cols-2 gap-16 pt-12 border-t border-black/10">
-                        <div>
-                            <h4 class="text-[11px] montserrat-caps mb-6 tracking-[0.3em]" style="color: var(--brand-green);" data-i18n="credo-h1"></h4>
-                            <p class="text-slate-600 font-light leading-relaxed text-base" data-i18n="credo-desc1"></p>
-                        </div>
-                        <div>
-                            <h4 class="text-[11px] montserrat-caps mb-6 tracking-[0.3em]" style="color: var(--brand-green);" data-i18n="credo-h2"></h4>
-                            <p class="text-slate-600 font-light leading-relaxed text-base" data-i18n="credo-desc2"></p>
-                        </div>
-                    </div>
+                <div class="lg:col-span-8">
+                    <p class="text-2xl md:text-4xl font-extralight leading-[1.3] text-slate-800" data-i18n="manifiesto-p1"></p>
+                </div>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-12 lg:gap-20 pt-12 border-t border-black/10">
+                <div>
+                    <h4 class="text-xl md:text-[22px] font-semibold titillium-base mb-4 tracking-tight leading-tight" style="color: var(--brand-green);" data-i18n="manifiesto-h1"></h4>
+                    <p class="text-slate-600 font-light leading-relaxed text-base" data-i18n="manifiesto-desc1"></p>
+                </div>
+                <div>
+                    <h4 class="text-xl md:text-[22px] font-semibold titillium-base mb-4 tracking-tight leading-tight" style="color: var(--brand-green);" data-i18n="manifiesto-h2"></h4>
+                    <p class="text-slate-600 font-light leading-relaxed text-base" data-i18n="manifiesto-desc2"></p>
+                </div>
+                <div>
+                    <h4 class="text-xl md:text-[22px] font-semibold titillium-base mb-4 tracking-tight leading-tight" style="color: var(--brand-green);" data-i18n="manifiesto-h3"></h4>
+                    <p class="text-slate-600 font-light leading-relaxed text-base" data-i18n="manifiesto-desc3"></p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- SECCIÓN 2: PORTAFOLIO -->
+    <!-- PORTFOLIO -->
     <section id="proyectos" class="py-32 px-10 md:px-16 lg:px-20 section-target" style="background-color: var(--bg-gray-light);">
         <div class="max-w-7xl mx-auto">
-            <div class="flex flex-col md:flex-row justify-between items-end mb-24 gap-8">
-                <h2 class="text-4xl md:text-6xl text-slate-900" id="portfolio-title"></h2>
-            </div>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
-                <div class="project-card bg-black/5 rounded-sm border border-black/5 min-h-[500px] flex flex-col">
-                    <div class="aspect-video bg-black/10 flex items-center justify-center">
-                        <span class="text-slate-400 text-xs montserrat-caps italic" data-i18n="case-img-coboce"></span>
+            <h2 class="text-4xl md:text-6xl text-slate-900 mb-24" id="portfolio-title"></h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-16">
+                <!-- Caso 1: COBOCE -->
+                <div class="project-card">
+                    <div class="case-image-container">
+                        <img src="https://project-s9rxa.vercel.app/cases/coboce-cover.png" alt="COBOCE COOP">
                     </div>
-                    <div class="p-10 flex-grow">
-                        <span class="text-[11px] montserrat-caps mb-6 block" style="color: var(--brand-green);" data-i18n="case-label-coboce"></span>
-                        <h3 class="text-2xl mb-6 montserrat-black-caps tracking-tighter" data-i18n="case-title-coboce"></h3>
-                        <p class="text-slate-600 text-base font-light leading-relaxed" data-i18n="case-desc-coboce"></p>
-                    </div>
-                </div>
-                <div class="project-card bg-emerald-950 text-white rounded-sm min-h-[500px] flex flex-col">
-                    <div class="aspect-video bg-emerald-900 flex items-center justify-center">
-                         <span class="text-emerald-700 text-xs montserrat-caps italic" data-i18n="case-img-wistu"></span>
-                    </div>
-                    <div class="p-10 flex-grow">
-                        <span class="text-[11px] montserrat-caps text-emerald-400 mb-6 block" data-i18n="case-label-wistu"></span>
-                        <h3 class="text-2xl mb-6"><span class="garamond-bold-italic text-white" data-i18n="case-title-wistu"></span></h3>
-                        <p class="text-emerald-50 text-base font-light leading-relaxed opacity-80" data-i18n="case-desc-wistu"></p>
+                    <div class="flex flex-col gap-y-1">
+                        <h3 class="text-[17px] md:text-[18px] font-black uppercase tracking-[0.15em] font-montserrat text-slate-900" data-i18n="case-name-coboce"></h3>
+                        <span class="text-[15px] md:text-[17px] text-slate-500 titillium-base font-light" data-i18n="case-phrase-coboce"></span>
                     </div>
                 </div>
-                <div class="project-card bg-black/5 rounded-sm border border-black/5 min-h-[500px] flex flex-col">
-                    <div class="aspect-video bg-black/10 flex items-center justify-center">
-                         <span class="text-slate-400 text-xs montserrat-caps italic" data-i18n="case-img-quantum"></span>
+
+                <!-- Caso 2: WISTUPIKU -->
+                <div class="project-card">
+                    <div class="case-image-container">
+                        <img src="https://project-s9rxa.vercel.app/cases/wistupiku-cover.jpg" alt="Wist'upiku">
                     </div>
-                    <div class="p-10 flex-grow">
-                        <span class="text-[11px] montserrat-caps mb-6 block" style="color: var(--brand-green);" data-i18n="case-label-quantum"></span>
-                        <h3 class="text-2xl mb-6 montserrat-black-caps tracking-tighter" data-i18n="case-title-quantum"></h3>
-                        <p class="text-slate-600 text-base font-light leading-relaxed" data-i18n="case-desc-quantum"></p>
+                    <div class="flex flex-col gap-y-1">
+                        <h3 class="text-[17px] md:text-[18px] font-black uppercase tracking-[0.15em] font-montserrat text-slate-900" data-i18n="case-name-wistupiku"></h3>
+                        <span class="text-[15px] md:text-[17px] text-slate-500 titillium-base font-light" data-i18n="case-phrase-wistupiku"></span>
+                    </div>
+                </div>
+
+                <!-- Caso 3: SIMP3L -->
+                <div class="project-card">
+                    <div class="case-image-container">
+                        <img src="https://project-s9rxa.vercel.app/cases/simp3l-cover.jpg" alt="SIMP3L">
+                    </div>
+                    <div class="flex flex-col gap-y-1">
+                        <h3 class="text-[17px] md:text-[18px] font-black uppercase tracking-[0.15em] font-montserrat text-slate-900" data-i18n="case-name-simp3l"></h3>
+                        <span class="text-[15px] md:text-[17px] text-slate-500 titillium-base font-light" data-i18n="case-phrase-simp3l"></span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- SECCIÓN 3: HERRAMIENTAS -->
-    <section id="herramientas" class="py-32 bg-slate-900 text-white px-10 md:px-16 lg:px-20 section-target">
-        <div class="max-w-7xl mx-auto">
-            <div class="grid lg:grid-cols-12 gap-24">
-                <div class="lg:col-span-5">
-                    <h3 class="text-3xl md:text-5xl mb-12 montserrat-black-caps tracking-tighter" id="tools-title"></h3>
-                    <p class="text-slate-300 text-xl font-light leading-relaxed garamond-accent italic" data-i18n="tools-intro"></p>
-                </div>
-                <div class="lg:col-span-7 space-y-12 lg:pl-16">
-                    <div class="p-8 border-l border-slate-700">
-                        <h4 class="text-2xl mb-4 text-white montserrat-black-caps tracking-tighter">Brandcanvas</h4>
-                        <p class="text-slate-300 text-base font-light" data-i18n="tool-desc1"></p>
-                    </div>
-                    <div class="p-8 border-l border-slate-700">
-                        <h4 class="text-2xl mb-4 text-white montserrat-black-caps tracking-tighter">Brinno</h4>
-                        <p class="text-slate-300 text-base font-light" data-i18n="tool-desc2"></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECCIÓN 4: CONTACTO -->
+    <!-- CONTACTO -->
     <section id="contacto" class="py-40 px-10 md:px-16 lg:px-20 section-target" style="background-color: var(--bg-gray-mid);">
         <div class="max-w-7xl mx-auto text-center">
             <p class="text-3xl md:text-5xl font-extralight mb-20 leading-tight text-slate-900" id="contact-title"></p>
@@ -363,77 +359,59 @@
     </section>
 
     <footer class="py-12 border-t border-black/5 px-10 md:px-16 lg:px-20 text-center section-target" style="background-color: var(--bg-gray-mid);">
-        <p class="text-[10px] montserrat-caps text-slate-500 font-bold tracking-[0.4em]">&copy; 2026 Francisco Cortés Arce — Bolivia</p>
+        <p class="text-[10px] montserrat-caps text-slate-500 font-bold tracking-[0.4em] uppercase">&copy; 2026 Francisco Cortés Arce — Bolivia</p>
     </footer>
 
     <script>
         const translations = {
             es: {
-                'nav-credo': 'Credo',
+                'nav-manifiesto': 'Manifiesto',
                 'nav-portfolio': 'Portafolio',
-                'nav-tools': 'Herramientas',
                 'nav-contact': 'Contacto',
                 'hero-design': 'diseño',
                 'hero-words': ['apropiado', 'útil', 'auténtico', 'estratégico', 'cortés'],
                 'hero-intro': 'Estrategias e innovación para marcas que quieren mostrar lo que son y no disfrazarse de tendencias o modas pasajeras.',
                 'hero-scroll': '¿De qué hablo?',
-                'credo-title': 'Sentido <br>antes que <br><span class="garamond-bold-italic text-slate-500 lowercase italic">pinta vacía</span>.',
-                'credo-p1': 'Branding como la <span class="garamond-bold-italic text-slate-900">construcción de sentido</span>. No se trata únicamente de diseñar identidades "bonitas", sino de definir con claridad lo qué una marca defiende y <span class="garamond-bold-italic text-slate-900">cómo lo manifiesta</span>.',
-                'credo-h1': 'Diferenciación con coherencia',
-                'credo-desc1': 'Mi trabajo se enfoca en construir marcas entendidas como sistemas. Cada proyecto es abordado desde su contexto particular.',
-                'credo-h2': 'Función sobre tendencia',
-                'credo-desc2': 'El diseño es una disciplina de servicio cuya validación reside en el cumplimiento de su función. Priorizo la resolución de problemas reales.',
-                'port-title': 'Portafolio de <span class="garamond-bold-italic font-bold" style="color: var(--brand-green);">casos</span>',
-                'case-img-coboce': '[Caso COBOCE]',
-                'case-label-coboce': 'Caso: COBOCE',
-                'case-title-coboce': 'Industria del pueblo',
-                'case-desc-coboce': 'Estructuración de un sistema de marca cooperativa con múltiples unidades de negocio.',
-                'case-img-wistu': '[Caso Wistupiku]',
-                'case-label-wistu': 'Caso: Wist\'upiku',
-                'case-title-wistu': 'Rescate cultural',
-                'case-desc-wistu': 'Proceso evolutivo basado en el tono de voz regional y el lenguaje cultural.',
-                'case-img-quantum': '[Caso Quantum]',
-                'case-label-quantum': 'Caso: Quantum Motors',
-                'case-title-quantum': 'Cute Tecnológico',
-                'case-desc-quantum': 'Traducción de atributos técnicos en una propuesta accesible.',
-                'tools-title': 'Pensar y decidir <br><span class="garamond-bold-italic text-white lowercase">antes</span>.',
-                'tools-intro': 'Mi trabajo se apoya en herramientas desarrolladas a lo largo de dos décadas.',
-                'tool-desc1': 'Herramienta diseñada para facilitar el análisis en proyectos de identidad.',
-                'tool-desc2': 'Framework orientado a procesos de diseño en contextos complejos.',
+                'manifiesto-title': 'Sentido <br>antes que <br><span class="garamond-bold-italic text-slate-500 lowercase">pinta vacía</span>.',
+                'manifiesto-p1': 'Entiendo el branding como la <span class="garamond-bold-italic text-slate-900">construcción de sentido</span>. No se trata únicamente de diseñar identidades "bonitas", sino de definir con claridad qué representa una marca.',
+                'manifiesto-h1': '<span class="garamond-bold-italic text-brand-accent">Diferenciación</span> con coherencia',
+                'manifiesto-desc1': 'Mi trabajo se enfoca en construir marcas entendidas como sistemas. Cada proyecto es abordado desde su contexto particular.',
+                'manifiesto-h2': '<span class="garamond-bold-italic text-brand-accent">Función</span> sobre tendencia',
+                'manifiesto-desc2': 'El diseño es una disciplina de servicio cuya validación reside en el cumplimiento de su función. Priorizo la resolución de problemas reales.',
+                'manifiesto-h3': '<span class="garamond-bold-italic text-brand-accent">Legado</span> sobre lo efímero',
+                'manifiesto-desc3': 'Las marcas no deben ser algo pasajero. Diseño soluciones pensadas para resistir el tiempo y aportar valor duradero.',
+                'portfolio-title': 'Casos de <span class="garamond-bold-italic font-bold text-brand-accent">branding</span>',
+                'case-name-coboce': 'COBOCE COOP',
+                'case-phrase-coboce': 'el pueblo en la industria',
+                'case-name-wistupiku': 'WIST\'UPIKU',
+                'case-phrase-wistupiku': 'rescatemos la cultura',
+                'case-name-simp3l': 'SIMP3L',
+                'case-phrase-simp3l': 'diferentes, pero iguales',
                 'contact-title': 'Hablemos de <br><span class="garamond-bold-italic text-slate-800 lowercase">sentido y permanencia</span>.'
             },
             en: {
-                'nav-credo': 'Credo',
+                'nav-manifiesto': 'Manifesto',
                 'nav-portfolio': 'Portfolio',
-                'nav-tools': 'Tools',
                 'nav-contact': 'Contact',
                 'hero-design': 'design',
                 'hero-words': ['appropriate', 'useful', 'authentic', 'strategic', 'cortés'],
                 'hero-intro': 'Strategies and innovation for brands that want to show what they truly are and not disguise themselves as trends or passing fads.',
                 'hero-scroll': 'What am I saying?',
-                'credo-title': 'Sense <br>before <br><span class="garamond-bold-italic text-slate-500 lowercase italic">empty looks</span>.',
-                'credo-p1': 'Branding as the <span class="garamond-bold-italic text-slate-900">construction of meaning</span>. It is not just about designing "pretty" brands, it is about clearly defining what a brand stands for and, <span class="garamond-bold-italic text-slate-900">how it expresses it</span>.',
-                'credo-h1': 'Differentiation with coherence',
-                'credo-desc1': 'My work focuses on building brands understood as systems. Each project is approached from its particular context.',
-                'credo-h2': 'Function over trend',
-                'credo-desc2': 'Design is a service discipline whose validation lies in the fulfillment of its function. I prioritize the resolution of real problems.',
-                'port-title': 'Case <span class="garamond-bold-italic font-bold" style="color: var(--brand-green);">portfolio</span>',
-                'case-img-coboce': '[COBOCE Case]',
-                'case-label-coboce': 'Case: COBOCE',
-                'case-title-coboce': 'People\'s Industry',
-                'case-desc-coboce': 'Structuring a cooperative brand system with multiple business units.',
-                'case-img-wistu': '[Wistupiku Case]',
-                'case-label-wistu': 'Case: Wist\'upiku',
-                'case-title-wistu': 'Cultural rescue',
-                'case-desc-wistu': 'Evolutionary process based on regional tone of voice and cultural language.',
-                'case-img-quantum': '[Quantum Case]',
-                'case-label-quantum': 'Case: Quantum Motors',
-                'case-title-quantum': 'Techno Cute',
-                'case-desc-quantum': 'Translation of technical attributes into an accessible proposal.',
-                'tools-title': 'Think and decide <br><span class="garamond-bold-italic text-white lowercase">before</span>.',
-                'tools-intro': 'My work is supported by tools developed over two decades.',
-                'tool-desc1': 'Tool designed to facilitate analysis in identity projects.',
-                'tool-desc2': 'Framework oriented to design processes in complex contexts.',
+                'manifiesto-title': 'Sense <br>before <br><span class="garamond-bold-italic text-slate-500 lowercase">empty looks</span>.',
+                'manifiesto-p1': 'I understand branding as the <span class="garamond-bold-italic text-slate-900">construction of meaning</span>. It is not only about designing "pretty" identities, but clearly defining what a brand represents.',
+                'manifiesto-h1': '<span class="garamond-bold-italic text-brand-accent">Differentiation</span> with coherence',
+                'manifiesto-desc1': 'My work focuses on building brands understood as systems. Each project is approached from its particular context.',
+                'manifiesto-h2': '<span class="garamond-bold-italic text-brand-accent">Function</span> over trend',
+                'manifiesto-desc2': 'Design is a service discipline whose validation lies in the fulfillment of its function. I prioritize the resolution of real problems.',
+                'manifiesto-h3': '<span class="garamond-bold-italic text-brand-accent">Legacy</span> over ephemeral',
+                'manifiesto-desc3': 'Brands should not be temporary. I design solutions intended to withstand the test of time and provide lasting value.',
+                'port-title': 'Case <span class="garamond-bold-italic font-bold text-brand-accent">portfolio</span>',
+                'case-name-coboce': 'COBOCE COOP',
+                'case-phrase-coboce': 'industry of the people',
+                'case-name-wistupiku': 'WIST\'UPIKU',
+                'case-phrase-wistupiku': 'saving culture',
+                'case-name-simp3l': 'SIMP3L',
+                'case-phrase-simp3l': 'different, but the same',
                 'contact-title': 'Let\'s talk about <br><span class="garamond-bold-italic text-slate-800 lowercase">meaning and permanence</span>.'
             }
         };
@@ -443,7 +421,6 @@
 
         function setLanguage(lang) {
             currentLang = lang;
-            
             const fixedWordContainer = document.getElementById('fixed-word-container');
             const viewport = document.getElementById('flip-viewport');
             const addons = document.getElementById('addons-layer');
@@ -468,9 +445,8 @@
                 if (translations[lang][key]) el.innerHTML = translations[lang][key];
             });
 
-            document.getElementById('credo-title').innerHTML = translations[lang]['credo-title'];
-            document.getElementById('portfolio-title').innerHTML = translations[lang]['port-title'];
-            document.getElementById('tools-title').innerHTML = translations[lang]['tools-title'];
+            document.getElementById('manifiesto-title').innerHTML = translations[lang]['manifiesto-title'];
+            document.getElementById('portfolio-title').innerHTML = translations[lang]['port-title'] || translations[lang]['portfolio-title'];
             document.getElementById('contact-title').innerHTML = translations[lang]['contact-title'];
 
             initHeroAnimation(translations[lang]['hero-words']);
@@ -518,14 +494,11 @@
 
         window.addEventListener('scroll', updateNavStyle);
 
-        // --- ANIMACIÓN HERO ---
         function initHeroAnimation(words) {
             if (flipIntervalId) clearTimeout(flipIntervalId);
-            
             const list = document.getElementById('flip-list');
             const viewport = document.getElementById('flip-viewport');
             const addons = document.getElementById('addons-layer');
-            
             list.innerHTML = '';
             words.forEach((w) => {
                 const li = document.createElement('li');
@@ -541,9 +514,7 @@
             function adjustWidth(idx) {
                 const item = items[idx];
                 const target = item.querySelector('.garamond-bold-italic');
-                if (target) {
-                    viewport.style.width = (target.getBoundingClientRect().width + 10) + 'px';
-                }
+                if (target) { viewport.style.width = (target.getBoundingClientRect().width + 10) + 'px'; }
             }
 
             adjustWidth(0);
@@ -551,12 +522,10 @@
 
             function cycle() {
                 addons.classList.remove('active');
-                
                 currentIndex = (currentIndex + 1) % items.length;
                 adjustWidth(currentIndex);
                 const h = items[0].offsetHeight;
                 list.style.transform = `translateY(-${currentIndex * h}px)`;
-                
                 const isLast = (currentIndex === items.length - 1);
                 
                 if (isLast && currentLang === 'en') {
@@ -564,26 +533,21 @@
                         const targetWord = items[currentIndex].querySelector('.garamond-bold-italic');
                         const rect = targetWord.getBoundingClientRect();
                         const headlineRect = document.getElementById('hero-headline').getBoundingClientRect();
-                        
                         const wordEndPos = rect.right - headlineRect.left;
                         const wordBaselinePos = rect.bottom - headlineRect.top;
                         
-                        // Tag "polite" escalado: 16px en móvil, 32px en desktop
                         addons.innerHTML = `
-                            <span class="absolute text-[0.8em] leading-none text-brand-accent" 
+                            <span class="absolute text-[0.75em] leading-none text-brand-accent" 
                                   style="left: ${wordEndPos}px; top: ${rect.top - headlineRect.top - 8}px;">*</span>
-                            <span class="absolute text-[16px] md:text-[32px] font-medium text-slate-900 titillium-base leading-none lowercase whitespace-nowrap" 
-                                  style="left: ${wordEndPos}px; top: ${wordBaselinePos - 2}px; transform: translateX(-100%);">* polite</span>
+                            <span class="absolute text-[16px] md:text-[32px] font-medium text-black titillium-base leading-none lowercase whitespace-nowrap" 
+                                  style="left: ${wordEndPos}px; top: ${wordBaselinePos + 10}px; transform: translateX(-100%);">* polite</span>
                         `;
-                        
                         addons.classList.add('active');
                     }, 850);
                 }
-
                 let nextDelay = isLast ? baseDelay * 3 : baseDelay;
                 flipIntervalId = setTimeout(cycle, nextDelay);
             }
-
             flipIntervalId = setTimeout(cycle, baseDelay);
         }
 

@@ -222,11 +222,17 @@
     </nav>
 
     <!-- Menú Móvil Overlay -->
-    <div id="mobile-menu" class="lg:hidden bg-white/90">
+    <div id="mobile-menu" class="lg:hidden bg-white/95">
         <div class="flex flex-col space-y-10 text-center">
             <a href="#manifiesto" class="mobile-nav-link text-2xl montserrat-black-caps" data-i18n="nav-manifiesto">Manifiesto</a>
             <a href="#proyectos" class="mobile-nav-link text-2xl montserrat-black-caps" data-i18n="nav-portfolio">Portafolio</a>
             <a href="#contacto" class="mobile-nav-link text-2xl montserrat-black-caps" data-i18n="nav-contact">Contacto</a>
+            
+            <!-- Selector de Idioma en Móvil -->
+            <div class="flex justify-center space-x-6 pt-10 border-t border-black/5 mx-20">
+                <span class="lang-btn-mobile montserrat-black-caps text-sm" onclick="setLanguage('es')">ESPAÑOL</span>
+                <span class="lang-btn-mobile montserrat-black-caps text-sm" onclick="setLanguage('en')">ENGLISH</span>
+            </div>
         </div>
     </div>
 
@@ -377,11 +383,11 @@
                 'manifiesto-desc3': 'Las marcas no deben ser algo pasajero. Diseño soluciones pensadas para resistir el tiempo y aportar valor duradero.',
                 'portfolio-title': 'Casos de <span class="garamond-bold-italic font-bold text-brand-accent">branding</span>',
                 'case-name-coboce': 'COBOCE COOP',
-                'case-phrase-coboce': 'Llamemos al pueblo de vuelta a la industria',
+                'case-phrase-coboce': 'pongamos al pueblo de vuelta en la industria',
                 'case-name-wistupiku': 'WIST\'UPIKU',
-                'case-phrase-wistupiku': 'Del rescate cultural, su divertido',
+                'case-phrase-wistupiku': 'del rescate cultural, su divertido',
                 'case-name-simp3l': 'SIMP3L',
-                'case-phrase-simp3l': 'Iguales, pero tampoco tanto',
+                'case-phrase-simp3l': 'iguales, pero tampoco tanto',
                 'contact-title': 'Hablemos de <br><span class="garamond-bold-italic text-slate-800 lowercase">sentido y permanencia</span>.'
             },
             en: {
@@ -402,11 +408,11 @@
                 'manifiesto-desc3': 'Brands should not be temporary. I design solutions intended to withstand the test of time and provide lasting value.',
                 'port-title': 'Case <span class="garamond-bold-italic font-bold text-brand-accent">portfolio</span>',
                 'case-name-coboce': 'COBOCE COOP',
-                'case-phrase-coboce': 'Bringing people back to the industry',
+                'case-phrase-coboce': 'putting the people back in industry',
                 'case-name-wistupiku': 'WIST\'UPIKU',
-                'case-phrase-wistupiku': 'From cultural rescue, its fun side',
+                'case-phrase-wistupiku': 'from cultural rescue, its fun side',
                 'case-name-simp3l': 'SIMP3L',
-                'case-phrase-simp3l': 'Equal, but not that much',
+                'case-phrase-simp3l': 'equal, but not that much',
                 'contact-title': 'Let\'s talk about <br><span class="garamond-bold-italic text-slate-800 lowercase">meaning and permanence</span>.'
             }
         };
@@ -414,14 +420,34 @@
         let currentLang = 'es';
         let flipIntervalId = null;
 
+        const navToggle = document.getElementById('nav-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        function toggleMenu() {
+            const isActive = mobileMenu.classList.toggle('active');
+            navToggle.querySelector('i').classList.toggle('fa-bars');
+            navToggle.querySelector('i').classList.toggle('fa-xmark');
+            document.body.style.overflow = isActive ? 'hidden' : '';
+        }
+
+        function closeMenu() {
+            mobileMenu.classList.remove('active');
+            navToggle.querySelector('i').classList.add('fa-bars');
+            navToggle.querySelector('i').classList.remove('fa-xmark');
+            document.body.style.overflow = '';
+        }
+
         function setLanguage(lang) {
             currentLang = lang;
+            
             const fixedWordContainer = document.getElementById('fixed-word-container');
             const viewport = document.getElementById('flip-viewport');
             const addons = document.getElementById('addons-layer');
             
-            addons.classList.remove('active');
-            addons.innerHTML = '';
+            if(addons) {
+                addons.classList.remove('active');
+                addons.innerHTML = '';
+            }
 
             if (lang === 'en') {
                 fixedWordContainer.classList.replace('order-1', 'order-2');
@@ -446,26 +472,37 @@
 
             initHeroAnimation(translations[lang]['hero-words']);
             updateLangUI();
+            
+            // Cerrar menú al cambiar idioma en móvil
+            if (mobileMenu.classList.contains('active')) {
+                closeMenu();
+            }
         }
 
         function updateLangUI() {
+            // Actualizar botones desktop
             document.querySelectorAll('.lang-btn').forEach(btn => {
                 btn.classList.toggle('active', btn.innerText.toLowerCase() === currentLang);
             });
+            // Actualizar botones mobile (visual simple)
+            document.querySelectorAll('.lang-btn-mobile').forEach(btn => {
+                const isSelected = (currentLang === 'es' && btn.innerText.includes('ESPAÑOL')) || 
+                                   (currentLang === 'en' && btn.innerText.includes('ENGLISH'));
+                btn.style.color = isSelected ? 'var(--brand-green)' : 'inherit';
+                btn.style.fontWeight = isSelected ? '900' : 'normal';
+            });
         }
+
+        navToggle.addEventListener('click', toggleMenu);
+
+        // Cerrar menú al hacer clic en enlaces de navegación móvil
+        document.querySelectorAll('.mobile-nav-link').forEach(link => {
+            link.addEventListener('click', closeMenu);
+        });
 
         const nav = document.getElementById('main-nav');
         const navBrand = document.getElementById('nav-brand');
-        const navToggle = document.getElementById('nav-toggle');
-        const mobileMenu = document.getElementById('mobile-menu');
         const sections = document.querySelectorAll('.section-target');
-
-        navToggle.addEventListener('click', () => {
-            const isActive = mobileMenu.classList.toggle('active');
-            navToggle.querySelector('i').classList.toggle('fa-bars');
-            navToggle.querySelector('i').classList.toggle('fa-xmark');
-            document.body.style.overflow = isActive ? 'hidden' : '';
-        });
 
         function updateNavStyle() {
             let currentBg = 'rgba(202, 204, 203, 0.85)';

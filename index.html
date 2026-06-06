@@ -7,7 +7,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
-        /* Importación de fuentes */
+        /* Importación de fuentes editoriales y técnicas */
         @import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200;300;400;600;700;900&family=EB+Garamond:ital,wght@0,400;0,700;1,400;1,700&family=Montserrat:wght@700;800;900&display=swap');
         
         :root {
@@ -15,7 +15,7 @@
             --bg-gray-mid: #cacccb;
             --bg-gray-light: #e3e6e4;
             --text-dark: #1e293b;
-            --text-accessible-gray: #334155; /* Gris más oscuro para accesibilidad */
+            --text-accessible-gray: #334155; /* Gris optimizado para legibilidad WCAG */
         }
 
         html, body {
@@ -32,7 +32,7 @@
             overflow-x: hidden;
         }
 
-        /* TIPOGRAFÍA BASE */
+        /* TIPOGRAFÍA EDITORIAL */
         .titillium-base { font-family: 'Titillium Web', sans-serif; font-weight: 400; letter-spacing: -0.01em; line-height: 1.2; }
         .montserrat-black-caps { font-family: 'Montserrat', sans-serif; text-transform: uppercase; letter-spacing: 0.02em; font-weight: 900; }
         .montserrat-caps { font-family: 'Montserrat', sans-serif; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 800; }
@@ -48,13 +48,13 @@
             line-height: 1;
         }
 
-        /* ESTILOS ESPECÍFICOS DEL PORTAFOLIO */
+        /* ESTILOS DE CASOS DEL PORTAFOLIO */
         .project-name {
             font-family: 'Montserrat', sans-serif;
             font-weight: 900;
             text-transform: uppercase;
-            font-size: 1.125rem; /* 1.5x de escala */
-            letter-spacing: 0.05em; /* Distancia entre letras compacta */
+            font-size: 1.125rem; 
+            letter-spacing: 0.05em; 
             line-height: 1.2;
             color: var(--text-dark);
         }
@@ -62,12 +62,12 @@
         .project-phrase {
             font-family: 'Titillium Web', sans-serif;
             font-weight: 400;
-            font-size: 1.05rem; /* 1.5x de escala */
+            font-size: 1.05rem; 
             color: var(--text-accessible-gray);
             line-height: 1.2;
         }
 
-        /* --- NAVEGACIÓN --- */
+        /* --- NAVEGACIÓN FIXED --- */
         #main-nav {
             position: fixed !important;
             top: 0 !important;
@@ -174,8 +174,12 @@
         }
         .scroll-indicator i { animation: bounceDown 2s infinite; }
 
-        .project-card { transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1); }
-        .project-card:hover { transform: translateY(-10px); }
+        /* --- PORTFOLIO TARJETAS --- */
+        .project-card { 
+            transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1); 
+            cursor: pointer;
+        }
+        .project-card:hover { transform: translateY(-8px); }
 
         .case-image-container {
             width: 100%;
@@ -192,6 +196,27 @@
             transition: transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
         }
         .project-card:hover .case-image-container img { transform: scale(1.05); }
+
+        /* --- VISOR INTERACTIVO DE CASOS (MINIPÁGINAS) --- */
+        #case-viewer {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            z-index: 3000;
+            background-color: var(--bg-gray-light);
+            overflow-y: auto;
+            transform: translateY(100%);
+            opacity: 0;
+            pointer-events: none;
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.5s ease;
+        }
+        #case-viewer.active {
+            transform: translateY(0);
+            opacity: 1;
+            pointer-events: auto;
+        }
     </style>
 </head>
 <body class="text-slate-900 overflow-x-hidden">
@@ -204,8 +229,8 @@
             </a>
             
             <div id="nav-links" class="hidden lg:flex space-x-12 items-center text-[11px] montserrat-caps text-slate-700 transition-colors duration-500">
-                <a href="#manifiesto" class="nav-link" data-i18n="nav-manifiesto">Manifiesto</a>
                 <a href="#proyectos" class="nav-link" data-i18n="nav-portfolio">Portafolio</a>
+                <a href="#manifiesto" class="nav-link" data-i18n="nav-manifiesto">Manifiesto</a>
                 <a href="#contacto" class="nav-link" data-i18n="nav-contact">Contacto</a>
                 
                 <div class="flex space-x-2 ml-4 border-l border-black/10 pl-6 h-4 items-center" id="lang-selector-desktop">
@@ -224,11 +249,10 @@
     <!-- Menú Móvil Overlay -->
     <div id="mobile-menu" class="lg:hidden bg-white/95">
         <div class="flex flex-col space-y-10 text-center">
-            <a href="#manifiesto" class="mobile-nav-link text-2xl montserrat-black-caps" data-i18n="nav-manifiesto">Manifiesto</a>
             <a href="#proyectos" class="mobile-nav-link text-2xl montserrat-black-caps" data-i18n="nav-portfolio">Portafolio</a>
+            <a href="#manifiesto" class="mobile-nav-link text-2xl montserrat-black-caps" data-i18n="nav-manifiesto">Manifiesto</a>
             <a href="#contacto" class="mobile-nav-link text-2xl montserrat-black-caps" data-i18n="nav-contact">Contacto</a>
             
-            <!-- Selector de Idioma en Móvil -->
             <div class="flex justify-center space-x-6 pt-10 border-t border-black/5 mx-20">
                 <span class="lang-btn-mobile montserrat-black-caps text-sm" onclick="setLanguage('es')">ESPAÑOL</span>
                 <span class="lang-btn-mobile montserrat-black-caps text-sm" onclick="setLanguage('en')">ENGLISH</span>
@@ -266,7 +290,7 @@
 
                 <div class="flex flex-col items-center md:items-start max-w-xl">
                     <p class="text-lg md:text-xl lg:text-xl text-slate-800 font-light leading-relaxed garamond-accent italic text-center md:text-left mb-8 max-w-[22rem] md:max-w-[28rem] lg:max-w-[36rem]" data-i18n="hero-intro"></p>
-                    <a href="#manifiesto" class="scroll-indicator inline-flex items-center gap-4 text-slate-900 hover:text-brand-accent transition-colors py-2 group">
+                    <a href="#proyectos" class="scroll-indicator inline-flex items-center gap-4 text-slate-900 hover:text-brand-accent transition-colors py-2 group">
                         <span class="text-[12px] montserrat-black-caps border-b-2 border-slate-900 group-hover:border-brand-accent pb-1" data-i18n="hero-scroll"></span>
                         <i class="fa-solid fa-arrow-down text-xl"></i>
                     </a>
@@ -277,8 +301,50 @@
         </div>
     </header>
 
-    <!-- MANIFIESTO -->
-    <section id="manifiesto" class="py-40 px-10 md:px-16 lg:px-20 border-y border-black/5 section-target" style="background-color: var(--bg-gray-light);">
+    <!-- PORTFOLIO (Ahora Primero) -->
+    <section id="proyectos" class="py-32 px-10 md:px-16 lg:px-20 border-b border-black/5 section-target" style="background-color: var(--bg-gray-light);">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-4xl md:text-6xl text-slate-900 mb-24" id="portfolio-title"></h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-16">
+                <!-- Caso 1: COBOCE -->
+                <div class="project-card" onclick="openCase('coboce')">
+                    <div class="case-image-container">
+                        <img src="https://project-s9rxa.vercel.app/cases/coboce-cover.png" alt="COBOCE COOP" onerror="this.src='https://via.placeholder.com/600/009a82/ffffff?text=COBOCE'">
+                    </div>
+                    <div class="flex flex-col gap-y-1">
+                        <h3 class="project-name" data-i18n="case-name-coboce"></h3>
+                        <span class="project-phrase" data-i18n="case-phrase-coboce"></span>
+                    </div>
+                </div>
+
+                <!-- Caso 2: WISTUPIKU -->
+                <div class="project-card" onclick="openCase('wistupiku')">
+                    <div class="case-image-container">
+                        <img src="https://project-s9rxa.vercel.app/cases/wistupiku-cover.jpg" alt="Wist'upiku" onerror="this.src='https://via.placeholder.com/600/009a82/ffffff?text=WISTUPIKU'">
+                    </div>
+                    <div class="flex flex-col gap-y-1">
+                        <h3 class="project-name" data-i18n="case-name-wistupiku"></h3>
+                        <span class="project-phrase" data-i18n="case-phrase-wistupiku"></span>
+                    </div>
+                </div>
+
+                <!-- Caso 3: SIMP3L -->
+                <div class="project-card" onclick="openCase('simp3l')">
+                    <div class="case-image-container">
+                        <img src="https://project-s9rxa.vercel.app/cases/simp3l-cover.jpg" alt="SIMP3L" onerror="this.src='https://via.placeholder.com/600/009a82/ffffff?text=SIMP3L'">
+                    </div>
+                    <div class="flex flex-col gap-y-1">
+                        <h3 class="project-name" data-i18n="case-name-simp3l"></h3>
+                        <span class="project-phrase" data-i18n="case-phrase-simp3l"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MANIFIESTO (Ahora Segundo) -->
+    <section id="manifiesto" class="py-40 px-10 md:px-16 lg:px-20 border-b border-black/5 section-target" style="background-color: var(--bg-gray-light);">
         <div class="max-w-7xl mx-auto">
             <div class="grid lg:grid-cols-12 gap-12 lg:gap-24 items-start mb-24">
                 <div class="lg:col-span-4 lg:sticky lg:top-32 relative">
@@ -306,48 +372,6 @@
         </div>
     </section>
 
-    <!-- PORTFOLIO -->
-    <section id="proyectos" class="py-32 px-10 md:px-16 lg:px-20 section-target" style="background-color: var(--bg-gray-light);">
-        <div class="max-w-7xl mx-auto">
-            <h2 class="text-4xl md:text-6xl text-slate-900 mb-24" id="portfolio-title"></h2>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-16">
-                <!-- Caso 1: COBOCE -->
-                <div class="project-card">
-                    <div class="case-image-container">
-                        <img src="https://project-s9rxa.vercel.app/cases/coboce-cover.png" alt="COBOCE COOP">
-                    </div>
-                    <div class="flex flex-col gap-y-1">
-                        <h3 class="project-name" data-i18n="case-name-coboce"></h3>
-                        <span class="project-phrase" data-i18n="case-phrase-coboce"></span>
-                    </div>
-                </div>
-
-                <!-- Caso 2: WISTUPIKU -->
-                <div class="project-card">
-                    <div class="case-image-container">
-                        <img src="https://project-s9rxa.vercel.app/cases/wistupiku-cover.jpg" alt="Wist'upiku">
-                    </div>
-                    <div class="flex flex-col gap-y-1">
-                        <h3 class="project-name" data-i18n="case-name-wistupiku"></h3>
-                        <span class="project-phrase" data-i18n="case-phrase-wistupiku"></span>
-                    </div>
-                </div>
-
-                <!-- Caso 3: SIMP3L -->
-                <div class="project-card">
-                    <div class="case-image-container">
-                        <img src="https://project-s9rxa.vercel.app/cases/simp3l-cover.jpg" alt="SIMP3L">
-                    </div>
-                    <div class="flex flex-col gap-y-1">
-                        <h3 class="project-name" data-i18n="case-name-simp3l"></h3>
-                        <span class="project-phrase" data-i18n="case-phrase-simp3l"></span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- CONTACTO -->
     <section id="contacto" class="py-40 px-10 md:px-16 lg:px-20 section-target" style="background-color: var(--bg-gray-mid);">
         <div class="max-w-7xl mx-auto text-center">
@@ -363,7 +387,170 @@
         <p class="text-[10px] montserrat-caps text-slate-500 font-bold tracking-[0.4em] uppercase">&copy; 2026 Francisco Cortés Arce — Bolivia</p>
     </footer>
 
+    <!-- VISOR DE MINIPÁGINAS DE PROYECTO (CASE STUDY VIEWER) -->
+    <div id="case-viewer" class="relative">
+        <!-- Navegación interna del visor -->
+        <div class="sticky top-0 left-0 right-0 h-24 bg-white/85 backdrop-blur-md border-b border-black/5 z-50 flex items-center px-10 md:px-16 lg:px-24">
+            <div class="max-w-7xl mx-auto w-full flex justify-between items-center">
+                <button onclick="closeCase()" class="text-[11px] montserrat-black-caps flex items-center gap-3 text-slate-800 hover:text-brand-green transition-colors">
+                    <i class="fa-solid fa-arrow-left text-sm"></i>
+                    <span data-case-i18n="btn-back">Volver al Portafolio</span>
+                </button>
+                <div class="text-[11px] montserrat-caps text-slate-400 font-bold tracking-widest">
+                    FRANCISCO CORTÉS ARCE &mdash; CASE STUDY
+                </div>
+            </div>
+        </div>
+
+        <!-- Contenedor de contenido dinámico -->
+        <div class="max-w-7xl mx-auto px-10 md:px-16 lg:px-24 py-24" id="case-content-wrapper">
+            
+            <!-- WIST'UPIKU (Exact layout and text matching Screenshot 2026-06-06 at 4.28.33 PM.png with "Equipo" section added in right sidebar) -->
+            <div id="case-wistupiku" class="case-detail-container hidden">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+                    <!-- Columna Izquierda & Central (Copia del caso distribuida) -->
+                    <div class="lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+                        <div class="md:col-span-2">
+                            <span class="text-[11px] montserrat-black-caps text-[#009a82] tracking-[0.2em] block mb-2" data-case-i18n="case-label">CASO:</span>
+                            <h2 class="text-4xl md:text-5xl lg:text-6xl font-black uppercase font-montserrat text-slate-900 tracking-tight mb-8">WIST'UPIKU</h2>
+                        </div>
+                        <!-- Columna 1 de Texto -->
+                        <div class="space-y-6">
+                            <p class="text-lg md:text-xl text-slate-800 font-light leading-relaxed" data-case-i18n="wistupiku-challenge"></p>
+                            <p class="text-lg md:text-xl text-slate-800 font-light leading-relaxed" data-case-i18n="wistupiku-history"></p>
+                        </div>
+                        <!-- Columna 2 de Texto -->
+                        <div class="space-y-6">
+                            <p class="text-lg md:text-xl text-slate-800 font-light leading-relaxed" data-case-i18n="wistupiku-system"></p>
+                            <p class="text-lg md:text-xl text-slate-800 font-light leading-relaxed" data-case-i18n="wistupiku-deployment"></p>
+                        </div>
+                    </div>
+
+                    <!-- Columna Derecha (Ficha Técnica / Meta Info de la imagen con sección EQUIPO incluida) -->
+                    <div class="lg:col-span-4 border-l-2 border-[#009a82] pl-8 py-2 space-y-8">
+                        <div>
+                            <span class="text-[11px] montserrat-black-caps text-[#009a82] tracking-[0.15em] block mb-2" data-case-i18n="label-location">UBICACIÓN:</span>
+                            <p class="text-lg font-serif italic text-slate-800 leading-snug" data-case-i18n="wistupiku-loc"></p>
+                        </div>
+                        <div>
+                            <span class="text-[11px] montserrat-black-caps text-[#009a82] tracking-[0.15em] block mb-2" data-case-i18n="label-strategy">ESTRATEGIA:</span>
+                            <p class="text-lg font-serif italic text-slate-800 leading-snug" data-case-i18n="wistupiku-strat"></p>
+                        </div>
+                        <div>
+                            <span class="text-[11px] montserrat-black-caps text-[#009a82] tracking-[0.15em] block mb-2" data-case-i18n="label-results">RESULTADOS:</span>
+                            <p class="text-lg font-serif italic text-slate-800 leading-snug" data-case-i18n="wistupiku-res"></p>
+                        </div>
+                        <div>
+                            <span class="text-[11px] montserrat-black-caps text-[#009a82] tracking-[0.15em] block mb-2" data-case-i18n="label-team">EQUIPO:</span>
+                            <p class="text-lg font-serif italic text-slate-800 leading-snug" data-case-i18n="wistupiku-team"></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Galería con recuadros grises diagramados (Mocks del Proyecto) -->
+                <div class="mt-24 pt-16 border-t border-black/10">
+                    <h3 class="text-xs montserrat-black-caps text-slate-400 tracking-[0.3em] uppercase mb-8" data-case-i18n="gallery-title">Despliegue Visual & Embalajes</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <!-- Recuadro Gris 1: Empaques -->
+                        <div class="bg-slate-300 aspect-[4/3] rounded-sm flex flex-col justify-between p-8 border border-black/5 relative group hover:bg-slate-400/50 transition-colors">
+                            <span class="text-[10px] montserrat-black-caps text-slate-500 tracking-wider" data-case-i18n="mock-label-1">MOCKUP #01</span>
+                            <div class="text-center font-serif italic text-slate-600 text-lg" data-case-i18n="wistupiku-mock1"></div>
+                            <span class="text-[11px] font-mono text-slate-500" data-case-i18n="mock-format-vector"></span>
+                        </div>
+                        <!-- Recuadro Gris 2: Espacios -->
+                        <div class="bg-slate-300 aspect-[4/3] rounded-sm flex flex-col justify-between p-8 border border-black/5 relative group hover:bg-slate-400/50 transition-colors">
+                            <span class="text-[10px] montserrat-black-caps text-slate-500 tracking-wider" data-case-i18n="mock-label-2">MOCKUP #02</span>
+                            <div class="text-center font-serif italic text-slate-600 text-lg" data-case-i18n="wistupiku-mock2"></div>
+                            <span class="text-[11px] font-mono text-slate-500" data-case-i18n="mock-format-render"></span>
+                        </div>
+                        <!-- Recuadro Gris 3: Digital -->
+                        <div class="bg-slate-300 aspect-[4/3] rounded-sm flex flex-col justify-between p-8 border border-black/5 relative group hover:bg-slate-400/50 transition-colors">
+                            <span class="text-[10px] montserrat-black-caps text-slate-500 tracking-wider" data-case-i18n="mock-label-3">MOCKUP #03</span>
+                            <div class="text-center font-serif italic text-slate-600 text-lg" data-case-i18n="wistupiku-mock3"></div>
+                            <span class="text-[11px] font-mono text-slate-500" data-case-i18n="mock-format-grid"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Caso 1: COBOCE COOP (With Team block in sidebar) -->
+            <div id="case-coboce" class="case-detail-container hidden">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+                    <div class="lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="md:col-span-2">
+                            <span class="text-[11px] montserrat-black-caps text-[#009a82] tracking-[0.2em] block mb-2" data-case-i18n="case-label">CASO:</span>
+                            <h2 class="text-4xl md:text-5xl lg:text-6xl font-black uppercase font-montserrat text-slate-900 tracking-tight mb-8">COBOCE COOP</h2>
+                        </div>
+                        <div class="space-y-6">
+                            <p class="text-lg md:text-xl text-slate-800 font-light leading-relaxed" data-case-i18n="coboce-challenge"></p>
+                        </div>
+                        <div class="space-y-6">
+                            <p class="text-lg md:text-xl text-slate-800 font-light leading-relaxed" data-case-i18n="coboce-system"></p>
+                        </div>
+                    </div>
+                    <div class="lg:col-span-4 border-l-2 border-[#009a82] pl-8 py-2 space-y-8">
+                        <div>
+                            <span class="text-[11px] montserrat-black-caps text-[#009a82] tracking-[0.15em] block mb-2" data-case-i18n="label-location">UBICACIÓN:</span>
+                            <p class="text-lg font-serif italic text-slate-800 leading-snug" data-case-i18n="coboce-loc"></p>
+                        </div>
+                        <div>
+                            <span class="text-[11px] montserrat-black-caps text-[#009a82] tracking-[0.15em] block mb-2" data-case-i18n="label-strategy">ESTRATEGIA:</span>
+                            <p class="text-lg font-serif italic text-slate-800 leading-snug" data-case-i18n="coboce-strat"></p>
+                        </div>
+                        <div>
+                            <span class="text-[11px] montserrat-black-caps text-[#009a82] tracking-[0.15em] block mb-2" data-case-i18n="label-team">EQUIPO:</span>
+                            <p class="text-lg font-serif italic text-slate-800 leading-snug" data-case-i18n="coboce-team"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-24 pt-16 border-t border-black/10">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="bg-slate-300 aspect-video rounded-sm flex items-center justify-center p-8 text-slate-600 font-serif italic" data-case-i18n="coboce-mock1"></div>
+                        <div class="bg-slate-300 aspect-video rounded-sm flex items-center justify-center p-8 text-slate-600 font-serif italic" data-case-i18n="coboce-mock2"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Caso 3: SIMP3L (With Team block in sidebar) -->
+            <div id="case-simp3l" class="case-detail-container hidden">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+                    <div class="lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="md:col-span-2">
+                            <span class="text-[11px] montserrat-black-caps text-[#009a82] tracking-[0.2em] block mb-2" data-case-i18n="case-label">CASO:</span>
+                            <h2 class="text-4xl md:text-5xl lg:text-6xl font-black uppercase font-montserrat text-slate-900 tracking-tight mb-8">SIMP3L</h2>
+                        </div>
+                        <div class="space-y-6">
+                            <p class="text-lg md:text-xl text-slate-800 font-light leading-relaxed" data-case-i18n="simp3l-challenge"></p>
+                        </div>
+                        <div class="space-y-6">
+                            <p class="text-lg md:text-xl text-slate-800 font-light leading-relaxed" data-case-i18n="simp3l-system"></p>
+                        </div>
+                    </div>
+                    <div class="lg:col-span-4 border-l-2 border-[#009a82] pl-8 py-2 space-y-8">
+                        <div>
+                            <span class="text-[11px] montserrat-black-caps text-[#009a82] tracking-[0.15em] block mb-2" data-case-i18n="label-strategy">ESTRATEGIA:</span>
+                            <p class="text-lg font-serif italic text-slate-800 leading-snug" data-case-i18n="simp3l-strat"></p>
+                        </div>
+                        <div>
+                            <span class="text-[11px] montserrat-black-caps text-[#009a82] tracking-[0.15em] block mb-2" data-case-i18n="label-team">EQUIPO:</span>
+                            <p class="text-lg font-serif italic text-slate-800 leading-snug" data-case-i18n="simp3l-team"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-24 pt-16 border-t border-black/10">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div class="bg-slate-300 aspect-square rounded-sm flex items-center justify-center p-8 text-slate-600 font-serif italic text-center" data-case-i18n="simp3l-mock1"></div>
+                        <div class="bg-slate-300 aspect-square rounded-sm flex items-center justify-center p-8 text-slate-600 font-serif italic text-center" data-case-i18n="simp3l-mock2"></div>
+                        <div class="bg-slate-300 aspect-square rounded-sm flex items-center justify-center p-8 text-slate-600 font-serif italic text-center" data-case-i18n="simp3l-mock3"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SCRIPTS INTERACTIVOS Y SISTEMA DE TRADUCCIÓN -->
     <script>
+        // Diccionario de traducción consistente global para el home
         const translations = {
             es: {
                 'nav-manifiesto': 'Manifiesto',
@@ -372,7 +559,7 @@
                 'hero-design': 'diseño',
                 'hero-words': ['apropiado', 'útil', 'auténtico', 'estratégico', 'cortés'],
                 'hero-intro': 'Estrategias e innovación para marcas que quieren mostrar lo que son y no disfrazarse de tendencias o modas pasajeras.',
-                'hero-scroll': '¿De qué hablo?',
+                'hero-scroll': 'Portafolio', // Botón principal del home ahora dice sólo "Portafolio"
                 'manifiesto-title': 'Sentido <br>antes que <br><span class="garamond-bold-italic text-slate-500 lowercase">pinta vacía</span>.',
                 'manifiesto-p1': 'Entiendo el branding como la <span class="garamond-bold-italic text-slate-900">construcción de sentido</span>. No se trata únicamente de diseñar identidades "bonitas", sino de definir con claridad qué representa una marca.',
                 'manifiesto-h1': '<span class="garamond-bold-italic text-brand-accent">Diferenciación</span> con coherencia',
@@ -397,7 +584,7 @@
                 'hero-design': 'design',
                 'hero-words': ['appropriate', 'useful', 'authentic', 'strategic', 'cortés'],
                 'hero-intro': 'Strategies and innovation for brands that want to show what they truly are and not disguise themselves as trends or passing fads.',
-                'hero-scroll': 'What am I saying?',
+                'hero-scroll': 'Portfolio', // Botón principal del home ahora dice sólo "Portfolio"
                 'manifiesto-title': 'Sense <br>before <br><span class="garamond-bold-italic text-slate-500 lowercase">empty looks</span>.',
                 'manifiesto-p1': 'I understand branding as the <span class="garamond-bold-italic text-slate-900">construction of meaning</span>. It is not only about designing "pretty" identities, but clearly defining what a brand represents.',
                 'manifiesto-h1': '<span class="garamond-bold-italic text-brand-accent">Differentiation</span> with coherence',
@@ -414,6 +601,103 @@
                 'case-name-simp3l': 'SIMP3L',
                 'case-phrase-simp3l': 'equal, but not that much',
                 'contact-title': 'Let\'s talk about <br><span class="garamond-bold-italic text-slate-800 lowercase">meaning and permanence</span>.'
+            }
+        };
+
+        // Traducciones consistentes específicas para los contenidos de las minipáginas de caso
+        // Incluye las traducciones para "Equipo" y los créditos correspondientes
+        const caseTranslations = {
+            es: {
+                'btn-back': 'Volver al Portafolio',
+                'case-label': 'CASO:',
+                'label-location': 'UBICACIÓN:',
+                'label-strategy': 'ESTRATEGIA:',
+                'label-results': 'RESULTADOS:',
+                'label-team': 'EQUIPO:',
+                'gallery-title': 'Despliegue Visual & Embalajes',
+                'mock-label-1': 'MOCKUP #01',
+                'mock-label-2': 'MOCKUP #02',
+                'mock-label-3': 'MOCKUP #03',
+                'mock-format-vector': 'FORMATO: 1:1 VECTORIAL',
+                'mock-format-render': 'FORMATO: RENDER ARQUITECTURA',
+                'mock-format-grid': 'FORMATO: GRID SOCIAL MEDIA',
+                
+                // Wist'upiku (Exact transcription of Screenshot 2026-06-06 at 4.28.33 PM.png)
+                'wistupiku-challenge': 'Esta marca gastronómica representativa de Cochabamba, planteaba el desafío de actualizarse <strong class="font-bold">sin perder el vínculo emocional construido a través de décadas</strong>.',
+                'wistupiku-history': 'El trabajo se desarrolló a lo largo de distintas etapas, acompañando a la marca en momentos clave como sus aniversarios 75, 80 y 85, esto permitió abordar la identidad como un proceso evolutivo. El enfoque se centró en consolidar un',
+                'wistupiku-system': '<strong class="font-bold text-brand-green">sistema de marca basado en el tono de voz y en la expresión cultural</strong>, utilizando el lenguaje regional como eje para construir cercanía, diferenciación y coherencia en distintos puntos de contacto.',
+                'wistupiku-deployment': 'La identidad resultante articula lo tradicional y lo contemporáneo, <strong class="font-bold">permitiendo su despliegue en empaques, espacios y comunicación digital</strong>.',
+                'wistupiku-loc': 'Origen en Cochabamba con alcance nacional',
+                'wistupiku-strat': 'Rescate cultural boliviano, con cariño y humor boliviano',
+                'wistupiku-res': 'Voz e identidad destacada online y offline.',
+                'wistupiku-team': 'Francisco Cortés, Director creativo del proyecto y diseñador senior, Sam Mendoza y Alex Arandia diseñadores junior.',
+                'wistupiku-mock1': '[ Empaques Tradicionales y Cajas de Pasteles ]',
+                'wistupiku-mock2': '[ Aplicación en Fachadas y Espacio de Tiendas ]',
+                'wistupiku-mock3': '[ Lenguaje de Expresión Cultural en Redes ]',
+
+                // Coboce
+                'coboce-challenge': 'El desafío consistió en unificar la arquitectura de marca de una de las corporaciones industriales cooperativas más grandes de Bolivia.',
+                'coboce-system': 'Creamos un sistema visual coherente y flexible para conectar todas las subunidades industriales con su base cooperativa, reflejando el poder de la comunidad en la producción.',
+                'coboce-loc': 'Cochabamba con impacto nacional',
+                'coboce-strat': 'Arquitectura de Marca Cooperativa Unificada',
+                'coboce-team': 'Francisco Cortés, Director de proyecto y estratega de marca, Sam Mendoza diseñador junior.',
+                'coboce-mock1': '[ Visual de Coboce Cemento ]',
+                'coboce-mock2': '[ Manual de Submarcas ]',
+
+                // Simp3l
+                'simp3l-challenge': 'SIMP3L propone un branding honesto donde la tecnología compleja se humaniza para crear un ecosistema digital transparente, directo y honesto.',
+                'simp3l-system': 'Diseñamos la interfaz, el sistema interactivo y la propuesta de marca de manera coordinada bajo la consigna de que la autenticidad supera la perfección artificial.',
+                'simp3l-strat': 'Tecnología sin pretensiones estéticas huecas',
+                'simp3l-team': 'Francisco Cortés, Diseñador de experiencia y estratega digital, Alex Arandia diseñador junior.',
+                'simp3l-mock1': '[ UI/UX Mockup ]',
+                'simp3l-mock2': '[ Visual de Logotipo ]',
+                'simp3l-mock3': '[ Paleta Cromática Digital ]'
+            },
+            en: {
+                'btn-back': 'Back to Portfolio',
+                'case-label': 'CASE:',
+                'label-location': 'LOCATION:',
+                'label-strategy': 'STRATEGY:',
+                'label-results': 'RESULTS:',
+                'label-team': 'TEAM:',
+                'gallery-title': 'Visual Deployment & Packaging',
+                'mock-label-1': 'MOCKUP #01',
+                'mock-label-2': 'MOCKUP #02',
+                'mock-label-3': 'MOCKUP #03',
+                'mock-format-vector': 'FORMAT: 1:1 VECTORIAL',
+                'mock-format-render': 'FORMAT: ARCHITECTURE RENDER',
+                'mock-format-grid': 'FORMAT: SOCIAL MEDIA GRID',
+
+                // Wist'upiku
+                'wistupiku-challenge': 'This iconic gastronomic brand of Cochabamba faced the challenge of updating itself <strong class="font-bold">without losing the emotional connection built over decades</strong>.',
+                'wistupiku-history': 'The work was developed across different stages, supporting the brand during key moments like its 75th, 80th, and 85th anniversaries, treating identity as an evolutionary process.',
+                'wistupiku-system': 'The focus was on consolidating a <strong class="font-bold text-brand-green">brand system based on tone of voice and cultural expression</strong>, utilizing regional language as a key pillar for closeness.',
+                'wistupiku-deployment': 'The resulting identity balances tradition with contemporary design, <strong class="font-bold">allowing its rollout across packaging, physical spaces, and social media</strong>.',
+                'wistupiku-loc': 'Origin in Cochabamba with nationwide reach',
+                'wistupiku-strat': 'Bolivian cultural rescue, shaped with warmth and Bolivian humor',
+                'wistupiku-res': 'Outstanding voice and identity, both online and offline.',
+                'wistupiku-team': 'Francisco Cortés, Project creative director and senior designer, Sam Mendoza and Alex Arandia junior designers.',
+                'wistupiku-mock1': '[ Traditional Packaging and Pastel Boxes ]',
+                'wistupiku-mock2': '[ Facade Application and Retail Store Design ]',
+                'wistupiku-mock3': '[ Cultural Expression Language on Social Networks ]',
+
+                // Coboce
+                'coboce-challenge': 'The challenge consisted of unifying the brand architecture of one of Bolivia\'s largest cooperative industrial corporations.',
+                'coboce-system': 'We built a coherent and flexible visual system to connect all cement and manufacturing sub-brands with their cooperative legacy.',
+                'coboce-loc': 'Cochabamba with national impact',
+                'coboce-strat': 'Unified Cooperative Brand Architecture',
+                'coboce-team': 'Francisco Cortés, Project director and brand strategist, Sam Mendoza junior designer.',
+                'coboce-mock1': '[ Coboce Cement Visual Asset ]',
+                'coboce-mock2': '[ Sub-brands Architecture Manual ]',
+
+                // Simp3l
+                'simp3l-challenge': 'SIMP3L stands for honest branding, where complex technology is humanized to build a transparent, straightforward, and sincere digital ecosystem.',
+                'simp3l-system': 'We designed the interface, the interactive system, and the overall brand identity under the premise that authenticity beats artificial perfection.',
+                'simp3l-strat': 'Technology without hollow aesthetic pretensions',
+                'simp3l-team': 'Francisco Cortés, UX designer and digital strategist, Alex Arandia junior designer.',
+                'simp3l-mock1': '[ UI/UX Interface Design ]',
+                'simp3l-mock2': '[ Typographic Logo Asset ]',
+                'simp3l-mock3': '[ Digital Color Palette System ]'
             }
         };
 
@@ -437,6 +721,56 @@
             document.body.style.overflow = '';
         }
 
+        // --- MANEJO DEL VISOR DE CASOS (MINIPÁGINAS) ---
+        function openCase(caseId) {
+            const viewer = document.getElementById('case-viewer');
+            
+            // Ocultar todos los casos primero
+            document.querySelectorAll('.case-detail-container').forEach(container => {
+                container.classList.add('hidden');
+            });
+
+            // Mostrar el caso solicitado
+            const activeContainer = document.getElementById(`case-${caseId}`);
+            if (activeContainer) {
+                activeContainer.classList.remove('hidden');
+            }
+
+            // Traducir dinámicamente según idioma actual
+            translateCaseContent(caseId);
+
+            // Activar visor
+            viewer.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Detener scroll del home
+        }
+
+        function closeCase() {
+            const viewer = document.getElementById('case-viewer');
+            viewer.classList.remove('active');
+            document.body.style.overflow = ''; // Restaurar scroll
+        }
+
+        function translateCaseContent(caseId) {
+            const langData = caseTranslations[currentLang];
+            const caseContainer = document.getElementById(`case-${caseId}`);
+            if (!caseContainer) return;
+
+            // Traducir todos los elementos marcados con data-case-i18n de forma consistente
+            caseContainer.querySelectorAll('[data-case-i18n]').forEach(el => {
+                const key = el.getAttribute('data-case-i18n');
+                if (langData[key]) {
+                    el.innerHTML = langData[key];
+                }
+            });
+
+            // Traducir también el botón de retroceso general del header del visor
+            const backBtn = document.querySelector('[data-case-i18n="btn-back"]');
+            if (backBtn && langData['btn-back']) {
+                backBtn.innerHTML = langData['btn-back'];
+            }
+        }
+
+        // --- SISTEMA DE IDIOMAS GLOBAL ---
         function setLanguage(lang) {
             currentLang = lang;
             
@@ -461,6 +795,7 @@
                 fixedWordContainer.style.paddingRight = '0.11em';
             }
 
+            // Traducir todos los elementos base del Home
             document.querySelectorAll('[data-i18n]').forEach(el => {
                 const key = el.getAttribute('data-i18n');
                 if (translations[lang][key]) el.innerHTML = translations[lang][key];
@@ -473,6 +808,13 @@
             initHeroAnimation(translations[lang]['hero-words']);
             updateLangUI();
             
+            // Si el visor de casos está activo, traducimos su contenido al vuelo para mantener consistencia lingüística
+            const activeCaseContainer = document.querySelector('.case-detail-container:not(.hidden)');
+            if (activeCaseContainer) {
+                const activeId = activeCaseContainer.id.replace('case-', '');
+                translateCaseContent(activeId);
+            }
+
             // Cerrar menú al cambiar idioma en móvil
             if (mobileMenu.classList.contains('active')) {
                 closeMenu();
@@ -484,7 +826,7 @@
             document.querySelectorAll('.lang-btn').forEach(btn => {
                 btn.classList.toggle('active', btn.innerText.toLowerCase() === currentLang);
             });
-            // Actualizar botones mobile (visual simple)
+            // Actualizar botones mobile
             document.querySelectorAll('.lang-btn-mobile').forEach(btn => {
                 const isSelected = (currentLang === 'es' && btn.innerText.includes('ESPAÑOL')) || 
                                    (currentLang === 'en' && btn.innerText.includes('ENGLISH'));
@@ -526,6 +868,7 @@
 
         window.addEventListener('scroll', updateNavStyle);
 
+        // --- HERO TEXT ROTATOR ANIMATION ---
         function initHeroAnimation(words) {
             if (flipIntervalId) clearTimeout(flipIntervalId);
             const list = document.getElementById('flip-list');
@@ -589,6 +932,7 @@
             updateNavStyle();
         };
 
+        // Smooth scroll con compensación por barra de navegación fixed
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();

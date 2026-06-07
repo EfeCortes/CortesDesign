@@ -7,7 +7,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
-        /* Importación de fuentes editoriales y técnicas */
+        /* Importación de fuentes */
         @import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200;300;400;600;700;900&family=EB+Garamond:ital,wght@0,400;0,700;1,400;1,700&family=Montserrat:wght@700;800;900&display=swap');
         
         :root {
@@ -53,8 +53,8 @@
             font-family: 'Montserrat', sans-serif;
             font-weight: 900;
             text-transform: uppercase;
-            font-size: 1.125rem; 
-            letter-spacing: 0.05em; 
+            font-size: 1.125rem; /* 1.5x de escala */
+            letter-spacing: 0.05em; /* Distancia entre letras compactada */
             line-height: 1.2;
             color: var(--text-dark);
         }
@@ -62,7 +62,7 @@
         .project-phrase {
             font-family: 'Titillium Web', sans-serif;
             font-weight: 400;
-            font-size: 1.05rem; 
+            font-size: 1.05rem; /* 1.5x de escala */
             color: var(--text-accessible-gray);
             line-height: 1.2;
         }
@@ -105,7 +105,7 @@
 
         /* --- HERO --- */
         #hero {
-            background-image: url('https://project-s9rxa.vercel.app/images/marker-bg.jpg');
+            background-image: url('https://cortes-design.vercel.app/images/marker-bg.jpg');
             background-size: cover;
             background-position: center;
             background-color: var(--bg-gray-mid);
@@ -221,7 +221,6 @@
 </head>
 <body class="text-slate-900 overflow-x-hidden">
 
-    <!-- Navegación Principal -->
     <nav id="main-nav" class="flex items-center border-b border-transparent">
         <div class="max-w-7xl mx-auto w-full px-10 md:px-16 lg:px-20 flex justify-between items-center relative z-[2100]">
             <a href="#hero" id="nav-brand" class="text-[12px] montserrat-black-caps leading-none text-slate-800 transition-colors duration-500 hover:opacity-70">
@@ -260,7 +259,6 @@
         </div>
     </div>
 
-    <!-- HERO SECTION -->
     <header id="hero" class="h-screen w-screen flex flex-col px-10 md:px-16 lg:px-20 relative overflow-hidden section-target pt-20">
         <div class="max-w-7xl mx-auto w-full z-10 flex flex-col h-full">
             <div class="flex-grow"></div>
@@ -284,14 +282,14 @@
             <div class="w-full flex flex-col md:flex-row items-center md:items-center justify-center gap-8 md:gap-12 max-w-4xl mx-auto mb-12 md:mb-20 lg:mb-24">
                 <div class="shrink-0">
                     <div class="w-24 h-24 md:w-28 md:h-28 rounded-full overflow-hidden border-2 border-black/5 shadow-2xl">
-                        <img src="https://project-s9rxa.vercel.app/images/profile.jpg" alt="Francisco Cortés Arce" class="w-full h-full object-cover scale-110" onerror="this.src='https://via.placeholder.com/200/cacccb/1e293b?text=FC'">
+                        <img src="https://cortes-design.vercel.app/images/profile.jpg" alt="Francisco Cortés Arce" class="w-full h-full object-cover scale-110" onerror="this.src='https://via.placeholder.com/200/cacccb/1e293b?text=FC'">
                     </div>
                 </div>
 
                 <div class="flex flex-col items-center md:items-start max-w-xl">
                     <p class="text-lg md:text-xl lg:text-xl text-slate-800 font-light leading-relaxed garamond-accent italic text-center md:text-left mb-8 max-w-[22rem] md:max-w-[28rem] lg:max-w-[36rem]" data-i18n="hero-intro"></p>
                     <a href="#proyectos" class="scroll-indicator inline-flex items-center gap-4 text-slate-900 hover:text-brand-accent transition-colors py-2 group">
-                        <span class="text-[12px] montserrat-black-caps border-b-2 border-slate-900 group-hover:border-brand-accent pb-1" data-i18n="hero-scroll"></span>
+                        <span class="text-[12px] montserrat-black-caps border-b-2 border-slate-900 group-hover:border-brand-accent pb-1" data-i18n="hero-scroll">Portafolio</span>
                         <i class="fa-solid fa-arrow-down text-xl"></i>
                     </a>
                 </div>
@@ -301,7 +299,6 @@
         </div>
     </header>
 
-    <!-- PORTFOLIO (Ahora Primero) -->
     <section id="proyectos" class="py-32 px-10 md:px-16 lg:px-20 border-b border-black/5 section-target" style="background-color: var(--bg-gray-light);">
         <div class="max-w-7xl mx-auto">
             <h2 class="text-4xl md:text-6xl text-slate-900 mb-24" id="portfolio-title"></h2>
@@ -310,7 +307,7 @@
                 <!-- Caso 1: COBOCE -->
                 <div class="project-card" onclick="openCase('coboce')">
                     <div class="case-image-container">
-                        <img src="https://project-s9rxa.vercel.app/cases/coboce-cover.png" alt="COBOCE COOP" onerror="this.src='https://via.placeholder.com/600/009a82/ffffff?text=COBOCE'">
+                        <img src="https://cortes-design.vercel.app/cases/coboce-cover.png" alt="COBOCE COOP" onerror="this.src='https://via.placeholder.com/600/009a82/ffffff?text=COBOCE'">
                     </div>
                     <div class="flex flex-col gap-y-1">
                         <h3 class="project-name" data-i18n="case-name-coboce"></h3>
@@ -321,7 +318,7 @@
                 <!-- Caso 2: WISTUPIKU -->
                 <div class="project-card" onclick="openCase('wistupiku')">
                     <div class="case-image-container">
-                        <img src="https://project-s9rxa.vercel.app/cases/wistupiku-cover.jpg" alt="Wist'upiku" onerror="this.src='https://via.placeholder.com/600/009a82/ffffff?text=WISTUPIKU'">
+                        <img src="https://cortes-design.vercel.app/cases/wistupiku-cover.jpg" alt="Wist'upiku" onerror="this.src='https://via.placeholder.com/600/009a82/ffffff?text=WISTUPIKU'">
                     </div>
                     <div class="flex flex-col gap-y-1">
                         <h3 class="project-name" data-i18n="case-name-wistupiku"></h3>
@@ -332,7 +329,7 @@
                 <!-- Caso 3: SIMP3L -->
                 <div class="project-card" onclick="openCase('simp3l')">
                     <div class="case-image-container">
-                        <img src="https://project-s9rxa.vercel.app/cases/simp3l-cover.jpg" alt="SIMP3L" onerror="this.src='https://via.placeholder.com/600/009a82/ffffff?text=SIMP3L'">
+                        <img src="https://cortes-design.vercel.app/cases/simp3l-cover.jpg" alt="SIMP3L" onerror="this.src='https://via.placeholder.com/600/009a82/ffffff?text=SIMP3L'">
                     </div>
                     <div class="flex flex-col gap-y-1">
                         <h3 class="project-name" data-i18n="case-name-simp3l"></h3>
@@ -343,7 +340,6 @@
         </div>
     </section>
 
-    <!-- MANIFIESTO (Ahora Segundo) -->
     <section id="manifiesto" class="py-40 px-10 md:px-16 lg:px-20 border-b border-black/5 section-target" style="background-color: var(--bg-gray-light);">
         <div class="max-w-7xl mx-auto">
             <div class="grid lg:grid-cols-12 gap-12 lg:gap-24 items-start mb-24">
@@ -357,22 +353,21 @@
             
             <div class="grid md:grid-cols-3 gap-12 lg:gap-20 pt-12 border-t border-black/10">
                 <div>
-                    <h4 class="text-xl md:text-[22px] font-semibold titillium-base mb-4 tracking-tight leading-tight" style="color: var(--brand-green);" data-i18n="manifiesto-h1"></h4>
+                    <h4 class="text-xl md:text-[22px] font-semibold titillium-base mb-4 tracking-tight leading-tight" style="color: var(--brand-green);" id="manifiesto-h1-el"></h4>
                     <p class="text-slate-600 font-light leading-relaxed text-base" data-i18n="manifiesto-desc1"></p>
                 </div>
                 <div>
-                    <h4 class="text-xl md:text-[22px] font-semibold titillium-base mb-4 tracking-tight leading-tight" style="color: var(--brand-green);" data-i18n="manifiesto-h2"></h4>
+                    <h4 class="text-xl md:text-[22px] font-semibold titillium-base mb-4 tracking-tight leading-tight" style="color: var(--brand-green);" id="manifiesto-h2-el"></h4>
                     <p class="text-slate-600 font-light leading-relaxed text-base" data-i18n="manifiesto-desc2"></p>
                 </div>
                 <div>
-                    <h4 class="text-xl md:text-[22px] font-semibold titillium-base mb-4 tracking-tight leading-tight" style="color: var(--brand-green);" data-i18n="manifiesto-h3"></h4>
+                    <h4 class="text-xl md:text-[22px] font-semibold titillium-base mb-4 tracking-tight leading-tight" style="color: var(--brand-green);" id="manifiesto-h3-el"></h4>
                     <p class="text-slate-600 font-light leading-relaxed text-base" data-i18n="manifiesto-desc3"></p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CONTACTO -->
     <section id="contacto" class="py-40 px-10 md:px-16 lg:px-20 section-target" style="background-color: var(--bg-gray-mid);">
         <div class="max-w-7xl mx-auto text-center">
             <p class="text-3xl md:text-5xl font-extralight mb-20 leading-tight text-slate-900" id="contact-title"></p>
@@ -387,9 +382,8 @@
         <p class="text-[10px] montserrat-caps text-slate-500 font-bold tracking-[0.4em] uppercase">&copy; 2026 Francisco Cortés Arce — Bolivia</p>
     </footer>
 
-    <!-- VISOR DE MINIPÁGINAS DE PROYECTO (CASE STUDY VIEWER) -->
     <div id="case-viewer" class="relative">
-        <!-- Navegación interna del visor -->
+        <!-- Barra de herramientas del visor -->
         <div class="sticky top-0 left-0 right-0 h-24 bg-white/85 backdrop-blur-md border-b border-black/5 z-50 flex items-center px-10 md:px-16 lg:px-24">
             <div class="max-w-7xl mx-auto w-full flex justify-between items-center">
                 <button onclick="closeCase()" class="text-[11px] montserrat-black-caps flex items-center gap-3 text-slate-800 hover:text-brand-green transition-colors">
@@ -402,31 +396,27 @@
             </div>
         </div>
 
-        <!-- Contenedor de contenido dinámico -->
+        <!-- Contenedor dinámico de contenidos -->
         <div class="max-w-7xl mx-auto px-10 md:px-16 lg:px-24 py-24" id="case-content-wrapper">
             
-            <!-- WIST'UPIKU (Exact layout and text matching Screenshot 2026-06-06 at 4.28.33 PM.png with "Equipo" section added in right sidebar) -->
+            <!-- WIST'UPIKU (Layout fiel a Screenshot 2026-06-06 at 4.28.33 PM.png con sección "Equipo" en el sidebar técnico) -->
             <div id="case-wistupiku" class="case-detail-container hidden">
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-                    <!-- Columna Izquierda & Central (Copia del caso distribuida) -->
                     <div class="lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
                         <div class="md:col-span-2">
                             <span class="text-[11px] montserrat-black-caps text-[#009a82] tracking-[0.2em] block mb-2" data-case-i18n="case-label">CASO:</span>
                             <h2 class="text-4xl md:text-5xl lg:text-6xl font-black uppercase font-montserrat text-slate-900 tracking-tight mb-8">WIST'UPIKU</h2>
                         </div>
-                        <!-- Columna 1 de Texto -->
                         <div class="space-y-6">
                             <p class="text-lg md:text-xl text-slate-800 font-light leading-relaxed" data-case-i18n="wistupiku-challenge"></p>
                             <p class="text-lg md:text-xl text-slate-800 font-light leading-relaxed" data-case-i18n="wistupiku-history"></p>
                         </div>
-                        <!-- Columna 2 de Texto -->
                         <div class="space-y-6">
                             <p class="text-lg md:text-xl text-slate-800 font-light leading-relaxed" data-case-i18n="wistupiku-system"></p>
                             <p class="text-lg md:text-xl text-slate-800 font-light leading-relaxed" data-case-i18n="wistupiku-deployment"></p>
                         </div>
                     </div>
 
-                    <!-- Columna Derecha (Ficha Técnica / Meta Info de la imagen con sección EQUIPO incluida) -->
                     <div class="lg:col-span-4 border-l-2 border-[#009a82] pl-8 py-2 space-y-8">
                         <div>
                             <span class="text-[11px] montserrat-black-caps text-[#009a82] tracking-[0.15em] block mb-2" data-case-i18n="label-location">UBICACIÓN:</span>
@@ -447,33 +437,29 @@
                     </div>
                 </div>
 
-                <!-- Galería con recuadros grises diagramados (Mocks del Proyecto) -->
                 <div class="mt-24 pt-16 border-t border-black/10">
                     <h3 class="text-xs montserrat-black-caps text-slate-400 tracking-[0.3em] uppercase mb-8" data-case-i18n="gallery-title">Despliegue Visual & Embalajes</h3>
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        <!-- Recuadro Gris 1: Empaques -->
                         <div class="bg-slate-300 aspect-[4/3] rounded-sm flex flex-col justify-between p-8 border border-black/5 relative group hover:bg-slate-400/50 transition-colors">
                             <span class="text-[10px] montserrat-black-caps text-slate-500 tracking-wider" data-case-i18n="mock-label-1">MOCKUP #01</span>
                             <div class="text-center font-serif italic text-slate-600 text-lg" data-case-i18n="wistupiku-mock1"></div>
-                            <span class="text-[11px] font-mono text-slate-500" data-case-i18n="mock-format-vector"></span>
+                            <span class="text-[11px] font-mono text-slate-500" data-case-i18n="mock-format-vector">FORMATO: 1:1 VECTORIAL</span>
                         </div>
-                        <!-- Recuadro Gris 2: Espacios -->
                         <div class="bg-slate-300 aspect-[4/3] rounded-sm flex flex-col justify-between p-8 border border-black/5 relative group hover:bg-slate-400/50 transition-colors">
                             <span class="text-[10px] montserrat-black-caps text-slate-500 tracking-wider" data-case-i18n="mock-label-2">MOCKUP #02</span>
                             <div class="text-center font-serif italic text-slate-600 text-lg" data-case-i18n="wistupiku-mock2"></div>
-                            <span class="text-[11px] font-mono text-slate-500" data-case-i18n="mock-format-render"></span>
+                            <span class="text-[11px] font-mono text-slate-500" data-case-i18n="mock-format-render">FORMATO: RENDER ARQUITECTURA</span>
                         </div>
-                        <!-- Recuadro Gris 3: Digital -->
                         <div class="bg-slate-300 aspect-[4/3] rounded-sm flex flex-col justify-between p-8 border border-black/5 relative group hover:bg-slate-400/50 transition-colors">
                             <span class="text-[10px] montserrat-black-caps text-slate-500 tracking-wider" data-case-i18n="mock-label-3">MOCKUP #03</span>
                             <div class="text-center font-serif italic text-slate-600 text-lg" data-case-i18n="wistupiku-mock3"></div>
-                            <span class="text-[11px] font-mono text-slate-500" data-case-i18n="mock-format-grid"></span>
+                            <span class="text-[11px] font-mono text-slate-500" data-case-i18n="mock-format-grid">FORMATO: GRID SOCIAL MEDIA</span>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Caso 1: COBOCE COOP (With Team block in sidebar) -->
+            <!-- Caso 1: COBOCE COOP (Con bloque de Equipo en sidebar) -->
             <div id="case-coboce" class="case-detail-container hidden">
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
                     <div class="lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -511,7 +497,7 @@
                 </div>
             </div>
 
-            <!-- Caso 3: SIMP3L (With Team block in sidebar) -->
+            <!-- Caso 3: SIMP3L (Con bloque de Equipo en sidebar) -->
             <div id="case-simp3l" class="case-detail-container hidden">
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
                     <div class="lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -548,9 +534,7 @@
         </div>
     </div>
 
-    <!-- SCRIPTS INTERACTIVOS Y SISTEMA DE TRADUCCIÓN -->
     <script>
-        // Diccionario de traducción consistente global para el home
         const translations = {
             es: {
                 'nav-manifiesto': 'Manifiesto',
@@ -559,7 +543,7 @@
                 'hero-design': 'diseño',
                 'hero-words': ['apropiado', 'útil', 'auténtico', 'estratégico', 'cortés'],
                 'hero-intro': 'Estrategias e innovación para marcas que quieren mostrar lo que son y no disfrazarse de tendencias o modas pasajeras.',
-                'hero-scroll': 'Portafolio', // Botón principal del home ahora dice sólo "Portafolio"
+                'hero-scroll': 'Portafolio', 
                 'manifiesto-title': 'Sentido <br>antes que <br><span class="garamond-bold-italic text-slate-500 lowercase">pinta vacía</span>.',
                 'manifiesto-p1': 'Entiendo el branding como la <span class="garamond-bold-italic text-slate-900">construcción de sentido</span>. No se trata únicamente de diseñar identidades "bonitas", sino de definir con claridad qué representa una marca.',
                 'manifiesto-h1': '<span class="garamond-bold-italic text-brand-accent">Diferenciación</span> con coherencia',
@@ -584,7 +568,7 @@
                 'hero-design': 'design',
                 'hero-words': ['appropriate', 'useful', 'authentic', 'strategic', 'cortés'],
                 'hero-intro': 'Strategies and innovation for brands that want to show what they truly are and not disguise themselves as trends or passing fads.',
-                'hero-scroll': 'Portfolio', // Botón principal del home ahora dice sólo "Portfolio"
+                'hero-scroll': 'Portfolio', 
                 'manifiesto-title': 'Sense <br>before <br><span class="garamond-bold-italic text-slate-500 lowercase">empty looks</span>.',
                 'manifiesto-p1': 'I understand branding as the <span class="garamond-bold-italic text-slate-900">construction of meaning</span>. It is not only about designing "pretty" identities, but clearly defining what a brand represents.',
                 'manifiesto-h1': '<span class="garamond-bold-italic text-brand-accent">Differentiation</span> with coherence',
@@ -604,8 +588,6 @@
             }
         };
 
-        // Traducciones consistentes específicas para los contenidos de las minipáginas de caso
-        // Incluye las traducciones para "Equipo" y los créditos correspondientes
         const caseTranslations = {
             es: {
                 'btn-back': 'Volver al Portafolio',
@@ -622,10 +604,10 @@
                 'mock-format-render': 'FORMATO: RENDER ARQUITECTURA',
                 'mock-format-grid': 'FORMATO: GRID SOCIAL MEDIA',
                 
-                // Wist'upiku (Exact transcription of Screenshot 2026-06-06 at 4.28.33 PM.png)
+                // Wist'upiku (As in Screenshot 2026-06-06 at 4.28.33 PM.png)
                 'wistupiku-challenge': 'Esta marca gastronómica representativa de Cochabamba, planteaba el desafío de actualizarse <strong class="font-bold">sin perder el vínculo emocional construido a través de décadas</strong>.',
                 'wistupiku-history': 'El trabajo se desarrolló a lo largo de distintas etapas, acompañando a la marca en momentos clave como sus aniversarios 75, 80 y 85, esto permitió abordar la identidad como un proceso evolutivo. El enfoque se centró en consolidar un',
-                'wistupiku-system': '<strong class="font-bold text-brand-green">sistema de marca basado en el tono de voz y en la expresión cultural</strong>, utilizando el lenguaje regional como eje para construir cercanía, diferenciación y coherencia en distintos puntos de contacto.',
+                'wistupiku-system': '<strong class="font-bold text-[#009a82]">sistema de marca basado en el tono de voz y en la expresión cultural</strong>, utilizando el lenguaje regional como eje para construir cercanía, diferenciación y coherencia en distintos puntos de contacto.',
                 'wistupiku-deployment': 'La identidad resultante articula lo tradicional y lo contemporáneo, <strong class="font-bold">permitiendo su despliegue en empaques, espacios y comunicación digital</strong>.',
                 'wistupiku-loc': 'Origen en Cochabamba con alcance nacional',
                 'wistupiku-strat': 'Rescate cultural boliviano, con cariño y humor boliviano',
@@ -671,7 +653,7 @@
                 // Wist'upiku
                 'wistupiku-challenge': 'This iconic gastronomic brand of Cochabamba faced the challenge of updating itself <strong class="font-bold">without losing the emotional connection built over decades</strong>.',
                 'wistupiku-history': 'The work was developed across different stages, supporting the brand during key moments like its 75th, 80th, and 85th anniversaries, treating identity as an evolutionary process.',
-                'wistupiku-system': 'The focus was on consolidating a <strong class="font-bold text-brand-green">brand system based on tone of voice and cultural expression</strong>, utilizing regional language as a key pillar for closeness.',
+                'wistupiku-system': 'The focus was on consolidating a <strong class="font-bold text-[#009a82]">brand system based on tone of voice and cultural expression</strong>, utilizing regional language as a key pillar for closeness.',
                 'wistupiku-deployment': 'The resulting identity balances tradition with contemporary design, <strong class="font-bold">allowing its rollout across packaging, physical spaces, and social media</strong>.',
                 'wistupiku-loc': 'Origin in Cochabamba with nationwide reach',
                 'wistupiku-strat': 'Bolivian cultural rescue, shaped with warmth and Bolivian humor',
@@ -721,33 +703,28 @@
             document.body.style.overflow = '';
         }
 
-        // --- MANEJO DEL VISOR DE CASOS (MINIPÁGINAS) ---
         function openCase(caseId) {
             const viewer = document.getElementById('case-viewer');
             
-            // Ocultar todos los casos primero
             document.querySelectorAll('.case-detail-container').forEach(container => {
                 container.classList.add('hidden');
             });
 
-            // Mostrar el caso solicitado
             const activeContainer = document.getElementById(`case-${caseId}`);
             if (activeContainer) {
                 activeContainer.classList.remove('hidden');
             }
 
-            // Traducir dinámicamente según idioma actual
             translateCaseContent(caseId);
 
-            // Activar visor
             viewer.classList.add('active');
-            document.body.style.overflow = 'hidden'; // Detener scroll del home
+            document.body.style.overflow = 'hidden'; 
         }
 
         function closeCase() {
             const viewer = document.getElementById('case-viewer');
             viewer.classList.remove('active');
-            document.body.style.overflow = ''; // Restaurar scroll
+            document.body.style.overflow = ''; 
         }
 
         function translateCaseContent(caseId) {
@@ -755,7 +732,6 @@
             const caseContainer = document.getElementById(`case-${caseId}`);
             if (!caseContainer) return;
 
-            // Traducir todos los elementos marcados con data-case-i18n de forma consistente
             caseContainer.querySelectorAll('[data-case-i18n]').forEach(el => {
                 const key = el.getAttribute('data-case-i18n');
                 if (langData[key]) {
@@ -763,14 +739,12 @@
                 }
             });
 
-            // Traducir también el botón de retroceso general del header del visor
             const backBtn = document.querySelector('[data-case-i18n="btn-back"]');
             if (backBtn && langData['btn-back']) {
                 backBtn.innerHTML = langData['btn-back'];
             }
         }
 
-        // --- SISTEMA DE IDIOMAS GLOBAL ---
         function setLanguage(lang) {
             currentLang = lang;
             
@@ -795,38 +769,52 @@
                 fixedWordContainer.style.paddingRight = '0.11em';
             }
 
-            // Traducir todos los elementos base del Home
             document.querySelectorAll('[data-i18n]').forEach(el => {
                 const key = el.getAttribute('data-i18n');
                 if (translations[lang][key]) el.innerHTML = translations[lang][key];
             });
 
-            document.getElementById('manifiesto-title').innerHTML = translations[lang]['manifiesto-title'];
-            document.getElementById('portfolio-title').innerHTML = translations[lang]['port-title'] || translations[lang]['portfolio-title'];
-            document.getElementById('contact-title').innerHTML = translations[lang]['contact-title'];
+            const manifiestoTitle = document.getElementById('manifiesto-title');
+            if (manifiestoTitle) {
+                manifiestoTitle.innerHTML = translations[lang]['manifiesto-title'];
+            }
+            
+            const h1El = document.getElementById('manifiesto-h1-el');
+            const h2El = document.getElementById('manifiesto-h2-el');
+            const h3El = document.getElementById('manifiesto-h3-el');
+            
+            if (h1El) h1El.innerHTML = translations[lang]['manifiesto-h1'];
+            if (h2El) h2El.innerHTML = translations[lang]['manifiesto-h2'];
+            if (h3El) h3El.innerHTML = translations[lang]['manifiesto-h3'];
+
+            const portTitle = document.getElementById('portfolio-title');
+            if (portTitle) {
+                portTitle.innerHTML = translations[lang]['port-title'] || translations[lang]['portfolio-title'];
+            }
+            
+            const contactTitle = document.getElementById('contact-title');
+            if (contactTitle) {
+                contactTitle.innerHTML = translations[lang]['contact-title'];
+            }
 
             initHeroAnimation(translations[lang]['hero-words']);
             updateLangUI();
             
-            // Si el visor de casos está activo, traducimos su contenido al vuelo para mantener consistencia lingüística
             const activeCaseContainer = document.querySelector('.case-detail-container:not(.hidden)');
             if (activeCaseContainer) {
                 const activeId = activeCaseContainer.id.replace('case-', '');
                 translateCaseContent(activeId);
             }
 
-            // Cerrar menú al cambiar idioma en móvil
             if (mobileMenu.classList.contains('active')) {
                 closeMenu();
             }
         }
 
         function updateLangUI() {
-            // Actualizar botones desktop
             document.querySelectorAll('.lang-btn').forEach(btn => {
                 btn.classList.toggle('active', btn.innerText.toLowerCase() === currentLang);
             });
-            // Actualizar botones mobile
             document.querySelectorAll('.lang-btn-mobile').forEach(btn => {
                 const isSelected = (currentLang === 'es' && btn.innerText.includes('ESPAÑOL')) || 
                                    (currentLang === 'en' && btn.innerText.includes('ENGLISH'));
@@ -837,7 +825,6 @@
 
         navToggle.addEventListener('click', toggleMenu);
 
-        // Cerrar menú al hacer clic en enlaces de navegación móvil
         document.querySelectorAll('.mobile-nav-link').forEach(link => {
             link.addEventListener('click', closeMenu);
         });
@@ -847,7 +834,8 @@
         const sections = document.querySelectorAll('.section-target');
 
         function updateNavStyle() {
-            let currentBg = 'rgba(202, 204, 203, 0.85)';
+            if (!nav || !navBrand) return;
+            let currentBg = 'rgba(227, 230, 228, 0.85)';
             let isDark = false;
             sections.forEach(section => {
                 const rect = section.getBoundingClientRect();
@@ -868,12 +856,13 @@
 
         window.addEventListener('scroll', updateNavStyle);
 
-        // --- HERO TEXT ROTATOR ANIMATION ---
         function initHeroAnimation(words) {
             if (flipIntervalId) clearTimeout(flipIntervalId);
             const list = document.getElementById('flip-list');
             const viewport = document.getElementById('flip-viewport');
             const addons = document.getElementById('addons-layer');
+            if(!list || !viewport || !addons) return;
+            
             list.innerHTML = '';
             words.forEach((w) => {
                 const li = document.createElement('li');
@@ -888,6 +877,7 @@
 
             function adjustWidth(idx) {
                 const item = items[idx];
+                if(!item) return;
                 const target = item.querySelector('.garamond-bold-italic');
                 if (target) { viewport.style.width = (target.getBoundingClientRect().width + 10) + 'px'; }
             }
@@ -906,8 +896,11 @@
                 if (isLast && currentLang === 'en') {
                     setTimeout(() => {
                         const targetWord = items[currentIndex].querySelector('.garamond-bold-italic');
+                        if (!targetWord) return;
                         const rect = targetWord.getBoundingClientRect();
-                        const headlineRect = document.getElementById('hero-headline').getBoundingClientRect();
+                        const headline = document.getElementById('hero-headline');
+                        if (!headline) return;
+                        const headlineRect = headline.getBoundingClientRect();
                         const wordEndPos = rect.right - headlineRect.left;
                         const wordBaselinePos = rect.bottom - headlineRect.top;
                         
@@ -932,7 +925,6 @@
             updateNavStyle();
         };
 
-        // Smooth scroll con compensación por barra de navegación fixed
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();

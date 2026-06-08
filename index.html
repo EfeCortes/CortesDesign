@@ -820,7 +820,7 @@
                 'coboce-mock2': 'Efecto de marca en uniformes industriales',
 
                 'simp3l-challenge': 'Creación de un sistema de identidad visual disruptivo y versátil para un proyecto que busca redefinir la simplicidad y la inclusión en el diseño contemporáneo.',
-                'simp3l-system': 'El lenguaje gráfico se construyó sobre geometrías puras y una paleta cromática de alto impacto, reflejando que se puede ser diferente pero compartir la misma esencia.',
+                'simp3l-system': 'El lenguaje gráfico se construyó sobre geometries puras y una paleta cromática de alto impacto, reflejando que se puede ser diferente pero compartir la misma esencia.',
                 'simp3l-strat': 'Concepto de igualdad asimétrica: iguales, pero tampoco tanto.',
                 'simp3l-team': 'Francisco Cortés, Director creativo y diseñador senior.',
                 'simp3l-mock1': 'Diseño de papelería corporativa',
@@ -913,6 +913,7 @@
         let currentLang = 'es';
         let flipIntervalId = null;
         let activeCaseId = null; // Guardar caso activo globalmente
+        const projectIds = ['coboce', 'wistupiku', 'simp3l'];
 
         const navToggle = document.getElementById('nav-toggle');
         const mobileMenu = document.getElementById('mobile-menu');
@@ -948,7 +949,8 @@
             }
         }
 
-        window.openCase = function(caseId) {
+        // Funciones internas de apertura y cierre
+        function openCaseInternal(caseId) {
             activeCaseId = caseId; // Registrar caso activo
 
             // Ocultar todas las subsecciones internas del visor primero
@@ -972,16 +974,41 @@
 
             // Evitar scroll en la página principal trasera
             document.body.style.overflow = 'hidden';
-        };
+        }
 
-        window.closeCase = function() {
+        function closeCaseInternal() {
             activeCaseId = null; // Liberar caso activo
             const viewer = document.getElementById('case-viewer');
             viewer.classList.remove('active');
             
             // Restaurar scroll original de fondo
             document.body.style.overflow = '';
+        }
+
+        // Interfaces globales vinculadas al HTML actual (no romper onclick="openCase(...)")
+        window.openCase = function(caseId) {
+            window.location.hash = caseId;
         };
+
+        window.closeCase = function() {
+            // Al cerrar, regresamos a la sección #proyectos para mantener el contexto
+            window.location.hash = 'proyectos';
+        };
+
+        // Escuchador del cambio de Hash
+        function handleHashChange() {
+            const hash = window.location.hash.substring(1); // Remover el '#'
+            if (projectIds.includes(hash)) {
+                openCaseInternal(hash);
+            } else {
+                // Si hay un caso activo pero el hash ya no es de un proyecto, lo cerramos
+                if (activeCaseId) {
+                    closeCaseInternal();
+                }
+            }
+        }
+
+        window.addEventListener('hashchange', handleHashChange);
 
         function setLanguage(lang) {
             currentLang = lang;
@@ -1312,17 +1339,26 @@
             });
         }
 
-        window.onload = () => {
-            detectDefaultLanguage();
+        window.onload = async () => {
+            await detectDefaultLanguage();
             updateNavStyle();
             initLightboxAutoBindings(); // Registrar bindings automáticos del Lightbox
+            handleHashChange(); // Procesar el hash de la URL al iniciar
         };
 
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) window.scrollTo({ top: target.getBoundingClientRect().top + window.pageYOffset - 80, behavior: 'smooth' });
+                const targetId = this.getAttribute('href');
+                if (targetId === '#' || projectIds.includes(targetId.substring(1))) {
+                    return; // Permitir que el hash nativo cambie para activar handleHashChange
+                }
+                const target = document.querySelector(targetId);
+                if (target) {
+                    e.preventDefault();
+                    window.scrollTo({ top: target.getBoundingClientRect().top + window.pageYOffset - 80, behavior: 'smooth' });
+                    // Actualizar URL sin brincos bruscos de scroll nativo
+                    history.pushState(null, null, targetId);
+                }
             });
         });
     </script>

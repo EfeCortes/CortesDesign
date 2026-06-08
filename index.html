@@ -132,9 +132,15 @@
             position: relative;
             mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%);
             -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%);
-            transition: width 0.7s cubic-bezier(0.65, 0, 0.35, 1);
+            transition: width 0.7s cubic-bezier(0.65, 0, 0.35, 1), opacity 0.5s ease-in-out;
             width: auto;
             min-width: 50px;
+            opacity: 0; /* Oculto inicialmente para prevenir saltos visuales/cortes antes de cargar fuentes */
+        }
+
+        /* Se muestra de forma fluida una vez que las tipografías estén correctamente descargadas */
+        .fonts-loaded .flip-viewport {
+            opacity: 1;
         }
 
         .flip-list {
@@ -343,7 +349,7 @@
     <section id="manifiesto" class="py-40 px-10 md:px-16 lg:px-20 border-b border-black/5 section-target" style="background-color: var(--bg-gray-light);">
         <div class="max-w-7xl mx-auto">
             <div class="grid lg:grid-cols-12 gap-12 lg:gap-24 items-start mb-24">
-                <div class="lg:col-span-4 lg:sticky lg:top-32 relative">
+                <div class="lg:col-span-4 lg:sticky lg:top-32 relative mb-12 lg:mb-0">
                     <h3 class="text-3xl md:text-4xl leading-[1.1] montserrat-black-caps tracking-tighter text-slate-900" id="manifiesto-title"></h3>
                 </div>
                 <div class="lg:col-span-8">
@@ -459,28 +465,28 @@
                             <!-- Columna Izquierda: Dos Cuadradas Apiladas -->
                             <div class="flex flex-col gap-8">
                                 <div class="bg-slate-300 aspect-square rounded-sm overflow-hidden border border-black/5 relative group hover:bg-slate-400/50 transition-colors">
-                                    <img src="https://cortes-design.vercel.app/cases/wistupiku/02_wp_bocetos_personaje.png" class="w-full h-full object-cover" onerror="if(!this.src.endsWith('.png')){this.src=this.src.replace('.jpg','.png');}else{this.style.display='none'; this.nextElementSibling.classList.remove('hidden');}" alt="Empaque Wist'upiku">
+                                    <img src="https://cortes-design.vercel.app/cases/wistupiku/02_wp_bocetos_personaje.png" class="w-full h-full object-cover" onerror="if(!this.src.endsWith('.png')){this.src=this.src.replace('.jpg','.png');}else{this.style.display='none'; this.nextElementSibling.classList.remove('hidden');}" alt="Bocetos de personaje">
                                     <div class="absolute inset-0 flex flex-col justify-between p-8 bg-slate-300/90 hidden text-slate-700">
                                         <span class="text-[10px] montserrat-black-caps text-slate-500 tracking-wider" data-case-i18n="mock-label-1">MOCKUP #01</span>
-                                        <div class="text-center font-serif italic text-slate-600 text-lg" data-case-i18n="wistupiku-mock1">Empaque tradicional de empanadas</div>
+                                        <div class="text-center font-serif italic text-slate-600 text-lg" data-case-i18n="wistupiku-mock1">Bocetos conceptuales del personaje</div>
                                         <span class="text-[11px] font-mono text-slate-500" data-case-i18n="mock-format-square">PROPORCIÓN: 1:1 CUADRADA</span>
                                     </div>
                                 </div>
                                 <div class="bg-slate-300 aspect-square rounded-sm overflow-hidden border border-black/5 relative group hover:bg-slate-400/50 transition-colors">
-                                    <img src="https://cortes-design.vercel.app/cases/wistupiku/03_wp_personaje.png" class="w-full h-full object-cover" onerror="if(!this.src.endsWith('.png')){this.src=this.src.replace('.jpg','.png');}else{this.style.display='none'; this.nextElementSibling.classList.remove('hidden');}" alt="Sucursal Wist'upiku">
+                                    <img src="https://cortes-design.vercel.app/cases/wistupiku/03_wp_personaje.png" class="w-full h-full object-cover" onerror="if(!this.src.endsWith('.png')){this.src=this.src.replace('.jpg','.png');}else{this.style.display='none'; this.nextElementSibling.classList.remove('hidden');}" alt="Empaque Wist'upiku">
                                     <div class="absolute inset-0 flex flex-col justify-between p-8 bg-slate-300/90 hidden text-slate-700">
                                         <span class="text-[10px] montserrat-black-caps text-slate-500 tracking-wider" data-case-i18n="mock-label-2">MOCKUP #02</span>
-                                        <div class="text-center font-serif italic text-slate-600 text-lg" data-case-i18n="wistupiku-mock2">Fachada de tienda física</div>
+                                        <div class="text-center font-serif italic text-slate-600 text-lg" data-case-i18n="wistupiku-mock2">Diseño y desarrollo de empaques</div>
                                         <span class="text-[11px] font-mono text-slate-500" data-case-i18n="mock-format-square">PROPORCIÓN: 1:1 CUADRADA</span>
                                     </div>
                                 </div>
                             </div>
                             <!-- Columna Derecha: Una Vertical de 1080x1920 (aspect 9/16) -->
                             <div class="bg-slate-300 aspect-[9/16] rounded-sm overflow-hidden border border-black/5 relative group hover:bg-slate-400/50 transition-colors">
-                                <img src="https://cortes-design.vercel.app/cases/wistupiku/04_wp_packaging.png" class="w-full h-full object-cover" onerror="if(!this.src.endsWith('.png')){this.src=this.src.replace('.jpg','.png');}else{this.style.display='none'; this.nextElementSibling.classList.remove('hidden');}" alt="Instagram Wist'upiku">
+                                <img src="https://cortes-design.vercel.app/cases/wistupiku/04_wp_packaging.png" class="w-full h-full object-cover" onerror="if(!this.src.endsWith('.png')){this.src=this.src.replace('.jpg','.png');}else{this.style.display='none'; this.nextElementSibling.classList.remove('hidden');}" alt="Personaje finalizado">
                                 <div class="absolute inset-0 flex flex-col justify-between p-8 bg-slate-300/90 hidden text-slate-700">
                                     <span class="text-[10px] montserrat-black-caps text-slate-500 tracking-wider" data-case-i18n="mock-label-3">MOCKUP #03 (VERTICAL)</span>
-                                    <div class="text-center font-serif italic text-slate-600 text-lg" data-case-i18n="wistupiku-mock3">Diseño de feed de Instagram</div>
+                                    <div class="text-center font-serif italic text-slate-600 text-lg" data-case-i18n="wistupiku-mock3">Ilustración final del personaje</div>
                                     <span class="text-[11px] font-mono text-slate-500" data-case-i18n="mock-format-vertical">PROPORCIÓN: 9:16 (1080x1920)</span>
                                 </div>
                             </div>
@@ -502,28 +508,28 @@
                         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
                             <!-- Columna Izquierda: Una Vertical de 1080x1920 (aspect 9/16) -->
                             <div class="bg-slate-300 aspect-[9/16] rounded-sm overflow-hidden border border-black/5 relative group hover:bg-slate-400/50 transition-colors">
-                                <img src="https://cortes-design.vercel.app/cases/wistupiku/05_wp_virales.png" class="w-full h-full object-cover" onerror="if(!this.src.endsWith('.png')){this.src=this.src.replace('.jpg','.png');}else{this.style.display='none'; this.nextElementSibling.classList.remove('hidden');}" alt="TikTok Wist'upiku">
+                                <img src="https://cortes-design.vercel.app/cases/wistupiku/05_wp_virales.png" class="w-full h-full object-cover" onerror="if(!this.src.endsWith('.png')){this.src=this.src.replace('.jpg','.png');}else{this.style.display='none'; this.nextElementSibling.classList.remove('hidden');}" alt="Resultados analíticos en TikTok">
                                 <div class="absolute inset-0 flex flex-col justify-between p-8 bg-slate-300/90 hidden text-slate-700">
                                     <span class="text-[10px] montserrat-black-caps text-slate-500 tracking-wider" data-case-i18n="mock-label-6">MOCKUP #06 (VERTICAL)</span>
-                                    <div class="text-center font-serif italic text-slate-600 text-lg" data-case-i18n="wistupiku-mock6">Mockup de Video de TikTok (9:16)</div>
+                                    <div class="text-center font-serif italic text-slate-600 text-lg" data-case-i18n="wistupiku-mock6">Métricas y desempeño orgánico de video</div>
                                     <span class="text-[11px] font-mono text-slate-500" data-case-i18n="mock-format-vertical">PROPORCIÓN: 9:16 (1080x1920)</span>
                                 </div>
                             </div>
                             <!-- Columna Derecha: Dos Cuadradas Apiladas -->
                             <div class="flex flex-col gap-8">
                                 <div class="bg-slate-300 aspect-square rounded-sm overflow-hidden border border-black/5 relative group hover:bg-slate-400/50 transition-colors">
-                                    <img src="https://cortes-design.vercel.app/cases/wistupiku/06_wp_empanadas_parlantes.png" class="w-full h-full object-cover" onerror="if(!this.src.endsWith('.png')){this.src=this.src.replace('.jpg','.png');}else{this.style.display='none'; this.nextElementSibling.classList.remove('hidden');}" alt="Espacio Comercial 1 Wist'upiku">
+                                    <img src="https://cortes-design.vercel.app/cases/wistupiku/06_wp_empanadas_parlantes.png" class="w-full h-full object-cover" onerror="if(!this.src.endsWith('.png')){this.src=this.src.replace('.jpg','.png');}else{this.style.display='none'; this.nextElementSibling.classList.remove('hidden');}" alt="Campañas virales de redes sociales">
                                     <div class="absolute inset-0 flex flex-col justify-between p-8 bg-slate-300/90 hidden text-slate-700">
                                         <span class="text-[10px] montserrat-black-caps text-slate-500 tracking-wider" data-case-i18n="mock-label-4">MOCKUP #04</span>
-                                        <div class="text-center font-serif italic text-slate-600 text-lg" data-case-i18n="wistupiku-mock4">Detalle de Espacio Comercial 01</div>
+                                        <div class="text-center font-serif italic text-slate-600 text-lg" data-case-i18n="wistupiku-mock4">Estrategias y plantillas visuales virales</div>
                                         <span class="text-[11px] font-mono text-slate-500" data-case-i18n="mock-format-square">PROPORCIÓN: 1:1 CUADRADA</span>
                                     </div>
                                 </div>
                                 <div class="bg-slate-300 aspect-square rounded-sm overflow-hidden border border-black/5 relative group hover:bg-slate-400/50 transition-colors">
-                                    <img src="https://cortes-design.vercel.app/cases/wistupiku/07_wp_resultados_tiktok.png" class="w-full h-full object-cover" onerror="if(!this.src.endsWith('.png')){this.src=this.src.replace('.jpg','.png');}else{this.style.display='none'; this.nextElementSibling.classList.remove('hidden');}" alt="Espacio Comercial 2 Wist'upiku">
+                                    <img src="https://cortes-design.vercel.app/cases/wistupiku/07_wp_resultados_tiktok.png" class="w-full h-full object-cover" onerror="if(!this.src.endsWith('.png')){this.src=this.src.replace('.jpg','.png');}else{this.style.display='none'; this.nextElementSibling.classList.remove('hidden');}" alt="Campaña interactiva Empanadas Parlantes">
                                     <div class="absolute inset-0 flex flex-col justify-between p-8 bg-slate-300/90 hidden text-slate-700">
                                         <span class="text-[10px] montserrat-black-caps text-slate-500 tracking-wider" data-case-i18n="mock-label-5">MOCKUP #05</span>
-                                        <div class="text-center font-serif italic text-slate-600 text-lg" data-case-i18n="wistupiku-mock5">Detalle de Espacio Comercial 02</div>
+                                        <div class="text-center font-serif italic text-slate-600 text-lg" data-case-i18n="wistupiku-mock5">Desarrollo y diseño de Empanadas Parlantes</div>
                                         <span class="text-[11px] font-mono text-slate-500" data-case-i18n="mock-format-square">PROPORCIÓN: 1:1 CUADRADA</span>
                                     </div>
                                 </div>
@@ -670,6 +676,40 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+
+    <!-- GLOBAL LIGHTBOX MODAL (PANTALLA COMPLETA INTERACTIVO) -->
+    <div id="lightbox-modal" class="fixed inset-0 z-[4000] bg-black/95 backdrop-blur-md opacity-0 pointer-events-none transition-all duration-300 flex flex-col justify-between p-6 select-none">
+        <!-- Header -->
+        <div class="flex justify-between items-center w-full max-w-7xl mx-auto z-10 pt-4">
+            <div id="lightbox-counter" class="text-[11px] montserrat-caps text-slate-400 font-bold tracking-[0.2em]">
+                0 / 0
+            </div>
+            <button onclick="closeLightbox()" class="text-white hover:text-brand-green transition-colors text-3xl p-2 focus:outline-none" aria-label="Cerrar vista completa">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        
+        <!-- Zona Central de Visualización -->
+        <div class="flex-grow flex items-center justify-center relative w-full max-w-7xl mx-auto my-4">
+            <!-- Flecha Navegación Anterior (Izquierda) -->
+            <button onclick="prevLightboxImage()" class="absolute left-2 md:left-8 text-white hover:text-brand-green transition-colors text-3xl p-4 z-10 focus:outline-none" aria-label="Imagen anterior">
+                <i class="fa-solid fa-chevron-left"></i>
+            </button>
+            
+            <!-- Imagen Activa -->
+            <img id="lightbox-active-img" src="" alt="Vista previa ampliada" class="max-h-[75vh] max-w-[85vw] object-contain transition-transform duration-300 pointer-events-none rounded-sm">
+            
+            <!-- Flecha Navegación Siguiente (Derecha) -->
+            <button onclick="nextLightboxImage()" class="absolute right-2 md:right-8 text-white hover:text-brand-green transition-colors text-3xl p-4 z-10 focus:outline-none" aria-label="Siguiente imagen">
+                <i class="fa-solid fa-chevron-right"></i>
+            </button>
+        </div>
+        
+        <!-- Pie del Lightbox (Leyenda de Imagen) -->
+        <div class="w-full text-center max-w-2xl mx-auto z-10 pb-6">
+            <p id="lightbox-caption" class="text-xs md:text-sm text-slate-300 font-light font-serif italic tracking-wide"></p>
         </div>
     </div>
 
@@ -1050,18 +1090,25 @@
                 if (!item) return;
                 const target = item.querySelector('.garamond-bold-italic');
                 if (target) { 
-                    viewport.style.width = (target.getBoundingClientRect().width + 10) + 'px'; 
+                    // Agregamos un colchón adicional de 25px para mitigar cortes de render en itálicas (EB Garamond)
+                    viewport.style.width = (target.getBoundingClientRect().width + 25) + 'px'; 
                 }
             }
 
             adjustWidth(0);
             list.style.transform = `translateY(0)`;
 
-            // Detección de carga de tipografías web para corregir recortes (clipping)
+            // Detección asíncrona de carga de fuentes tipográficas para evitar desajustes y cortes de la primera palabra
             if (document.fonts) {
                 document.fonts.ready.then(() => {
-                    adjustWidth(currentIndex);
+                    document.body.classList.add('fonts-loaded');
+                    // Retraso de seguridad para que el navegador asimile el cambio físico de tamaño de fuente
+                    setTimeout(() => {
+                        adjustWidth(currentIndex);
+                    }, 50);
                 });
+            } else {
+                document.body.classList.add('fonts-loaded');
             }
 
             function cycle() {
@@ -1095,9 +1142,125 @@
             flipIntervalId = setTimeout(cycle, baseDelay);
         }
 
+        // --- SISTEMA DE VISUALIZACIÓN DE IMÁGENES LIGHTBOX ---
+        let lightboxImages = [];
+        let lightboxIndex = 0;
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        window.openLightbox = function(clickedImg) {
+            // Buscamos el contenedor activo del caso de estudio actual
+            const activeContainer = clickedImg.closest('.case-detail-container');
+            if (!activeContainer) return;
+            
+            // Recopilamos todas las imágenes visibles en el caso actual
+            const imgs = Array.from(activeContainer.querySelectorAll('img')).filter(img => {
+                return window.getComputedStyle(img).display !== 'none';
+            });
+            
+            lightboxImages = imgs.map(img => ({
+                src: img.src,
+                alt: img.alt || "Imagen del Caso",
+                caption: img.alt || ""
+            }));
+            
+            lightboxIndex = imgs.indexOf(clickedImg);
+            if (lightboxIndex === -1) lightboxIndex = 0;
+            
+            updateLightboxContent();
+            
+            // Revelar el modal con transición suave
+            const modal = document.getElementById('lightbox-modal');
+            modal.classList.remove('opacity-0', 'pointer-events-none');
+            document.body.style.overflow = 'hidden'; // Bloquear scroll de la ventana
+        };
+
+        window.closeLightbox = function() {
+            const modal = document.getElementById('lightbox-modal');
+            modal.classList.add('opacity-0', 'pointer-events-none');
+            
+            // Si el visor de casos principal ya no está activo, regresamos el scroll general
+            const viewer = document.getElementById('case-viewer');
+            if (!viewer.classList.contains('active')) {
+                document.body.style.overflow = '';
+            }
+        };
+
+        window.prevLightboxImage = function() {
+            if (lightboxImages.length === 0) return;
+            lightboxIndex = (lightboxIndex - 1 + lightboxImages.length) % lightboxImages.length;
+            updateLightboxContent();
+        };
+
+        window.nextLightboxImage = function() {
+            if (lightboxImages.length === 0) return;
+            lightboxIndex = (lightboxIndex + 1) % lightboxImages.length;
+            updateLightboxContent();
+        };
+
+        function updateLightboxContent() {
+            if (lightboxImages.length === 0) return;
+            const data = lightboxImages[lightboxIndex];
+            
+            const imgEl = document.getElementById('lightbox-active-img');
+            const counterEl = document.getElementById('lightbox-counter');
+            const captionEl = document.getElementById('lightbox-caption');
+            
+            // Animación sutil de desvanecimiento en el cambio de imagen
+            imgEl.style.opacity = '0';
+            setTimeout(() => {
+                imgEl.src = data.src;
+                imgEl.alt = data.alt;
+                counterEl.innerText = `${lightboxIndex + 1} / ${lightboxImages.length}`;
+                captionEl.innerText = data.caption;
+                imgEl.style.opacity = '1';
+            }, 100);
+        }
+
+        // Control de teclado para el Lightbox (Flechas y Escape)
+        document.addEventListener('keydown', e => {
+            const modal = document.getElementById('lightbox-modal');
+            if (modal && !modal.classList.contains('opacity-0')) {
+                if (e.key === 'Escape') closeLightbox();
+                if (e.key === 'ArrowLeft') prevLightboxImage();
+                if (e.key === 'ArrowRight') nextLightboxImage();
+            }
+        });
+
+        // Eventos táctiles para soporte de Swipe en celulares
+        const lightboxModal = document.getElementById('lightbox-modal');
+        lightboxModal.addEventListener('touchstart', e => {
+            touchStartX = e.changedTouches[0].screenX;
+        }, { passive: true });
+
+        lightboxModal.addEventListener('touchend', e => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipeGesture();
+        }, { passive: true });
+
+        function handleSwipeGesture() {
+            const minDistance = 50; // Distancia mínima en píxeles para detectar un deslizamiento
+            if (touchEndX < touchStartX - minDistance) {
+                nextLightboxImage(); // Deslizar a la izquierda: Siguiente imagen
+            } else if (touchEndX > touchStartX + minDistance) {
+                prevLightboxImage(); // Deslizar a la derecha: Imagen anterior
+            }
+        }
+
+        // Inicializar los listeners para todas las imágenes dentro de las secciones de casos
+        function initLightboxAutoBindings() {
+            document.querySelectorAll('.case-detail-container img').forEach(img => {
+                img.classList.add('cursor-pointer', 'hover:opacity-95', 'transition-opacity', 'duration-300');
+                img.addEventListener('click', function() {
+                    openLightbox(this);
+                });
+            });
+        }
+
         window.onload = () => {
             detectDefaultLanguage();
             updateNavStyle();
+            initLightboxAutoBindings(); // Registrar bindings automáticos del Lightbox
         };
 
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {

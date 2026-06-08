@@ -407,16 +407,16 @@
             
             <!-- WIST'UPIKU -->
             <div id="case-wistupiku" class="case-detail-container hidden">
-                <!-- Hero Image (Full Width, fluye con el scroll natural) -->
-                <div class="w-full h-[55vh] md:h-[65vh] bg-slate-300 relative overflow-hidden flex items-center justify-center border-b border-black/5">
-                    <img src="https://cortes-design.vercel.app/cases/wistupiku/01_wp_hero.png" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');" alt="Wist'upiku Hero">
+                <!-- Hero Image (Adaptable en Móviles sin Recortes, 1920x720 en Escritorio) -->
+                <div class="w-full bg-slate-300 relative overflow-hidden flex items-center justify-center border-b border-black/5 aspect-auto md:aspect-[1920/720]">
+                    <img src="https://cortes-design.vercel.app/cases/wistupiku/01_wp_hero.png" class="w-full h-auto md:h-full md:object-cover" onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');" alt="Wist'upiku Hero">
                     <div class="absolute inset-0 flex flex-col justify-between p-12 bg-slate-300/90 hidden text-slate-700">
                         <span class="text-[10px] montserrat-black-caps tracking-widest text-[#009a82]" data-case-i18n="hero-label">PORTADA PRINCIPAL</span>
                         <div class="text-center">
                             <i class="fa-solid fa-image text-4xl mb-4 text-slate-400"></i>
                             <h4 class="font-serif italic text-2xl">Wist'upiku &mdash; Identidad de marca y expresión cultural</h4>
                         </div>
-                        <span class="text-[10px] font-mono tracking-widest">PROPORCIÓN RECOMENDADA: 16:9 (1920x1080)</span>
+                        <span class="text-[10px] font-mono tracking-widest">PROPORCIÓN RECOMENDADA: 8:3 (1920x720)</span>
                     </div>
                 </div>
 
@@ -458,6 +458,37 @@
                         </div>
                     </div>
 
+                    <!-- SECCIÓN: EVOLUCIÓN ANTES Y DESPUÉS (ETIQUETAS GRISES SIN FONDO, ADAPTABLE EN PANTALLA) -->
+                    <div class="mt-24 pt-16 border-t border-black/10">
+                        <h3 class="text-xs montserrat-black-caps text-slate-400 tracking-[0.3em] uppercase mb-12" data-case-i18n="before-after-title">Evolución: Antes y Después</h3>
+                        <div class="grid grid-cols-2 gap-0 rounded-sm overflow-hidden border border-black/5 shadow-md relative">
+                            <!-- Antes (Before) -->
+                            <div class="relative group overflow-hidden bg-white aspect-[4/3] md:aspect-video border-r border-black/5">
+                                <div class="absolute top-4 left-4 z-20 text-slate-500 text-[10px] md:text-xs font-bold uppercase montserrat-caps tracking-widest pointer-events-none" data-case-i18n="label-before">
+                                    Antes
+                                </div>
+                                <img src="https://cortes-design.vercel.app/cases/wistupiku/wp_before.png" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" onerror="if(!this.src.endsWith('.png')){this.src=this.src.replace('.jpg','.png');}else{this.style.display='none'; this.nextElementSibling.classList.remove('hidden');}" alt="Antes">
+                                <div class="absolute inset-0 flex flex-col justify-between p-8 bg-slate-300/90 hidden text-slate-700">
+                                    <span class="text-[10px] montserrat-black-caps text-slate-500 tracking-wider">ANTES / BEFORE</span>
+                                    <div class="text-center font-serif italic text-slate-600 text-lg">Wist'upiku Antes</div>
+                                    <span class="text-[11px] font-mono text-slate-500">PROPORCIÓN: ANTES</span>
+                                </div>
+                            </div>
+                            <!-- Después (After) -->
+                            <div class="relative group overflow-hidden bg-white aspect-[4/3] md:aspect-video">
+                                <div class="absolute top-4 left-4 z-20 text-slate-500 text-[10px] md:text-xs font-bold uppercase montserrat-caps tracking-widest pointer-events-none" data-case-i18n="label-after">
+                                    Después
+                                </div>
+                                <img src="https://cortes-design.vercel.app/cases/wistupiku/wp_after.png" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" onerror="if(!this.src.endsWith('.png')){this.src=this.src.replace('.jpg','.png');}else{this.style.display='none'; this.nextElementSibling.classList.remove('hidden');}" alt="Después">
+                                <div class="absolute inset-0 flex flex-col justify-between p-8 bg-slate-300/90 hidden text-slate-700">
+                                    <span class="text-[10px] montserrat-black-caps text-slate-500 tracking-wider">DESPUÉS / AFTER</span>
+                                    <div class="text-center font-serif italic text-slate-600 text-lg">Wist'upiku Después</div>
+                                    <span class="text-[11px] font-mono text-slate-500">PROPORCIÓN: DESPUÉS</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                     <!-- Primera Tanda Visual (Normal Grid) -->
                     <div class="mt-24 pt-16 border-t border-black/10">
                         <h3 class="text-xs montserrat-black-caps text-slate-400 tracking-[0.3em] uppercase mb-12" data-case-i18n="gallery-title">Despliegue Visual & Embalajes</h3>
@@ -473,7 +504,7 @@
                                     </div>
                                 </div>
                                 <div class="bg-slate-300 aspect-square rounded-sm overflow-hidden border border-black/5 relative group hover:bg-slate-400/50 transition-colors">
-                                    <img src="https://cortes-design.vercel.app/cases/wistupiku/03_wp_personaje.png" class="w-full h-full object-cover" onerror="if(!this.src.endsWith('.png')){this.src=this.src.replace('.jpg','.png');}else{this.style.display='none'; this.nextElementSibling.classList.remove('hidden');}" alt="Empaque Wist'upiku">
+                                    <img src="https://cortes-design.vercel.app/cases/wistupiku/04_wp_packaging.png" class="w-full h-full object-cover" onerror="if(!this.src.endsWith('.png')){this.src=this.src.replace('.jpg','.png');}else{this.style.display='none'; this.nextElementSibling.classList.remove('hidden');}" alt="Empaque Wist'upiku">
                                     <div class="absolute inset-0 flex flex-col justify-between p-8 bg-slate-300/90 hidden text-slate-700">
                                         <span class="text-[10px] montserrat-black-caps text-slate-500 tracking-wider" data-case-i18n="mock-label-2">MOCKUP #02</span>
                                         <div class="text-center font-serif italic text-slate-600 text-lg" data-case-i18n="wistupiku-mock2">Diseño y desarrollo de empaques</div>
@@ -483,7 +514,7 @@
                             </div>
                             <!-- Columna Derecha: Una Vertical de 1080x1920 (aspect 9/16) -->
                             <div class="bg-slate-300 aspect-[9/16] rounded-sm overflow-hidden border border-black/5 relative group hover:bg-slate-400/50 transition-colors">
-                                <img src="https://cortes-design.vercel.app/cases/wistupiku/04_wp_packaging.png" class="w-full h-full object-cover" onerror="if(!this.src.endsWith('.png')){this.src=this.src.replace('.jpg','.png');}else{this.style.display='none'; this.nextElementSibling.classList.remove('hidden');}" alt="Personaje finalizado">
+                                <img src="https://cortes-design.vercel.app/cases/wistupiku/05_wp_personaje.png" class="w-full h-full object-cover" onerror="if(!this.src.endsWith('.png')){this.src=this.src.replace('.jpg','.png');}else{this.style.display='none'; this.nextElementSibling.classList.remove('hidden');}" alt="Personaje finalizado">
                                 <div class="absolute inset-0 flex flex-col justify-between p-8 bg-slate-300/90 hidden text-slate-700">
                                     <span class="text-[10px] montserrat-black-caps text-slate-500 tracking-wider" data-case-i18n="mock-label-3">MOCKUP #03 (VERTICAL)</span>
                                     <div class="text-center font-serif italic text-slate-600 text-lg" data-case-i18n="wistupiku-mock3">Ilustración final del personaje</div>
@@ -508,7 +539,7 @@
                         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
                             <!-- Columna Izquierda: Una Vertical de 1080x1920 (aspect 9/16) -->
                             <div class="bg-slate-300 aspect-[9/16] rounded-sm overflow-hidden border border-black/5 relative group hover:bg-slate-400/50 transition-colors">
-                                <img src="https://cortes-design.vercel.app/cases/wistupiku/05_wp_virales.png" class="w-full h-full object-cover" onerror="if(!this.src.endsWith('.png')){this.src=this.src.replace('.jpg','.png');}else{this.style.display='none'; this.nextElementSibling.classList.remove('hidden');}" alt="Resultados analíticos en TikTok">
+                                <img src="https://cortes-design.vercel.app/cases/wistupiku/08_wp_resultados_tiktok.png" class="w-full h-full object-cover" onerror="if(!this.src.endsWith('.png')){this.src=this.src.replace('.jpg','.png');}else{this.style.display='none'; this.nextElementSibling.classList.remove('hidden');}" alt="Resultados analíticos en TikTok">
                                 <div class="absolute inset-0 flex flex-col justify-between p-8 bg-slate-300/90 hidden text-slate-700">
                                     <span class="text-[10px] montserrat-black-caps text-slate-500 tracking-wider" data-case-i18n="mock-label-6">MOCKUP #06 (VERTICAL)</span>
                                     <div class="text-center font-serif italic text-slate-600 text-lg" data-case-i18n="wistupiku-mock6">Métricas y desempeño orgánico de video</div>
@@ -518,7 +549,7 @@
                             <!-- Columna Derecha: Dos Cuadradas Apiladas -->
                             <div class="flex flex-col gap-8">
                                 <div class="bg-slate-300 aspect-square rounded-sm overflow-hidden border border-black/5 relative group hover:bg-slate-400/50 transition-colors">
-                                    <img src="https://cortes-design.vercel.app/cases/wistupiku/06_wp_empanadas_parlantes.png" class="w-full h-full object-cover" onerror="if(!this.src.endsWith('.png')){this.src=this.src.replace('.jpg','.png');}else{this.style.display='none'; this.nextElementSibling.classList.remove('hidden');}" alt="Campañas virales de redes sociales">
+                                    <img src="https://cortes-design.vercel.app/cases/wistupiku/06_wp_virales.png" class="w-full h-full object-cover" onerror="if(!this.src.endsWith('.png')){this.src=this.src.replace('.jpg','.png');}else{this.style.display='none'; this.nextElementSibling.classList.remove('hidden');}" alt="Campañas virales de redes sociales">
                                     <div class="absolute inset-0 flex flex-col justify-between p-8 bg-slate-300/90 hidden text-slate-700">
                                         <span class="text-[10px] montserrat-black-caps text-slate-500 tracking-wider" data-case-i18n="mock-label-4">MOCKUP #04</span>
                                         <div class="text-center font-serif italic text-slate-600 text-lg" data-case-i18n="wistupiku-mock4">Estrategias y plantillas visuales virales</div>
@@ -526,7 +557,7 @@
                                     </div>
                                 </div>
                                 <div class="bg-slate-300 aspect-square rounded-sm overflow-hidden border border-black/5 relative group hover:bg-slate-400/50 transition-colors">
-                                    <img src="https://cortes-design.vercel.app/cases/wistupiku/07_wp_resultados_tiktok.png" class="w-full h-full object-cover" onerror="if(!this.src.endsWith('.png')){this.src=this.src.replace('.jpg','.png');}else{this.style.display='none'; this.nextElementSibling.classList.remove('hidden');}" alt="Campaña interactiva Empanadas Parlantes">
+                                    <img src="https://cortes-design.vercel.app/cases/wistupiku/07_wp_empanadas_parlantes.png" class="w-full h-full object-cover" onerror="if(!this.src.endsWith('.png')){this.src=this.src.replace('.jpg','.png');}else{this.style.display='none'; this.nextElementSibling.classList.remove('hidden');}" alt="Campaña interactiva Empanadas Parlantes">
                                     <div class="absolute inset-0 flex flex-col justify-between p-8 bg-slate-300/90 hidden text-slate-700">
                                         <span class="text-[10px] montserrat-black-caps text-slate-500 tracking-wider" data-case-i18n="mock-label-5">MOCKUP #05</span>
                                         <div class="text-center font-serif italic text-slate-600 text-lg" data-case-i18n="wistupiku-mock5">Desarrollo y diseño de Empanadas Parlantes</div>
@@ -541,8 +572,8 @@
 
             <!-- COBOCE COOP -->
             <div id="case-coboce" class="case-detail-container hidden">
-                <!-- Hero Image (Full Width, fluye con el scroll natural) -->
-                <div class="w-full h-[55vh] md:h-[65vh] bg-slate-300 relative overflow-hidden flex items-center justify-center border-b border-black/5">
+                <!-- Hero Image (Adaptable en Móviles sin Recortes, 1920x720 en Escritorio) -->
+                <div class="w-full bg-slate-300 relative overflow-hidden flex items-center justify-center border-b border-black/5 aspect-auto md:aspect-[1920/720]">
                     <img src="https://cortes-design.vercel.app/cases/coboce-hero.jpg" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');" alt="COBOCE Hero">
                     <div class="absolute inset-0 flex flex-col justify-between p-12 bg-slate-300/90 hidden text-slate-700">
                         <span class="text-[10px] montserrat-black-caps tracking-widest text-[#009a82]" data-case-i18n="hero-label">PORTADA PRINCIPAL</span>
@@ -550,7 +581,7 @@
                             <i class="fa-solid fa-image text-4xl mb-4 text-slate-400"></i>
                             <h4 class="font-serif italic text-2xl">COBOCE COOP &mdash; Arquitectura marcaría e industrial</h4>
                         </div>
-                        <span class="text-[10px] font-mono tracking-widest">PROPORCIÓN RECOMENDADA: 16:9 (1920x1080)</span>
+                        <span class="text-[10px] font-mono tracking-widest">PROPORCIÓN RECOMENDADA: 8:3 (1920x720)</span>
                     </div>
                 </div>
 
@@ -612,8 +643,8 @@
 
             <!-- SIMP3L -->
             <div id="case-simp3l" class="case-detail-container hidden">
-                <!-- Hero Image (Full Width, fluye con el scroll natural) -->
-                <div class="w-full h-[55vh] md:h-[65vh] bg-slate-300 relative overflow-hidden flex items-center justify-center border-b border-black/5">
+                <!-- Hero Image (Adaptable en Móviles sin Recortes, 1920x720 en Escritorio) -->
+                <div class="w-full bg-slate-300 relative overflow-hidden flex items-center justify-center border-b border-black/5 aspect-auto md:aspect-[1920/720]">
                     <img src="https://cortes-design.vercel.app/cases/simp3l-hero.jpg" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');" alt="SIMP3L Hero">
                     <div class="absolute inset-0 flex flex-col justify-between p-12 bg-slate-300/90 hidden text-slate-700">
                         <span class="text-[10px] montserrat-black-caps tracking-widest text-[#009a82]" data-case-i18n="hero-label">PORTADA PRINCIPAL</span>
@@ -621,7 +652,7 @@
                             <i class="fa-solid fa-image text-4xl mb-4 text-slate-400"></i>
                             <h4 class="font-serif italic text-2xl">SIMP3L &mdash; Simplicidad, contraste y diseño asimétrico</h4>
                         </div>
-                        <span class="text-[10px] font-mono tracking-widest">PROPORCIÓN RECOMENDADA: 16:9 (1920x1080)</span>
+                        <span class="text-[10px] font-mono tracking-widest">PROPORCIÓN RECOMENDADA: 8:3 (1920x720)</span>
                     </div>
                 </div>
 
@@ -758,6 +789,11 @@
                 'mock-format-square': 'PROPORCIÓN: 1:1 CUADRADA',
                 'mock-format-vertical': 'PROPORCIÓN: 9:16 (1080x1920)',
                 
+                // Nuevas traducciones para Antes y Después
+                'before-after-title': 'Evolución: Antes y Después',
+                'label-before': 'Antes',
+                'label-after': 'Después',
+                
                 'wistupiku-challenge': 'Esta marca gastronómica representativa de Cochabamba, planteaba el desafío de actualizarse sin perder el vínculo emocional construido a través de décadas.',
                 'wistupiku-history': 'El trabajo se desarrolló a lo largo de distintas etapas, acompañando a la marca en momentos clave como sus aniversarios 75, 80 y 85, esto permitió abordar la identidad como un proceso evolutivo.',
                 'wistupiku-system': 'El enfoque se centró en consolidar un sistema de marca basado en el tono de voz y en la expresión cultural, utilizando el lenguaje regional como eje para construir cercanía, diferenciación y coherencia en distintos puntos de contacto.',
@@ -833,6 +869,11 @@
                 'mock-label-6': 'MOCKUP #06 (VERTICAL)',
                 'mock-format-square': 'PROPORTION: 1:1 SQUARE',
                 'mock-format-vertical': 'PROPORTION: 9:16 (1080x1920)',
+                
+                // Nuevas traducciones para Antes y Después en Inglés
+                'before-after-title': 'Evolution: Before and After',
+                'label-before': 'Before',
+                'label-after': 'After',
                 
                 'wistupiku-challenge': 'This representative gastronomic brand from Cochabamba posed the challenge of modernizing without losing the emotional connection built over decades.',
                 'wistupiku-history': 'The work was developed over different stages, accompanying the brand during key moments such as its 75th, 80th, and 85th anniversaries, which allowed the identity to be approached as an evolutionary process.',
@@ -1085,12 +1126,12 @@
             let currentIndex = 0;
             const baseDelay = 2800;
 
+            // Agregamos un colchón adicional de 25px para mitigar cortes de render en itálicas (EB Garamond)
             function adjustWidth(idx) {
                 const item = items[idx];
                 if (!item) return;
                 const target = item.querySelector('.garamond-bold-italic');
                 if (target) { 
-                    // Agregamos un colchón adicional de 25px para mitigar cortes de render en itálicas (EB Garamond)
                     viewport.style.width = (target.getBoundingClientRect().width + 25) + 'px'; 
                 }
             }
@@ -1131,7 +1172,7 @@
                             <span class="absolute text-[0.75em] leading-none text-brand-accent" 
                                   style="left: ${wordEndPos}px; top: ${rect.top - headlineRect.top - 8}px;">*</span>
                             <span class="absolute text-[16px] md:text-[32px] font-medium text-black titillium-base leading-none lowercase whitespace-nowrap" 
-                                  style="left: ${wordEndPos}px; top: ${wordBaselinePos + 10}px; transform: translateX(-100%);">* polite</span>
+                                  style="left: ${wordEndPos}px; top: ${wordBaselinePos - 2}px; transform: translateX(-100%);">* polite</span>
                         `;
                         addons.classList.add('active');
                     }, 850);

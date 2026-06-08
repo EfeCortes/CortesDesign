@@ -493,7 +493,7 @@
                     <div class="mt-24 pt-16 border-t border-black/10">
                         <h3 class="text-xs montserrat-black-caps text-slate-400 tracking-[0.3em] uppercase mb-12" data-case-i18n="gallery-title">Despliegue Visual & Embalajes</h3>
                         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                            <!-- Columna Izquierda: Dos Cuadradas Apiladas (02 y 04) -->
+                            <!-- Columna Izquierda: Dos Cuadradas Apiladas (02 y 03) -->
                             <div class="flex flex-col gap-8">
                                 <div class="bg-slate-300 aspect-square rounded-sm overflow-hidden border border-black/5 relative group hover:bg-slate-400/50 transition-colors">
                                     <img src="https://cortes-design.vercel.app/cases/wistupiku/02_wp_bocetos_personaje.png" class="w-full h-full object-cover" onerror="if(!this.src.endsWith('.png')){this.src=this.src.replace('.jpg','.png');}else{this.style.display='none'; this.nextElementSibling.classList.remove('hidden');}" alt="Bocetos de personaje">
@@ -512,7 +512,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- Columna Derecha: Una Vertical de 1080x1920 (aspect 9/16) (05) -->
+                            <!-- Columna Derecha: Una Vertical de 1080x1920 (aspect 9/16) (04) -->
                             <div class="bg-slate-300 aspect-[9/16] rounded-sm overflow-hidden border border-black/5 relative group hover:bg-slate-400/50 transition-colors">
                                 <img src="https://cortes-design.vercel.app/cases/wistupiku/04_wp_packaging.png" class="w-full h-full object-cover" onerror="if(!this.src.endsWith('.png')){this.src=this.src.replace('.jpg','.png');}else{this.style.display='none'; this.nextElementSibling.classList.remove('hidden');}" alt="Personaje finalizado">
                                 <div class="absolute inset-0 flex flex-col justify-between p-8 bg-slate-300/90 hidden text-slate-700">
@@ -537,7 +537,7 @@
                     <!-- Segunda Tanda Visual (Mirrored Grid - Espejo) -->
                     <div class="mt-16">
                         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                            <!-- Columna Izquierda: Una Vertical de 1080x1920 (aspect 9/16) (08) -->
+                            <!-- Columna Izquierda: Una Vertical de 1080x1920 (aspect 9/16) (05) -->
                             <div class="bg-slate-300 aspect-[9/16] rounded-sm overflow-hidden border border-black/5 relative group hover:bg-slate-400/50 transition-colors">
                                 <img src="https://cortes-design.vercel.app/cases/wistupiku/05_wp_virales.png" class="w-full h-full object-cover" onerror="if(!this.src.endsWith('.png')){this.src=this.src.replace('.jpg','.png');}else{this.style.display='none'; this.nextElementSibling.classList.remove('hidden');}" alt="Resultados analíticos en TikTok">
                                 <div class="absolute inset-0 flex flex-col justify-between p-8 bg-slate-300/90 hidden text-slate-700">
@@ -998,16 +998,18 @@
                 addons.innerHTML = '';
             }
 
-            if (lang === 'en') {
-                fixedWordContainer.classList.replace('order-1', 'order-2');
-                viewport.classList.replace('order-2', 'order-1');
-                fixedWordContainer.style.paddingLeft = '0.02em';
-                fixedWordContainer.style.paddingRight = '0';
-            } else {
-                fixedWordContainer.classList.replace('order-2', 'order-1');
-                viewport.classList.replace('order-1', 'order-2');
-                fixedWordContainer.style.paddingLeft = '0';
-                fixedWordContainer.style.paddingRight = '0.11em';
+            if (fixedWordContainer && viewport) {
+                if (lang === 'en') {
+                    fixedWordContainer.classList.replace('order-1', 'order-2');
+                    viewport.classList.replace('order-2', 'order-1');
+                    fixedWordContainer.style.paddingLeft = '0.02em';
+                    fixedWordContainer.style.paddingRight = '0';
+                } else {
+                    fixedWordContainer.classList.replace('order-2', 'order-1');
+                    viewport.classList.replace('order-1', 'order-2');
+                    fixedWordContainer.style.paddingLeft = '0';
+                    fixedWordContainer.style.paddingRight = '0.11em';
+                }
             }
 
             document.querySelectorAll('[data-i18n]').forEach(el => {
@@ -1120,6 +1122,8 @@
             const list = document.getElementById('flip-list');
             const viewport = document.getElementById('flip-viewport');
             const addons = document.getElementById('addons-layer');
+            if (!list || !viewport) return;
+            
             list.innerHTML = '';
             words.forEach((w) => {
                 const li = document.createElement('li');
@@ -1159,6 +1163,7 @@
             }
 
             function cycle() {
+                if (!addons) return;
                 addons.classList.remove('active');
                 currentIndex = (currentIndex + 1) % items.length;
                 adjustWidth(currentIndex);
@@ -1169,6 +1174,7 @@
                 if (isLast && currentLang === 'en') {
                     setTimeout(() => {
                         const targetWord = items[currentIndex].querySelector('.garamond-bold-italic');
+                        if (!targetWord) return;
                         const rect = targetWord.getBoundingClientRect();
                         const headlineRect = document.getElementById('hero-headline').getBoundingClientRect();
                         const wordEndPos = rect.right - headlineRect.left;
@@ -1276,14 +1282,16 @@
 
         // Eventos táctiles para soporte de Swipe en celulares
         const lightboxModal = document.getElementById('lightbox-modal');
-        lightboxModal.addEventListener('touchstart', e => {
-            touchStartX = e.changedTouches[0].screenX;
-        }, { passive: true });
+        if (lightboxModal) {
+            lightboxModal.addEventListener('touchstart', e => {
+                touchStartX = e.changedTouches[0].screenX;
+            }, { passive: true });
 
-        lightboxModal.addEventListener('touchend', e => {
-            touchEndX = e.changedTouches[0].screenX;
-            handleSwipeGesture();
-        }, { passive: true });
+            lightboxModal.addEventListener('touchend', e => {
+                touchEndX = e.changedTouches[0].screenX;
+                handleSwipeGesture();
+            }, { passive: true });
+        }
 
         function handleSwipeGesture() {
             const minDistance = 50; // Distancia mínima en píxeles para detectar un deslizamiento

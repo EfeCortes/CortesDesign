@@ -46,6 +46,9 @@
             font-size: 1.22em; 
             letter-spacing: -0.01em;
             line-height: 1;
+            display: inline-block;
+            white-space: nowrap;
+            padding-right: 0.15em; /* Compensar la inclinación física de la cursiva para que no se corte */
         }
 
         /* ESTILOS DE CASOS DEL PORTAFOLIO */
@@ -458,12 +461,12 @@
                         </div>
                     </div>
 
-                    <!-- SECCIÓN: EVOLUCIÓN ANTES Y DESPUÉS (ETIQUETAS GRISES SIN FONDO, APILADO EN MÓVIL Y LADO A LADO EN DESKTOP) -->
+                    <!-- SECCIÓN: EVOLUCIÓN ANTES Y DESPUÉS (ETIQUETAS GRISES SIN FONDO, MANTENIENDO PROPORCIÓN CUADRADA) -->
                     <div class="mt-24 pt-16 border-t border-black/10">
                         <h3 class="text-xs montserrat-black-caps text-slate-400 tracking-[0.3em] uppercase mb-12" data-case-i18n="before-after-title">Evolución: Antes y Después</h3>
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-0 rounded-sm overflow-hidden border border-black/5 shadow-md relative">
                             <!-- Antes (Before) -->
-                            <div class="relative group overflow-hidden bg-white aspect-[4/3] md:aspect-video border-b md:border-b-0 md:border-r border-black/5">
+                            <div class="relative group overflow-hidden bg-white aspect-square border-b md:border-b-0 md:border-r border-black/5">
                                 <div class="absolute top-4 left-4 z-20 text-slate-500 text-[10px] md:text-xs font-bold uppercase montserrat-caps tracking-widest pointer-events-none" data-case-i18n="label-before">
                                     Antes
                                 </div>
@@ -475,7 +478,7 @@
                                 </div>
                             </div>
                             <!-- Después (After) -->
-                            <div class="relative group overflow-hidden bg-white aspect-[4/3] md:aspect-video">
+                            <div class="relative group overflow-hidden bg-white aspect-square">
                                 <div class="absolute top-4 left-4 z-20 text-slate-500 text-[10px] md:text-xs font-bold uppercase montserrat-caps tracking-widest pointer-events-none" data-case-i18n="label-after">
                                     Después
                                 </div>
@@ -574,12 +577,12 @@
             <div id="case-coboce" class="case-detail-container hidden">
                 <!-- Hero Image (Adaptable en Móviles sin Recortes, 1920x720 en Escritorio) -->
                 <div class="w-full bg-slate-300 relative overflow-hidden flex items-center justify-center border-b border-black/5 aspect-[16/9] md:aspect-[1920/720]">
-                    <img src="https://cortes-design.vercel.app/cases/coboce-hero.jpg" class="absolute inset-0 w-full h-full object-cover object-center" onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');" alt="COBOCE Hero">
+                    <img src="https://cortes-design.vercel.app/cases/coboce/01_cbc_hero.png" class="absolute inset-0 w-full h-full object-cover object-center" onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');" alt="COBOCE Hero">
                     <div class="absolute inset-0 flex flex-col justify-between p-12 bg-slate-300/90 hidden text-slate-700">
                         <span class="text-[10px] montserrat-black-caps tracking-widest text-[#009a82]" data-case-i18n="hero-label">PORTADA PRINCIPAL</span>
                         <div class="text-center">
                             <i class="fa-solid fa-image text-4xl mb-4 text-slate-400"></i>
-                            <h4 class="font-serif italic text-2xl">COBOCE COOP &mdash; Arquitectura marcaría e industrial</h4>
+                            <h4 class="font-serif italic text-2xl">COBOCE &mdash; Arquitectura marcaría e industrial</h4>
                         </div>
                         <span class="text-[10px] font-mono tracking-widest">PROPORCIÓN RECOMENDADA: 8:3 (1920x720)</span>
                     </div>
@@ -587,15 +590,15 @@
 
                 <div class="max-w-7xl mx-auto px-10 md:px-16 lg:px-24 py-24">
                     <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-                        <div class="lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
                             <div class="md:col-span-2">
                                 <span class="text-[11px] montserrat-black-caps text-[#009a82] tracking-[0.2em] block mb-2" data-case-i18n="case-label">CASO:</span>
-                                <h2 class="text-4xl md:text-5xl lg:text-6xl font-black uppercase font-montserrat text-slate-900 tracking-tight mb-8">COBOCE COOP</h2>
+                                <h2 class="text-4xl md:text-5xl lg:text-6xl font-black uppercase font-montserrat text-slate-900 tracking-tight mb-8">COBOCE</h2>
                             </div>
-                            <div class="space-y-6 font-light text-lg md:text-xl text-slate-800 leading-relaxed">
+                            <div class="space-y-6 text-slate-800 font-light text-lg md:text-xl leading-relaxed">
                                 <p data-case-i18n="coboce-challenge"></p>
                             </div>
-                            <div class="space-y-6 font-light text-lg md:text-xl text-slate-800 leading-relaxed">
+                            <div class="space-y-6 text-slate-800 font-light text-lg md:text-xl leading-relaxed">
                                 <p data-case-i18n="coboce-system"></p>
                             </div>
                         </div>
@@ -609,32 +612,118 @@
                                 <p class="text-lg font-serif italic text-slate-800 leading-snug" data-case-i18n="coboce-strat"></p>
                             </div>
                             <div>
+                                <span class="text-[11px] montserrat-black-caps text-[#009a82] tracking-[0.15em] block mb-2" data-case-i18n="label-results">RESULTADOS:</span>
+                                <p class="text-lg font-serif italic text-slate-800 leading-snug" data-case-i18n="coboce-res"></p>
+                            </div>
+                            <div>
                                 <span class="text-[11px] montserrat-black-caps text-[#009a82] tracking-[0.15em] block mb-2" data-case-i18n="label-team">EQUIPO:</span>
                                 <p class="text-lg font-serif italic text-slate-800 leading-snug" data-case-i18n="coboce-team"></p>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Grilla de Imágenes Asimétrica COBOCE -->
+                    <!-- SECCIÓN: EVOLUCIÓN ANTES Y DESPUÉS (COBOCE, MANTENIENDO PROPORCIÓN CUADRADA) -->
+                    <div class="mt-24 pt-16 border-t border-black/10">
+                        <h3 class="text-xs montserrat-black-caps text-slate-400 tracking-[0.3em] uppercase mb-12" data-case-i18n="before-after-title">Evolución: Antes y Después</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-0 rounded-sm overflow-hidden border border-black/5 shadow-md relative">
+                            <!-- Antes (Before) -->
+                            <div class="relative group overflow-hidden bg-white aspect-square border-b md:border-b-0 md:border-r border-black/5">
+                                <div class="absolute top-4 left-4 z-20 text-slate-500 text-[10px] md:text-xs font-bold uppercase montserrat-caps tracking-widest pointer-events-none" data-case-i18n="label-before">
+                                    Antes
+                                </div>
+                                <img src="https://cortes-design.vercel.app/cases/coboce/cbc_before.png" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" onerror="if(!this.src.endsWith('.png')){this.src=this.src.replace('.png','.jpg');}else{this.style.display='none'; this.nextElementSibling.classList.remove('hidden');}" alt="Antes COBOCE">
+                                <div class="absolute inset-0 flex flex-col justify-between p-8 bg-slate-300/90 hidden text-slate-700">
+                                    <span class="text-[10px] montserrat-black-caps text-slate-500 tracking-wider">ANTES / BEFORE</span>
+                                    <div class="text-center font-serif italic text-slate-600 text-lg">Identidad histórica de COBOCE</div>
+                                </div>
+                            </div>
+                            <!-- Después (After) -->
+                            <div class="relative group overflow-hidden bg-white aspect-square">
+                                <div class="absolute top-4 left-4 z-20 text-slate-500 text-[10px] md:text-xs font-bold uppercase montserrat-caps tracking-widest pointer-events-none" data-case-i18n="label-after">
+                                    Después
+                                </div>
+                                <img src="https://cortes-design.vercel.app/cases/coboce/cbc_after.png" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" onerror="if(!this.src.endsWith('.png')){this.src=this.src.replace('.png','.jpg');}else{this.style.display='none'; this.nextElementSibling.classList.remove('hidden');}" alt="Después COBOCE">
+                                <div class="absolute inset-0 flex flex-col justify-between p-8 bg-slate-300/90 hidden text-slate-700">
+                                    <span class="text-[10px] montserrat-black-caps text-slate-500 tracking-wider">DESPUÉS / AFTER</span>
+                                    <div class="text-center font-serif italic text-slate-600 text-lg">Sistema de marca unificado</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Primera Tanda Visual (Mockups de COBOCE) -->
                     <div class="mt-24 pt-16 border-t border-black/10">
                         <h3 class="text-xs montserrat-black-caps text-slate-400 tracking-[0.3em] uppercase mb-12" data-case-i18n="gallery-title">Despliegue Visual & Embalajes</h3>
                         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                            <!-- Columna Izquierda: Dos Cuadradas Apiladas (02 y 03) -->
                             <div class="flex flex-col gap-8">
-                                <div class="bg-slate-300 aspect-square rounded-sm flex flex-col justify-between p-8 border border-black/5 relative group hover:bg-slate-400/50 transition-colors">
-                                    <span class="text-[10px] montserrat-black-caps text-slate-500 tracking-wider" data-case-i18n="mock-label-1">MOCKUP #01</span>
-                                    <div class="text-center font-serif italic text-slate-600 text-lg" data-case-i18n="coboce-mock1"></div>
-                                    <span class="text-[11px] font-mono text-slate-500" data-case-i18n="mock-format-square">PROPORCIÓN: 1:1 CUADRADA</span>
+                                <div class="bg-slate-300 aspect-square rounded-sm overflow-hidden border border-black/5 relative group hover:bg-slate-400/50 transition-colors">
+                                    <img src="https://cortes-design.vercel.app/cases/coboce/02_cbc_empaques_redesign.png" class="w-full h-full object-cover" onerror="if(!this.src.endsWith('.png')){this.src=this.src.replace('.png','.jpg');}else{this.style.display='none'; this.nextElementSibling.classList.remove('hidden');}" alt="COBOCE Camión">
+                                    <div class="absolute inset-0 flex flex-col justify-between p-8 bg-slate-300/90 hidden text-slate-700">
+                                        <span class="text-[10px] montserrat-black-caps text-slate-500 tracking-wider" data-case-i18n="mock-label-1">MOCKUP #01</span>
+                                        <div class="text-center font-serif italic text-slate-600 text-lg" data-case-i18n="coboce-mock1"></div>
+                                        <span class="text-[11px] font-mono text-slate-500" data-case-i18n="mock-format-square">PROPORCIÓN: 1:1 CUADRADA</span>
+                                    </div>
                                 </div>
-                                <div class="bg-slate-300 aspect-square rounded-sm flex flex-col justify-between p-8 border border-black/5 relative group hover:bg-slate-400/50 transition-colors">
-                                    <span class="text-[10px] montserrat-black-caps text-slate-500 tracking-wider" data-case-i18n="mock-label-2">MOCKUP #02</span>
-                                    <div class="text-center font-serif italic text-slate-600 text-lg" data-case-i18n="coboce-mock2"></div>
-                                    <span class="text-[11px] font-mono text-slate-500" data-case-i18n="mock-format-square">PROPORCIÓN: 1:1 CUADRADA</span>
+                                <div class="bg-slate-300 aspect-square rounded-sm overflow-hidden border border-black/5 relative group hover:bg-slate-400/50 transition-colors">
+                                    <img src="https://cortes-design.vercel.app/cases/coboce/03_cbc_isotipo_redesign.png" class="w-full h-full object-cover" onerror="if(!this.src.endsWith('.png')){this.src=this.src.replace('.png','.jpg');}else{this.style.display='none'; this.nextElementSibling.classList.remove('hidden');}" alt="COBOCE Uniforme">
+                                    <div class="absolute inset-0 flex flex-col justify-between p-8 bg-slate-300/90 hidden text-slate-700">
+                                        <span class="text-[10px] montserrat-black-caps text-slate-500 tracking-wider" data-case-i18n="mock-label-2">MOCKUP #02</span>
+                                        <div class="text-center font-serif italic text-slate-600 text-lg" data-case-i18n="coboce-mock2"></div>
+                                        <span class="text-[11px] font-mono text-slate-500" data-case-i18n="mock-format-square">PROPORCIÓN: 1:1 CUADRADA</span>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="bg-slate-300 aspect-[9/16] rounded-sm flex flex-col justify-between p-8 border border-black/5 relative group hover:bg-slate-400/50 transition-colors">
-                                <span class="text-[10px] montserrat-black-caps text-slate-500 tracking-wider" data-case-i18n="mock-label-3">MOCKUP #03 (VERTICAL)</span>
-                                <div class="text-center font-serif italic text-slate-600 text-lg">COBOCE - Presencia Editorial Corporativa</div>
-                                <span class="text-[11px] font-mono text-slate-500" data-case-i18n="mock-format-vertical">PROPORCIÓN: 9:16 (1080x1920)</span>
+                            <!-- Columna Derecha: Una Vertical de 1080x1920 (04) -->
+                            <div class="bg-slate-300 aspect-[9/16] rounded-sm overflow-hidden border border-black/5 relative group hover:bg-slate-400/50 transition-colors">
+                                <img src="https://cortes-design.vercel.app/cases/coboce/04_cbc_personajes-bolivianos.png" class="w-full h-full object-cover" onerror="if(!this.src.endsWith('.png')){this.src=this.src.replace('.png','.jpg');}else{this.style.display='none'; this.nextElementSibling.classList.remove('hidden');}" alt="COBOCE Editorial">
+                                <div class="absolute inset-0 flex flex-col justify-between p-8 bg-slate-300/90 hidden text-slate-700">
+                                    <span class="text-[10px] montserrat-black-caps text-slate-500 tracking-wider" data-case-i18n="mock-label-3">MOCKUP #03 (VERTICAL)</span>
+                                    <div class="text-center font-serif italic text-slate-600 text-lg" data-case-i18n="coboce-mock3"></div>
+                                    <span class="text-[11px] font-mono text-slate-500" data-case-i18n="mock-format-vertical">PROPORCIÓN: 9:16 (1080x1920)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Explicación de la expansión industrial (NUEVO BLOQUE REQUERIDO) -->
+                    <div class="mt-24 pt-16 border-t border-black/10">
+                        <div class="max-w-3xl">
+                            <h3 class="text-lg md:text-xl font-black uppercase font-montserrat text-slate-900 tracking-[0.1em] mb-4" data-case-i18n="coboce-expansion-heading"></h3>
+                            <p class="text-lg md:text-xl text-slate-700 font-light leading-relaxed" data-case-i18n="coboce-expansion-text"></p>
+                        </div>
+                    </div>
+
+                    <!-- Segunda Tanda Visual de COBOCE (Mirrored Grid - Espejo) -->
+                    <div class="mt-16">
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                            <!-- Columna Izquierda: Una Vertical (05_coboce_hormigon.png) -->
+                            <div class="bg-slate-300 aspect-[9/16] rounded-sm overflow-hidden border border-black/5 relative group hover:bg-slate-400/50 transition-colors">
+                                <img src="https://cortes-design.vercel.app/cases/coboce/05_cbc_familia de marcas.png" class="w-full h-full object-cover" onerror="if(!this.src.endsWith('.png')){this.src=this.src.replace('.png','.jpg');}else{this.style.display='none'; this.nextElementSibling.classList.remove('hidden');}" alt="COBOCE Hormigón">
+                                <div class="absolute inset-0 flex flex-col justify-between p-8 bg-slate-300/90 hidden text-slate-700">
+                                    <span class="text-[10px] montserrat-black-caps text-slate-500 tracking-wider" data-case-i18n="mock-label-6">MOCKUP #04 (VERTICAL)</span>
+                                    <div class="text-center font-serif italic text-slate-600 text-lg" data-case-i18n="coboce-mock4">COBOCE Hormigón - Mixer y Silos</div>
+                                    <span class="text-[11px] font-mono text-slate-500" data-case-i18n="mock-format-vertical">PROPORCIÓN: 9:16 (1080x1920)</span>
+                                </div>
+                            </div>
+                            <!-- Columna Derecha: Dos Cuadradas (06_coboce_mosaico.png y 07_coboce_ceramica.png) -->
+                            <div class="flex flex-col gap-8">
+                                <div class="bg-slate-300 aspect-square rounded-sm overflow-hidden border border-black/5 relative group hover:bg-slate-400/50 transition-colors">
+                                    <img src="https://cortes-design.vercel.app/cases/coboce/06_cbc_nueva_linea.png" class="w-full h-full object-cover" onerror="if(!this.src.endsWith('.png')){this.src=this.src.replace('.png','.jpg');}else{this.style.display='none'; this.nextElementSibling.classList.remove('hidden');}" alt="COBOCE Mosaicos">
+                                    <div class="absolute inset-0 flex flex-col justify-between p-8 bg-slate-300/90 hidden text-slate-700">
+                                        <span class="text-[10px] montserrat-black-caps text-slate-500 tracking-wider" data-case-i18n="mock-label-4">MOCKUP #05</span>
+                                        <div class="text-center font-serif italic text-slate-600 text-lg" data-case-i18n="coboce-mock5">Diseño de Catálogos de Mosaico</div>
+                                        <span class="text-[11px] font-mono text-slate-500" data-case-i18n="mock-format-square">PROPORCIÓN: 1:1 CUADRADA</span>
+                                    </div>
+                                </div>
+                                <div class="bg-slate-300 aspect-square rounded-sm overflow-hidden border border-black/5 relative group hover:bg-slate-400/50 transition-colors">
+                                    <img src="https://cortes-design.vercel.app/cases/coboce/07_cbc_submarca.png" class="w-full h-full object-cover" onerror="if(!this.src.endsWith('.png')){this.src=this.src.replace('.png','.jpg');}else{this.style.display='none'; this.nextElementSibling.classList.remove('hidden');}" alt="COBOCE Cerámica Packaging">
+                                    <div class="absolute inset-0 flex flex-col justify-between p-8 bg-slate-300/90 hidden text-slate-700">
+                                        <span class="text-[10px] montserrat-black-caps text-slate-500 tracking-wider" data-case-i18n="mock-label-5">MOCKUP #06</span>
+                                        <div class="text-center font-serif italic text-slate-600 text-lg" data-case-i18n="coboce-mock6">Sistema de empaques COBOCE Cerámica</div>
+                                        <span class="text-[11px] font-mono text-slate-500" data-case-i18n="mock-format-square">PROPORCIÓN: 1:1 CUADRADA</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -794,6 +883,7 @@
                 'label-before': 'Antes',
                 'label-after': 'Después',
                 
+                // Wist'upiku
                 'wistupiku-challenge': 'Esta marca gastronómica representativa de Cochabamba, planteaba el desafío de actualizarse sin perder el vínculo emocional construido a través de décadas.',
                 'wistupiku-history': 'El trabajo se desarrolló a lo largo de distintas etapas, acompañando a la marca en momentos clave como sus aniversarios 75, 80 y 85, esto permitió abordar la identidad como un proceso evolutivo.',
                 'wistupiku-system': 'El enfoque se centró en consolidar un sistema de marca basado en el tono de voz y en la expresión cultural, utilizando el lenguaje regional como eje para construir cercanía, diferenciación y coherencia en distintos puntos de contacto.',
@@ -811,14 +901,23 @@
                 'wistupiku-tiktok-heading': 'Impacto en TikTok & Nuevas Plataformas',
                 'wistupiku-tiktok-text': 'El impacto de la marca se consolidó de manera orgánica en plataformas contemporáneas como TikTok, donde la combinación de humor local, orgullo cochabambino y un sistema de identidad sumamente dinámico conectó con una nueva generación de consumidores. El diseño de empaques y la ambientación de los espacios físicos se convirtieron en generadores de contenido espontáneo, amplificando el alcance cultural de Wist\'upiku más allá de los soportes tradicionales.',
 
-                'coboce-challenge': 'Rediseño de marca para una de las cooperativas industriales más grandes y emblemáticas de Bolivia. El desafío consistió en sintetizar su legado y proyectarlo hacia las nuevas generaciones.',
-                'coboce-system': 'Se estructuró una identidad visual sólida y modular que evoca la fuerza de la construcción comunitaria y el desarrollo colectivo de la industria nacional.',
-                'coboce-loc': 'Sede principal en Cochabamba con presencia nacional.',
-                'coboce-strat': 'Industrialización con rostro humano y valores cooperativos.',
-                'coboce-team': 'Francisco Cortés, Director creativo y diseñador senior.',
-                'coboce-mock1': 'Identidad visual en camiones distribuidores',
-                'coboce-mock2': 'Efecto de marca en uniformes industriales',
+                // COBOCE (Exacto según imagen provista + nuevos añadidos)
+                'coboce-challenge': 'Organización cooperativa con <strong class="font-bold text-slate-900">múltiples unidades de negocio</strong> que requería fortalecer su identidad para operar de manera coherente en distintos niveles y contextos.<br><br>El proyecto se centró en estructurar un sistema de marca que permita articular su carácter institucional con la diversidad de sus áreas, estableciendo criterios claros de organización, jerarquía y aplicación.',
+                'coboce-system': 'Se desarrolló una identidad capaz de sostener unidad sin perder flexibilidad, facilitando su implementación en comunicación, entornos y piezas operativas.<br><br>El resultado es un sistema que ordena, clarifica y proyecta la marca de manera consistente en toda su estructura, apoyándose en los valores con mayor potencial, como el hecho de representar a la <strong class="font-bold text-slate-900">"industria del pueblo"</strong>.',
+                'coboce-loc': 'Origen en Cochabamba con alcance nacional',
+                'coboce-strat': 'Solidez de identidad nacional, hecha "desde el pueblo".',
+                'coboce-res': 'Implementación en diversas unidades de negocio.',
+                'coboce-team': 'Francisco Cortés (Director creativo y diseñador senior), Daniel Barrientos y Dorian López (Diseñadores).',
+                'coboce-mock1': 'Identidad visual corporativa aplicada a camiones de distribución',
+                'coboce-mock2': 'Desarrollo de indumentaria y uniformes industriales para plantas operativas',
+                'coboce-mock3': 'Diseño editorial y maquetación de informes institucionales de COBOCE',
+                'coboce-expansion-heading': 'Arquitectura de Marca & Diversificación Industrial',
+                'coboce-expansion-text': 'La solidez del sistema principal permitió que el proyecto madurara orgánicamente hacia la unificación de sus subsidiarias industriales. A lo largo de varios años de estrecha colaboración, se estructuró la arquitectura de marca de unidades altamente operativas como COBOCE Hormigón, COBOCE Cemento y COBOCE Metal, así como nuevas líneas de productos de embalaje y revestimiento, logrando que el gigante cooperativo proyecte una sola voz técnica pero profundamente humana ante sus diversos públicos.',
+                'coboce-mock4': 'COBOCE Hormigón - Aplicación de marca en mixers de transporte y silos de almacenamiento',
+                'coboce-mock5': 'COBOCE Cerámica - Sistema modular de embalajes de cartón y displays para revestimiento',
+                'coboce-mock6': 'COBOCE Mosaicos - Diseño de catálogo comercial de productos y patrones premium',
 
+                // SIMP3L
                 'simp3l-challenge': 'Creación de un sistema de identidad visual disruptivo y versátil para un proyecto que busca redefinir la simplicidad y la inclusión en el diseño contemporáneo.',
                 'simp3l-system': 'El lenguaje gráfico se construyó sobre geometries puras y una paleta cromática de alto impacto, reflejando que se puede ser diferente pero compartir la misma esencia.',
                 'simp3l-strat': 'Concepto de igualdad asimétrica: iguales, pero tampoco tanto.',
@@ -892,21 +991,29 @@
                 'wistupiku-tiktok-heading': 'TikTok & New Platforms Impact',
                 'wistupiku-tiktok-text': 'The brand\'s impact was organically consolidated on contemporary platforms such as TikTok, where the combination of local humor, Cochabamba pride, and a highly dynamic identity system connected with a new generation of consumers. Packaging design and physical space atmosphere became spontaneous content generators, amplifying Wist\'upiku\'s cultural reach far beyond traditional media.',
 
-                'coboce-challenge': 'Brand redesign for one of Bolivia\'s largest and most iconic industrial cooperatives. The challenge was to synthesize its legacy and project it toward new generations.',
-                'coboce-system': 'A solid and modular visual identity was structured, evoking the strength of community building and the collective development of the national industry.',
-                'coboce-loc': 'Headquarters in Cochabamba with national presence.',
-                'coboce-strat': 'Industrialization with a human face and cooperative values.',
-                'coboce-team': 'Francisco Cortés, Creative Director & Senior Designer.',
-                'coboce-mock1': 'Visual identity on distributor trucks',
-                'coboce-mock2': 'Brand application on industrial uniforms',
+                // COBOCE EN
+                'coboce-challenge': 'A cooperative organization with <strong class="font-bold text-slate-900">multiple business units</strong> that needed to strengthen its identity to operate coherently across different levels and contexts.<br><br>The project focused on structuring a brand system that articulates its institutional character with the diversity of its areas, establishing clear criteria for organization, hierarchy, and application.',
+                'coboce-system': 'An identity was developed that is capable of sustaining unity without losing flexibility, facilitating its implementation in communication, environments, and operational collateral.<br><br>The result is a system that organizes, clarifies, and projects the brand consistently across its entire structure, relying on values with the greatest potential, such as representing the <strong class="font-bold text-slate-900">"industry of the people"</strong>.',
+                'coboce-loc': 'Origin in Cochabamba with national reach',
+                'coboce-strat': 'Solid national identity, made "from the people".',
+                'coboce-res': 'Implementation across various business units.',
+                'coboce-team': 'Francisco Cortés (Creative Director & Senior Designer), Daniel Barrientos and Dorian López (Designers).',
+                'coboce-mock1': 'Corporate visual identity applied to logistics and distribution fleet trucks',
+                'coboce-mock2': 'Development of safety workwear and industrial uniforms for plant operatives',
+                'coboce-mock3': 'Editorial design and corporate layout for COBOCE institutional reports',
+                'coboce-expansion-heading': 'Brand Architecture & Industrial Diversification',
+                'coboce-expansion-text': 'The robustness of the core system allowed the project to mature organically toward the unification of its industrial subsidiaries. Over several years of close collaboration, we structured the brand architecture of highly operational business units such as COBOCE Hormigón, COBOCE Cemento and COBOCE Metal, alongside new product lines for packaging and cladding. This ensured the cooperative giant projected a single, highly technical yet deeply human voice to its diverse audiences.',
+                'coboce-mock4': 'COBOCE Hormigón - Brand implementation on transport mixers and cement storage silos',
+                'coboce-mock5': 'COBOCE Cerámica - Modular cardboard packaging systems and tiles retail displays',
+                'coboce-mock6': 'COBOCE Mosaicos - Premium product catalogue and cladding patterns layout design',
 
                 'simp3l-challenge': 'Creation of a disruptive and versatile visual identity system for a project looking to redefine simplicity and inclusion in contemporary design.',
                 'simp3l-system': 'The graphic language was built on pure geometries and a high-impact color palette, reflecting that you can be different but share the same essence.',
                 'simp3l-strat': 'Asymmetric equality concept: equal, but not that much.',
-                'simp3l-team': 'Francisco Cortés, Creative Director & Senior Designer.',
-                'simp3l-mock1': 'Corporate stationery design',
-                'simp3l-mock2': 'Brand application on eco-bags',
-                'simp3l-mock3': 'Responsive web interface structure'
+                'simp3l-team': 'Francisco Cortés, Director creative and designer senior.',
+                'simp3l-mock1': 'Diseño de papelería corporativa',
+                'simp3l-mock2': 'Aplicación en bolsas ecológicas',
+                'simp3l-mock3': 'Estructura de interfaz web responsiva'
             }
         };
 
@@ -1163,13 +1270,13 @@
             let currentIndex = 0;
             const baseDelay = 2800;
 
-            // Agregamos un colchón adicional de 25px para mitigar cortes de render en itálicas (EB Garamond)
+            // Incrementamos a un colchón seguro adicional de 30px junto con el padding-right del CSS
             function adjustWidth(idx) {
                 const item = items[idx];
                 if (!item) return;
                 const target = item.querySelector('.garamond-bold-italic');
                 if (target) { 
-                    viewport.style.width = (target.getBoundingClientRect().width + 25) + 'px'; 
+                    viewport.style.width = (target.getBoundingClientRect().width + 30) + 'px'; 
                 }
             }
 
@@ -1183,10 +1290,11 @@
                     // Retraso de seguridad para que el navegador asimile el cambio físico de tamaño de fuente
                     setTimeout(() => {
                         adjustWidth(currentIndex);
-                    }, 50);
+                    }, 80);
                 });
             } else {
                 document.body.classList.add('fonts-loaded');
+                adjustWidth(0);
             }
 
             function cycle() {

@@ -346,29 +346,7 @@
                     </div>
                 </div>
 
-                <!-- Caso 4: SURI -->
-                <div class="project-card" onclick="openCase('suri')">
-                    <div class="case-image-container">
-                        <img src="https://via.placeholder.com/600/1e293b/ffffff?text=SURI" onerror="this.style.backgroundColor='#1e293b'" alt="SURI">
-                    </div>
-                    <div class="flex flex-col gap-y-1">
-                        <h3 class="project-name" data-i18n="case-name-suri"></h3>
-                        <span class="project-phrase" data-i18n="case-phrase-suri"></span>
-                    </div>
-                </div>
-
-                <!-- Caso 5: AMALAYA -->
-                <div class="project-card" onclick="openCase('amalaya')">
-                    <div class="case-image-container">
-                        <img src="https://via.placeholder.com/600/800020/ffffff?text=AMALAYA" onerror="this.style.backgroundColor='#800020'" alt="AMALAYA">
-                    </div>
-                    <div class="flex flex-col gap-y-1">
-                        <h3 class="project-name" data-i18n="case-name-amalaya"></h3>
-                        <span class="project-phrase" data-i18n="case-phrase-amalaya"></span>
-                    </div>
-                </div>
-
-                <!-- Caso 6: QUANTUM MOTORS -->
+                <!-- Caso 4: QUANTUM MOTORS -->
                 <div class="project-card" onclick="openCase('quantum')">
                     <div class="case-image-container">
                         <img src="https://cortes-design.vercel.app/cases/quantum/00_quan_cover.png" alt="Quantum Motors" onerror="this.src='https://via.placeholder.com/600/334155/ffffff?text=QUANTUM'">
@@ -376,6 +354,17 @@
                     <div class="flex flex-col gap-y-1">
                         <h3 class="project-name" data-i18n="case-name-quantum"></h3>
                         <span class="project-phrase" data-i18n="case-phrase-quantum"></span>
+                    </div>
+                </div>
+
+                <!-- Caso 5: PROEZA FINANCIERA -->
+                <div class="project-card" onclick="openCase('proeza')">
+                    <div class="case-image-container">
+                        <img src="https://cortes-design.vercel.app/cases/proeza/00_prza_cover.png" alt="Proeza Financiera" onerror="this.src='https://via.placeholder.com/600/009a82/ffffff?text=PROEZA'">
+                    </div>
+                    <div class="flex flex-col gap-y-1">
+                        <h3 class="project-name" data-i18n="case-name-proeza"></h3>
+                        <span class="project-phrase" data-i18n="case-phrase-proeza"></span>
                     </div>
                 </div>
             </div>
@@ -447,10 +436,7 @@
                     <img src="https://cortes-design.vercel.app/cases/wistupiku/01_wp_hero.png" class="absolute inset-0 w-full h-full object-cover object-center" onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');" alt="Wist'upiku Hero">
                     <div class="absolute inset-0 flex flex-col justify-between p-12 bg-slate-300/90 hidden text-slate-700">
                         <span class="text-[10px] montserrat-black-caps tracking-widest text-[#009a82]" data-case-i18n="hero-label">PORTADA PRINCIPAL</span>
-                        <div class="text-center">
-                            <i class="fa-solid fa-image text-4xl mb-4 text-slate-400"></i>
-                            <h4 class="font-serif italic text-2xl">Wist'upiku &mdash; Identidad de marca y expresión cultural</h4>
-                        </div>
+                        <div class="text-center font-serif italic text-2xl">Wist'upiku &mdash; Identidad de marca y expresión cultural</div>
                     </div>
                 </div>
 
@@ -710,174 +696,6 @@
                 </div>
             </div>
 
-            <!-- SURI -->
-            <div id="case-suri" class="case-detail-container hidden">
-                <div class="w-full bg-[#1e293b] relative overflow-hidden flex items-center justify-center border-b border-black/5 aspect-[16/9] md:aspect-[1920/720]">
-                    <div class="absolute inset-0 flex flex-col justify-between p-12 bg-slate-900/40 text-white">
-                        <span class="text-[10px] montserrat-black-caps tracking-widest text-[#009a82]" data-case-i18n="hero-label">PORTADA PRINCIPAL</span>
-                        <div class="text-center">
-                            <i class="fa-solid fa-image text-4xl mb-4 text-slate-400"></i>
-                            <h4 class="font-serif italic text-2xl">SURI &mdash; Vestir el viento de los Andes</h4>
-                        </div>
-                        <span class="text-[10px] font-mono tracking-widest">SURI BOUTIQUE LUXURY ALPACA</span>
-                    </div>
-                </div>
-
-                <div class="max-w-7xl mx-auto px-10 md:px-16 lg:px-24 py-24">
-                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-                        <div class="lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
-                            <div class="md:col-span-2">
-                                <span class="text-[11px] montserrat-black-caps text-[#009a82] tracking-[0.2em] block mb-2" data-case-i18n="case-label">CASO:</span>
-                                <h2 class="text-4xl md:text-5xl lg:text-6xl font-black uppercase font-montserrat text-slate-900 tracking-tight mb-8">SURI</h2>
-                            </div>
-                            <div class="space-y-6 text-slate-800 font-light text-lg md:text-xl leading-relaxed">
-                                <p data-case-i18n="suri-challenge"></p>
-                            </div>
-                            <div class="space-y-6 text-slate-800 font-light text-lg md:text-xl leading-relaxed">
-                                <p data-case-i18n="suri-system"></p>
-                            </div>
-                        </div>
-                        <div class="lg:col-span-4 border-l-2 border-[#009a82] pl-8 py-2 space-y-8">
-                            <div>
-                                <span class="text-[11px] montserrat-black-caps text-[#009a82] tracking-[0.15em] block mb-2" data-case-i18n="label-location">UBICACIÓN:</span>
-                                <p class="text-lg font-serif italic text-slate-800 leading-snug" data-case-i18n="suri-loc"></p>
-                            </div>
-                            <div>
-                                <span class="text-[11px] montserrat-black-caps text-[#009a82] tracking-[0.15em] block mb-2" data-case-i18n="label-strategy">ESTRATEGIA:</span>
-                                <p class="text-lg font-serif italic text-slate-800 leading-snug" data-case-i18n="suri-strat"></p>
-                            </div>
-                            <div>
-                                <span class="text-[11px] montserrat-black-caps text-[#009a82] tracking-[0.15em] block mb-2" data-case-i18n="label-results">RESULTADOS:</span>
-                                <p class="text-lg font-serif italic text-slate-800 leading-snug" data-case-i18n="suri-res"></p>
-                            </div>
-                            <div>
-                                <span class="text-[11px] montserrat-black-caps text-[#009a82] tracking-[0.15em] block mb-2" data-case-i18n="label-team">EQUIPO:</span>
-                                <p class="text-lg font-serif italic text-slate-800 leading-snug" data-case-i18n="suri-team"></p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="mt-24 pt-16 border-t border-black/10">
-                        <h3 class="text-xs montserrat-black-caps text-slate-400 tracking-[0.3em] uppercase mb-12" data-case-i18n="before-after-title">Evolución: Antes y Después</h3>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-0 rounded-sm overflow-hidden border border-black/5 shadow-md relative">
-                            <div class="relative group overflow-hidden bg-white aspect-square border-b md:border-b-0 md:border-r border-black/5 flex items-center justify-center">
-                                <div class="absolute top-4 left-4 z-20 text-slate-500 text-[10px] md:text-xs font-bold uppercase montserrat-caps tracking-widest pointer-events-none" data-case-i18n="label-before">Antes</div>
-                                <span class="text-xl font-serif text-slate-300 italic">Identidad Artesanal Genérica</span>
-                            </div>
-                            <div class="relative group overflow-hidden bg-slate-900 aspect-square flex items-center justify-center">
-                                <div class="absolute top-4 left-4 z-20 text-slate-500 text-[10px] md:text-xs font-bold uppercase montserrat-caps tracking-widest pointer-events-none" data-case-i18n="label-after">Después</div>
-                                <span class="text-xl font-serif text-white tracking-widest uppercase">SURI LUXURY SYSTEM</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="mt-24 pt-16 border-t border-black/10">
-                        <h3 class="text-xs montserrat-black-caps text-slate-400 tracking-[0.3em] uppercase mb-12" data-case-i18n="gallery-title">Despliegue Visual & Embalajes</h3>
-                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                            <div class="flex flex-col gap-8">
-                                <div class="bg-slate-800 aspect-square rounded-sm overflow-hidden border border-black/5 relative group hover:bg-slate-700 transition-colors flex items-center justify-center p-8">
-                                    <span class="text-[10px] absolute top-4 left-4 montserrat-black-caps text-slate-400 tracking-wider" data-case-i18n="mock-label-1">MOCKUP #01</span>
-                                    <div class="text-center font-serif italic text-white text-lg" data-case-i18n="suri-mock1"></div>
-                                </div>
-                                <div class="bg-slate-800 aspect-square rounded-sm overflow-hidden border border-black/5 relative group hover:bg-slate-700 transition-colors flex items-center justify-center p-8">
-                                    <span class="text-[10px] absolute top-4 left-4 montserrat-black-caps text-slate-400 tracking-wider" data-case-i18n="mock-label-2">MOCKUP #02</span>
-                                    <div class="text-center font-serif italic text-white text-lg" data-case-i18n="suri-mock2"></div>
-                                </div>
-                            </div>
-                            <div class="bg-slate-900 aspect-[9/16] rounded-sm overflow-hidden border border-black/5 relative group hover:bg-slate-800 transition-colors flex flex-col justify-between p-8">
-                                <span class="text-[10px] montserrat-black-caps text-slate-400 tracking-wider" data-case-i18n="mock-label-3">MOCKUP #03 (VERTICAL)</span>
-                                <div class="text-center font-serif italic text-white text-lg" data-case-i18n="suri-mock3"></div>
-                                <span class="text-[11px] font-mono text-slate-500" data-case-i18n="mock-format-vertical">PROPORCIÓN: 9:16 (1080x1920)</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- AMALAYA -->
-            <div id="case-amalaya" class="case-detail-container hidden">
-                <div class="w-full bg-[#800020] relative overflow-hidden flex items-center justify-center border-b border-black/5 aspect-[16/9] md:aspect-[1920/720]">
-                    <div class="absolute inset-0 flex flex-col justify-between p-12 bg-black/40 text-white">
-                        <span class="text-[10px] montserrat-black-caps tracking-widest text-white" data-case-i18n="hero-label">PORTADA PRINCIPAL</span>
-                        <div class="text-center">
-                            <i class="fa-solid fa-wine-glass text-4xl mb-4 text-white"></i>
-                            <h4 class="font-serif italic text-2xl">AMALAYA &mdash; Vino biodinámico de altura extrema</h4>
-                        </div>
-                        <span class="text-[10px] font-mono tracking-widest">AMALAYA VINEYARDS</span>
-                    </div>
-                </div>
-
-                <div class="max-w-7xl mx-auto px-10 md:px-16 lg:px-24 py-24">
-                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-                        <div class="lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
-                            <div class="md:col-span-2">
-                                <span class="text-[11px] montserrat-black-caps text-[#009a82] tracking-[0.2em] block mb-2" data-case-i18n="case-label">CASO:</span>
-                                <h2 class="text-4xl md:text-5xl lg:text-6xl font-black uppercase font-montserrat text-slate-900 tracking-tight mb-8">AMALAYA</h2>
-                            </div>
-                            <div class="space-y-6 text-slate-800 font-light text-lg md:text-xl leading-relaxed">
-                                <p data-case-i18n="amalaya-challenge"></p>
-                            </div>
-                            <div class="space-y-6 text-slate-800 font-light text-lg md:text-xl leading-relaxed">
-                                <p data-case-i18n="amalaya-system"></p>
-                            </div>
-                        </div>
-                        <div class="lg:col-span-4 border-l-2 border-[#009a82] pl-8 py-2 space-y-8">
-                            <div>
-                                <span class="text-[11px] montserrat-black-caps text-[#009a82] tracking-[0.15em] block mb-2" data-case-i18n="label-location">UBICACIÓN:</span>
-                                <p class="text-lg font-serif italic text-slate-800 leading-snug" data-case-i18n="amalaya-loc"></p>
-                            </div>
-                            <div>
-                                <span class="text-[11px] montserrat-black-caps text-[#009a82] tracking-[0.15em] block mb-2" data-case-i18n="label-strategy">ESTRATEGIA:</span>
-                                <p class="text-lg font-serif italic text-slate-800 leading-snug" data-case-i18n="amalaya-strat"></p>
-                            </div>
-                            <div>
-                                <span class="text-[11px] montserrat-black-caps text-[#009a82] tracking-[0.15em] block mb-2" data-case-i18n="label-results">RESULTADOS:</span>
-                                <p class="text-lg font-serif italic text-slate-800 leading-snug" data-case-i18n="amalaya-res"></p>
-                            </div>
-                            <div>
-                                <span class="text-[11px] montserrat-black-caps text-[#009a82] tracking-[0.15em] block mb-2" data-case-i18n="label-team">EQUIPO:</span>
-                                <p class="text-lg font-serif italic text-slate-800 leading-snug" data-case-i18n="amalaya-team"></p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="mt-24 pt-16 border-t border-black/10">
-                        <h3 class="text-xs montserrat-black-caps text-slate-400 tracking-[0.3em] uppercase mb-12" data-case-i18n="before-after-title">Evolución: Antes y Después</h3>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-0 rounded-sm overflow-hidden border border-black/5 shadow-md relative">
-                            <div class="relative group overflow-hidden bg-white aspect-square border-b md:border-b-0 md:border-r border-black/5 flex items-center justify-center">
-                                <div class="absolute top-4 left-4 z-20 text-slate-500 text-[10px] md:text-xs font-bold uppercase montserrat-caps tracking-widest pointer-events-none" data-case-i18n="label-before">Antes</div>
-                                <span class="text-xl font-serif text-slate-300 italic">Etiquetado Comercial Genérico</span>
-                            </div>
-                            <div class="relative group overflow-hidden bg-[#2a0813] aspect-square flex items-center justify-center">
-                                <div class="absolute top-4 left-4 z-20 text-slate-500 text-[10px] md:text-xs font-bold uppercase montserrat-caps tracking-widest pointer-events-none" data-case-i18n="label-after">Después</div>
-                                <span class="text-xl font-serif text-white tracking-widest uppercase">AMALAYA RESERVA BIODINÁMICA</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="mt-24 pt-16 border-t border-black/10">
-                        <h3 class="text-xs montserrat-black-caps text-slate-400 tracking-[0.3em] uppercase mb-12" data-case-i18n="gallery-title">Despliegue Visual & Embalajes</h3>
-                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                            <div class="flex flex-col gap-8">
-                                <div class="bg-[#2a0813] aspect-square rounded-sm overflow-hidden border border-black/5 relative group hover:bg-[#3d0b1b] transition-colors flex items-center justify-center p-8">
-                                    <span class="text-[10px] absolute top-4 left-4 montserrat-black-caps text-slate-400 tracking-wider" data-case-i18n="mock-label-1">MOCKUP #01</span>
-                                    <div class="text-center font-serif italic text-white text-lg" data-case-i18n="amalaya-mock1"></div>
-                                </div>
-                                <div class="bg-[#2a0813] aspect-square rounded-sm overflow-hidden border border-black/5 relative group hover:bg-[#3d0b1b] transition-colors flex items-center justify-center p-8">
-                                    <span class="text-[10px] absolute top-4 left-4 montserrat-black-caps text-slate-400 tracking-wider" data-case-i18n="mock-label-2">MOCKUP #02</span>
-                                    <div class="text-center font-serif italic text-white text-lg" data-case-i18n="amalaya-mock2"></div>
-                                </div>
-                            </div>
-                            <div class="bg-[#1e020c] aspect-[9/16] rounded-sm overflow-hidden border border-black/5 relative group hover:bg-[#2e0413] transition-colors flex flex-col justify-between p-8">
-                                <span class="text-[10px] montserrat-black-caps text-slate-400 tracking-wider" data-case-i18n="mock-label-3">MOCKUP #03 (VERTICAL)</span>
-                                <div class="text-center font-serif italic text-white text-lg" data-case-i18n="amalaya-mock3"></div>
-                                <span class="text-[11px] font-mono text-slate-500" data-case-i18n="mock-format-vertical">PROPORCIÓN: 9:16 (1080x1920)</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
             <!-- QUANTUM MOTORS -->
             <div id="case-quantum" class="case-detail-container hidden">
                 <div class="w-full bg-[#1e293b] relative overflow-hidden flex items-center justify-center border-b border-black/5 aspect-[16/9] md:aspect-[1920/720]">
@@ -958,6 +776,113 @@
                     </div>
                 </div>
             </div>
+
+            <!-- PROEZA FINANCIERA -->
+            <div id="case-proeza" class="case-detail-container hidden">
+                <!-- Hero Image -->
+                <div class="w-full bg-slate-300 relative overflow-hidden flex items-center justify-center border-b border-black/5 aspect-[16/9] md:aspect-[1920/720]">
+                    <img src="https://cortes-design.vercel.app/cases/proeza/01_prza_hero.png" class="absolute inset-0 w-full h-full object-cover object-center" onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');" alt="Proeza Financiera Hero">
+                    <div class="absolute inset-0 flex flex-col justify-between p-12 bg-slate-300/90 hidden text-slate-700">
+                        <span class="text-[10px] montserrat-black-caps tracking-widest text-[#009a82]" data-case-i18n="hero-label">PORTADA PRINCIPAL</span>
+                        <div class="text-center font-serif italic text-2xl">Proeza Financiera &mdash; Crédito a sus sueños</div>
+                    </div>
+                </div>
+
+                <div class="max-w-7xl mx-auto px-10 md:px-16 lg:px-24 py-24">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+                        <div class="lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+                            <div class="md:col-span-2">
+                                <span class="text-[11px] montserrat-black-caps text-[#009a82] tracking-[0.2em] block mb-2" data-case-i18n="case-label">CASO:</span>
+                                <h2 class="text-4xl md:text-5xl lg:text-6xl font-black uppercase font-montserrat text-slate-900 tracking-tight mb-8">PROEZA</h2>
+                            </div>
+                            <div class="space-y-6 text-slate-800 font-light text-lg md:text-xl leading-relaxed">
+                                <p data-case-i18n="proeza-challenge"></p>
+                            </div>
+                            <div class="space-y-6 text-slate-800 font-light text-lg md:text-xl leading-relaxed">
+                                <p data-case-i18n="proeza-system"></p>
+                            </div>
+                        </div>
+                        <div class="lg:col-span-4 border-l-2 border-[#009a82] pl-8 py-2 space-y-8">
+                            <div>
+                                <span class="text-[11px] montserrat-black-caps text-[#009a82] tracking-[0.15em] block mb-2" data-case-i18n="label-location">UBICACIÓN:</span>
+                                <p class="text-lg font-serif italic text-slate-800 leading-snug" data-case-i18n="proeza-loc"></p>
+                            </div>
+                            <div>
+                                <span class="text-[11px] montserrat-black-caps text-[#009a82] tracking-[0.15em] block mb-2" data-case-i18n="label-strategy">ESTRATEGIA:</span>
+                                <p class="text-lg font-serif italic text-slate-800 leading-snug" data-case-i18n="proeza-strat"></p>
+                            </div>
+                            <div>
+                                <span class="text-[11px] montserrat-black-caps text-[#009a82] tracking-[0.15em] block mb-2" data-case-i18n="label-results">RESULTADOS:</span>
+                                <p class="text-lg font-serif italic text-slate-800 leading-snug" data-case-i18n="proeza-res"></p>
+                            </div>
+                            <div>
+                                <span class="text-[11px] montserrat-black-caps text-[#009a82] tracking-[0.15em] block mb-2" data-case-i18n="label-team">EQUIPO:</span>
+                                <p class="text-lg font-serif italic text-slate-800 leading-snug" data-case-i18n="proeza-team"></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SECCIÓN: EVOLUCIÓN ANTES Y DESPUÉS (PROEZA, MANTENIENDO PROPORCIÓN CUADRADA) -->
+                    <div class="mt-24 pt-16 border-t border-black/10">
+                        <h3 class="text-xs montserrat-black-caps text-slate-400 tracking-[0.3em] uppercase mb-12" data-case-i18n="before-after-title">Evolución: Antes y Después</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-0 rounded-sm overflow-hidden border border-black/5 shadow-md relative">
+                            <!-- Antes (Before) -->
+                            <div class="relative group overflow-hidden bg-white aspect-square border-b md:border-b-0 md:border-r border-black/5">
+                                <div class="absolute top-4 left-4 z-20 text-slate-500 text-[10px] md:text-xs font-bold uppercase montserrat-caps tracking-widest pointer-events-none" data-case-i18n="label-before">Antes</div>
+                                <img src="https://cortes-design.vercel.app/cases/proeza/prza_before.png" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Antes PROEZA" onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');">
+                                <div class="absolute inset-0 flex flex-col justify-between p-8 bg-slate-300/90 hidden text-slate-700">
+                                    <span class="text-[10px] montserrat-black-caps text-slate-500 tracking-wider">ANTES / BEFORE</span>
+                                    <div class="text-center font-serif italic text-slate-600 text-lg">Identidad histórica de PROEZA</div>
+                                </div>
+                            </div>
+                            <!-- Después (After) -->
+                            <div class="relative group overflow-hidden bg-white aspect-square">
+                                <div class="absolute top-4 left-4 z-20 text-slate-500 text-[10px] md:text-xs font-bold uppercase montserrat-caps tracking-widest pointer-events-none" data-case-i18n="label-after">Después</div>
+                                <img src="https://cortes-design.vercel.app/cases/proeza/prza_after.png" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Después PROEZA" onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');">
+                                <div class="absolute inset-0 flex flex-col justify-between p-8 bg-slate-300/90 hidden text-slate-700">
+                                    <span class="text-[10px] montserrat-black-caps text-slate-500 tracking-wider">DESPUÉS / AFTER</span>
+                                    <div class="text-center font-serif italic text-slate-600 text-lg">Sistema de marca actual</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Primera Tanda Visual (Mockups de PROEZA) -->
+                    <div class="mt-24 pt-16 border-t border-black/10">
+                        <h3 class="text-xs montserrat-black-caps text-slate-400 tracking-[0.3em] uppercase mb-12" data-case-i18n="proeza-gallery-title">Comunicación & Testeo</h3>
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                            <!-- Columna Izquierda: Dos Cuadradas Apiladas (02_prza_ads.png y 03_prza_rrss.png) -->
+                            <div class="flex flex-col gap-8">
+                                <div class="bg-slate-300 aspect-square rounded-sm overflow-hidden border border-black/5 relative group hover:bg-slate-400/50 transition-colors">
+                                    <img src="https://cortes-design.vercel.app/cases/proeza/02_prza_ads.png" class="w-full h-full object-cover" alt="Proeza Ads" onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');">
+                                    <div class="absolute inset-0 flex flex-col justify-between p-8 bg-slate-300/90 hidden text-slate-700">
+                                        <span class="text-[10px] montserrat-black-caps text-slate-500 tracking-wider" data-case-i18n="mock-label-1">MOCKUP #01</span>
+                                        <div class="text-center font-serif italic text-slate-600 text-lg" data-case-i18n="proeza-mock1"></div>
+                                        <span class="text-[11px] font-mono text-slate-500" data-case-i18n="mock-format-square">PROPORCIÓN: 1:1 CUADRADA</span>
+                                    </div>
+                                </div>
+                                <div class="bg-slate-300 aspect-square rounded-sm overflow-hidden border border-black/5 relative group hover:bg-slate-400/50 transition-colors">
+                                    <img src="https://cortes-design.vercel.app/cases/proeza/03_prza_rrss.png" class="w-full h-full object-cover" alt="Proeza Redes Sociales" onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');">
+                                    <div class="absolute inset-0 flex flex-col justify-between p-8 bg-slate-300/90 hidden text-slate-700">
+                                        <span class="text-[10px] montserrat-black-caps text-slate-500 tracking-wider" data-case-i18n="mock-label-2">MOCKUP #02</span>
+                                        <div class="text-center font-serif italic text-slate-600 text-lg" data-case-i18n="proeza-mock2"></div>
+                                        <span class="text-[11px] font-mono text-slate-500" data-case-i18n="mock-format-square">PROPORCIÓN: 1:1 CUADRADA</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Columna Derecha: Una Vertical de 1080x1920 (04_prza_testim.png) -->
+                            <div class="bg-slate-300 aspect-[9/16] rounded-sm overflow-hidden border border-black/5 relative group hover:bg-slate-400/50 transition-colors">
+                                <img src="https://cortes-design.vercel.app/cases/proeza/04_prza_testim.png" class="w-full h-full object-cover" alt="Proeza Testimonials" onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');">
+                                <div class="absolute inset-0 flex flex-col justify-between p-8 bg-slate-300/90 hidden text-slate-700">
+                                    <span class="text-[10px] montserrat-black-caps text-slate-500 tracking-wider" data-case-i18n="mock-label-3">MOCKUP #03 (VERTICAL)</span>
+                                    <div class="text-center font-serif italic text-white text-lg" data-case-i18n="proeza-mock3"></div>
+                                    <span class="text-[11px] font-mono text-slate-500" data-case-i18n="mock-format-vertical">PROPORCIÓN: 9:16 (1080x1920)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -1020,12 +945,10 @@
                 'case-phrase-wistupiku': 'del rescate cultural, su divertido',
                 'case-name-simp3l': 'SIMP3L',
                 'case-phrase-simp3l': 'iguales, pero tampoco tanto',
-                'case-name-suri': 'SURI',
-                'case-phrase-suri': 'vestir el viento con fibra noble',
-                'case-name-amalaya': 'AMALAYA',
-                'case-phrase-amalaya': 'la tierra que habla en tarija',
                 'case-name-quantum': 'QUANTUM MOTORS',
                 'case-phrase-quantum': 'el primer carro eléctrico boliviano',
+                'case-name-proeza': 'PROEZA FINANCIERA',
+                'case-phrase-proeza': 'dignos de que se le dé crédito a sus sueños',
                 'contact-title': 'Hablemos de <br><span class="garamond-bold-italic text-slate-800 lowercase">sentido y permanencia</span>.',
                 
                 // Traducciones internas del Visor de Casos
@@ -1037,6 +960,7 @@
                 'label-team': 'EQUIPO:',
                 'gallery-title': 'Despliegue Visual & Embalajes',
                 'quantum-gallery-title': 'Despliegue Visual',
+                'proeza-gallery-title': 'Comunicación & Testeo',
                 'hero-label': 'PORTADA PRINCIPAL',
                 'mock-label-1': 'MOCKUP #01',
                 'mock-label-2': 'MOCKUP #02',
@@ -1097,30 +1021,8 @@
                 'simp3l-mock2': 'Señalética comercial integrada con geometría de marca limpia',
                 'simp3l-mock3': 'Identidad verbal y dirección de tono minimalista Danés',
 
-                // SURI
-                'suri-challenge': 'Marca boutique de alta costura y moda ética con fibra de alpaca suri. El desafío consistió en reposicionar la fibra de alpaca andina en el mercado de ultra-lujo sostenible europeo.',
-                'suri-system': 'Se estructuró un sistema tipográfico de raíces vernáculas pero con una puesta en página moderna, utilizando papeles de fibras naturales recicladas y empaques minimalistas de carácter escultural.',
-                'suri-loc': 'Sede en La Paz con operaciones en París y Milán.',
-                'suri-strat': 'Unir el misticismo artesanal andino con la sofisticación del lujo silencioso.',
-                'suri-res': 'Introducción en boutiques de alta costura de Europa y Asia.',
-                'suri-team': 'Dirección creativa y diseño: Francisco Cortés Arce. Textiles a cargo: Comunidad de Tejedores del Altiplano.',
-                'suri-mock1': 'Diseño editorial premium del catálogo de fibras nobles SURI',
-                'suri-mock2': 'Diseño de empaque biodegradable con relieve escultural',
-                'suri-mock3': 'Arquitectura de marca aplicada a etiquetas y marquillas de colección',
-
-                // AMALAYA
-                'amalaya-challenge': 'Branding para un viñedo biodinámico ubicado a 2,400 metros de altura en Tarija. El desafío residía en proyectar un vino místico, arraigado al suelo de altura extrema.',
-                'amalaya-system': 'Se concibió un sistema gráfico basado en la alquimia andina y geometría sagrada. Las etiquetas combinan un negro profundo con foil de cobre que representa los minerales de la uva.',
-                'amalaya-loc': 'Valle de Tarija, Bolivia.',
-                'amalaya-strat': 'Astronomía biodinámica: embotellar el pulso astrológico y la altura tarijeña.',
-                'amalaya-res': 'Reconocimiento y galardón en el certamen de etiquetas de vino andinas.',
-                'amalaya-team': 'Director creativo: Francisco Cortés. Ilustración de constelaciones: Daniel Barrientos.',
-                'amalaya-mock1': 'Desarrollo de etiquetado premium con foil de cobre y relieve andino',
-                'amalaya-mock2': 'Diseño de caja de madera tallada para la edición de coleccionista',
-                'amalaya-mock3': 'Sello lacrado comercial y papelería corporativa del viñedo',
-
                 // QUANTUM MOTORS (TRADUCCIONES EXACTAS SEGÚN FOTO)
-                'quantum-challenge': 'En octubre de 2018 un equipo de emprendedores se preparaba para lanzar al mercado la <strong class="font-bold text-slate-900">primera marca de automóviles eléctricos ensamblados en Bolivia</strong>, confiando en el diseño como herramienta para construir su identidad desde el inicio.<br><br>El desafío consistía en proyectar una marca capaz de comunicar de manera clara y consistente sus atributos diferenciales en un contexto donde la movilidad eléctrica aún no estaba completamente instalada en el imaginario local.',
+                'quantum-challenge': 'En octubre de 2018 un equipo de emprendedores se preparaba para lanzar al mercado la <strong class="font-bold text-slate-900"> primera marca de automóviles eléctricos ensamblados en Bolivia</strong>, confiando en el diseño como herramienta para construir su identidad desde el inicio.<br><br>El desafío consistía en proyectar una marca capaz de comunicar de manera clara y consistente sus atributos differentials en un contexto donde la movilidad eléctrica aún no estaba completamente instalada en el imaginario local.',
                 'quantum-system': 'El trabajo se abordó desde la definición integral de la marca, comenzando por el naming hasta la construcción de su lenguaje visual, buscando traducir lo técnico en una propuesta accesible, reconocible y con carácter propio. La pieza clave fue usar el enfoque <strong class="font-bold text-slate-900">"small (and smart) is beautiful"</strong>.',
                 'quantum-loc': 'Origen en Bolivia, alcance regional Paraguay, México, El Salvador & Perú',
                 'quantum-strat': 'Competir desde lo pequeño, bajo la estética "cute-tecnológica".',
@@ -1128,7 +1030,18 @@
                 'quantum-team': 'Director creativo y diseñador senior: Francisco Cortés Arce, Diseñador: Daniel Barrientos.',
                 'quantum-mock1': 'Identidad visual de los vehículos compactos Quantum Motors en circulación urbana',
                 'quantum-mock2': 'Señalética limpia y minimalista para estaciones de carga y showrooms de venta',
-                'quantum-mock3': 'Dirección tipográfica, especificaciones técnicas y hoja comercial de marca'
+                'quantum-mock3': 'Dirección tipográfica, especificaciones técnicas y hoja comercial de marca',
+
+                // PROEZA FINANCIERA (NUEVO CASO SEGÚN DETALLE DE IMAGEN DE REFERENCIA)
+                'proeza-challenge': 'El año 2022 la financiera PROEZA en función a expandir su alcance a nivel nacional y relanzar la marca tomaron contacto conmigo para cumplir este objetivo.<br><br>El desafío constaba en construir una identidad que represente el quehacer de la empresa —<strong class="font-bold text-slate-900">ofrecer microcréditos a pequeños empresarios y comerciantes</strong>—. Para cumplir con ello se debía conocer el punto de vista de estos clientes. En función a ello se realizaron encuestas tanto al cliente interno como al externo sobre los valores relacionados a la marca y su representación visual en el identificador.',
+                'proeza-system': 'Al concluir el proceso se obtuvo una marca y estrategia hecha a medida a insights de estos clientes que necesitaban sentirse valorados y que eran dignos de apoyo, <strong class="font-bold text-slate-900">dignos de que se le dé crédito a sus sueños</strong>.',
+                'proeza-loc': 'Origen Cochabamba, con alcance nacional',
+                'proeza-strat': 'Lograr que el cliente se sientan valorado y apoyado.',
+                'proeza-res': 'Una marca consistente con su credo conectada con sus clientes.',
+                'proeza-team': 'Francisco Cortés Arce (Director creativo y diseñador).',
+                'proeza-mock1': 'Diseño de campañas publicitarias urbanas impresas y comunicación offline',
+                'proeza-mock2': 'Plantillas estructuradas de identidad verbal y voz para canales y redes sociales',
+                'proeza-mock3': 'Testigos reales de testeo de usabilidad, insights y credos de marca con usuarios'
             },
             en: {
                 'nav-manifiesto': 'Manifesto',
@@ -1153,12 +1066,10 @@
                 'case-phrase-wistupiku': 'from cultural rescue, its fun side',
                 'case-name-simp3l': 'SIMP3L',
                 'case-phrase-simp3l': 'equal, but not that much',
-                'case-name-suri': 'SURI',
-                'case-phrase-suri': 'wearing the wind with noble alpaca fiber',
-                'case-name-amalaya': 'AMALAYA',
-                'case-phrase-amalaya': 'the speaking earth of Tarija',
                 'case-name-quantum': 'QUANTUM MOTORS',
                 'case-phrase-quantum': 'the first bolivian electric car',
+                'case-name-proeza': 'PROEZA FINANCIERA',
+                'case-phrase-proeza': 'worthy of giving credit to their dreams',
                 'contact-title': 'Let\'s talk about <br><span class="garamond-bold-italic text-slate-800 lowercase">meaning and permanence</span>.',
                 
                 // Visor de Casos en Inglés
@@ -1170,6 +1081,7 @@
                 'label-team': 'TEAM:',
                 'gallery-title': 'Visual Deployment & Packaging',
                 'quantum-gallery-title': 'Visual Deployment',
+                'proeza-gallery-title': 'Communication & Testing',
                 'hero-label': 'MAIN HERO BANNER',
                 'mock-label-1': 'MOCKUP #01',
                 'mock-label-2': 'MOCKUP #02',
@@ -1229,28 +1141,6 @@
                 'simp3l-mock2': 'Commercial signage integrated with clean brand geometry',
                 'simp3l-mock3': 'Verbal identity and Danish minimalist tone of voice direction',
 
-                // SURI EN
-                'suri-challenge': 'High fashion boutique and ethical clothing brand crafted with alpaca Suri wool. The challenge was to reposition Andean alpaca fibers within the sustainable ultra-luxury European fashion market.',
-                'suri-system': 'An editorial identity with vernacular roots but a completely contemporary layout was crafted, making use of raw, recycled fibers and beautifully organic sculptural packaging designs.',
-                'suri-loc': 'Based in La Paz with operative channels in Paris & Milan.',
-                'suri-strat': 'Merging local artisanal mysticism with quiet luxury aesthetics.',
-                'suri-res': 'Launch and placement across premium boutiques in Europe and Asia.',
-                'suri-team': 'Creative Direction & Design: Francisco Cortés Arce. Textiles: Altiplano Weavers Cooperative.',
-                'suri-mock1': 'Premium editorial layout of SURI noble fibers catalog book',
-                'suri-mock2': 'Sculptural biodegradable brand apparel boxes design',
-                'suri-mock3': 'SURI spatial system: premium physical collection labels',
-
-                // AMALAYA EN
-                'amalaya-challenge': 'Branding and spatial packaging design for a biodynamic high-altitude vineyard set at 2,400 meters in Tarija. The goal was to build a mystic, earth-connected wine label.',
-                'amalaya-system': 'The visual system relies on Andean alchemy and sacred geometry. Label layouts blend organic matte-black materials with copper foil reflecting grape-bed minerals.',
-                'amalaya-loc': 'Tarija Valley, Bolivia.',
-                'amalaya-strat': 'Biodynamic wine system: bottling the astro-geological pulse of high Tarija soil.',
-                'amalaya-res': 'First-place award on design aesthetics at Southern Vinewards festival.',
-                'amalaya-team': 'Creative Director: Francisco Cortés. Constellations illustrations: Daniel Barrientos.',
-                'amalaya-mock1': 'Premium copper foil stamping and raw label textures development',
-                'amalaya-mock2': 'Engraved wooden collector packaging and premium physical seal',
-                'amalaya-mock3': 'Custom cellar wax-seal design and executive stationery',
-
                 // QUANTUM MOTORS EN
                 'quantum-challenge': 'In October 2018, a team of entrepreneurs prepared to launch the <strong class="font-bold text-slate-900">first electric car brand assembled in Bolivia</strong>, relying on design as a tool to build its identity from the start.<br><br>The challenge was to project a brand capable of communicating its differential attributes clearly and consistently in a context where electric mobility was not yet fully established in the local imagination.',
                 'quantum-system': 'The work was approached from the overall definition of the brand, starting from the naming to the construction of its visual language, seeking to translate the technical aspect into an accessible, recognizable proposal with its own character. The key piece was using the <strong class="font-bold text-slate-900">"small (and smart) is beautiful"</strong> approach.',
@@ -1260,14 +1150,25 @@
                 'quantum-team': 'Creative Director & Senior Designer: Francisco Cortés Arce, Designer: Daniel Barrientos.',
                 'quantum-mock1': 'Quantum Motors visual identity on vehicles in active urban circulation',
                 'quantum-mock2': 'Clean and minimalist signage systems for charging stations and sales showrooms',
-                'quantum-mock3': 'Typographic guidelines, specifications sheets and executive commercial brandmarks'
+                'quantum-mock3': 'Typographic guidelines, specifications sheets and executive commercial brandmarks',
+
+                // PROEZA FINANCIERA EN (NEW DEEP TRANSLATION AS REQUESTED)
+                'proeza-challenge': 'In 2022, the financial company PROEZA contacted me with the objective of expanding its reach nationwide and relaunching the brand.<br><br>The challenge consisted of building an identity that represents the core of the company—<strong class="font-bold text-slate-900">offering microcredits to small business owners and merchants</strong>. To achieve this, it was necessary to understand the clients\' perspective. Based on this, surveys were conducted with both internal and external clients regarding brand-related values and their visual representation in the identifier.',
+                'proeza-system': 'At the end of the process, a tailor-made brand and strategy was obtained based on the insights of these clients who needed to feel valued and supported, <strong class="font-bold text-slate-900">worthy of giving credit to their dreams</strong>.',
+                'proeza-loc': 'Origin in Cochabamba, with national reach',
+                'proeza-strat': 'Enabling the client to feel valued and supported.',
+                'proeza-res': 'A consistent brand aligned with its creed, deeply connected with its clients.',
+                'proeza-team': 'Francisco Cortés Arce (Creative Director & Designer).',
+                'proeza-mock1': 'Urban advertising layouts and printed campaign rollouts',
+                'proeza-mock2': 'Verbal voice architecture, assets and structured templates for social media channels',
+                'proeza-mock3': 'Real qualitative testings, focus-groups, user testing insights and brand beliefs'
             }
         };
 
         let currentLang = 'es';
         let flipIntervalId = null;
         let activeCaseId = null; // Guardar caso activo globalmente
-        const projectIds = ['coboce', 'wistupiku', 'simp3l', 'suri', 'amalaya', 'quantum'];
+        const projectIds = ['coboce', 'wistupiku', 'simp3l', 'quantum', 'proeza'];
 
         const navToggle = document.getElementById('nav-toggle');
         const mobileMenu = document.getElementById('mobile-menu');

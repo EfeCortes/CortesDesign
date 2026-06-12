@@ -377,7 +377,7 @@
                 <!-- Caso 6: 4 LLAMAS -->
                 <div class="project-card" onclick="openCase('fourllamas')">
                     <div class="case-image-container">
-                        <img src="https://cortes-design.vercel.app/cases/llamas/00_llamas_cover.png" alt="4 Llamas" onerror="this.src='https://via.placeholder.com/600/6f4e37/ffffff?text=4+LLAMAS'">
+                        <img src="https://cortes-design.vercel.app/cases/4llamas/00_4llamas_cover.png" alt="4 Llamas" onerror="this.src='https://via.placeholder.com/600/6f4e37/ffffff?text=4+LLAMAS'">
                     </div>
                     <div class="flex flex-col gap-y-1">
                         <h3 class="project-name" data-i18n="case-name-fourllamas"></h3>
@@ -436,7 +436,8 @@
             <div class="max-w-7xl mx-auto w-full flex justify-between items-center">
                 <button onclick="closeCase()" class="text-[11px] montserrat-black-caps flex items-center gap-3 text-slate-800 hover:text-brand-green transition-colors">
                     <i class="fa-solid fa-arrow-left text-sm"></i>
-                    <span data-case-i18n="btn-back">Volver al Portafolio</span>
+                    <!-- En móvil ocultamos el texto usando hidden md:inline para evitar que quede demasiado lleno -->
+                    <span class="hidden md:inline" data-case-i18n="btn-back">Volver al Portafolio</span>
                 </button>
                 <div id="case-viewer-title" class="text-[11px] montserrat-black-caps text-slate-900 font-extrabold tracking-[0.1em] uppercase">
                     <!-- Dinámico vía JS -->

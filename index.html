@@ -127,6 +127,7 @@
             justify-content: center;
             position: relative; 
             transition: all 0.7s cubic-bezier(0.65, 0, 0.35, 1); 
+            gap: 0.28em; /* Genera una separación de palabra consistente y perfectamente escalable */
         }
 
         .flip-viewport {
@@ -144,6 +145,11 @@
         /* Se muestra de forma fluida una vez que las tipografías estén correctamente descargadas */
         .fonts-loaded .flip-viewport {
             opacity: 1;
+        }
+
+        /* Corrección de alineación para la versión en inglés */
+        .flip-viewport.lang-en .flip-item {
+            justify-content: flex-end; /* Alinea las palabras a la derecha para que el colchón de seguridad no cree separación en medio */
         }
 
         .flip-list {
@@ -368,10 +374,10 @@
                     </div>
                 </div>
 
-                <!-- Caso 6: 4 LLAMAS (NUEVO) -->
+                <!-- Caso 6: 4 LLAMAS -->
                 <div class="project-card" onclick="openCase('fourllamas')">
                     <div class="case-image-container">
-                        <img src="https://cortes-design.vercel.app/cases/4llamas/00_4llamas_cover.png" alt="4 Llamas" onerror="this.src='https://via.placeholder.com/600/6f4e37/ffffff?text=4+LLAMAS'">
+                        <img src="https://cortes-design.vercel.app/cases/https://cortes-design.vercel.app/cases/llamas/00_llamas_cover.png" alt="4 Llamas" onerror="this.src='https://via.placeholder.com/600/6f4e37/ffffff?text=4+LLAMAS'">
                     </div>
                     <div class="flex flex-col gap-y-1">
                         <h3 class="project-name" data-i18n="case-name-fourllamas"></h3>
@@ -670,7 +676,7 @@
                         </div>
                         <div class="lg:col-span-4 border-l-2 border-[#009a82] pl-8 py-2 space-y-8">
                             <div>
-                                <span class="text-[11px] montserrat-black-caps text-[#009a82] tracking-[0.15em] block mb-2" data-case-i18n="label-location">UBICACIÓN:</span>
+                                <span class="text-[11px] montserrat-black-caps text-[#009a82] tracking-[0.15em] block mb-2" data-case-i18n="simp3l-loc">UBICACIÓN:</span>
                                 <p class="text-lg font-serif italic text-slate-800 leading-snug" data-case-i18n="simp3l-loc"></p>
                             </div>
                             <div>
@@ -946,7 +952,7 @@
                             <!-- Antes (Before) -->
                             <div class="relative group overflow-hidden bg-white aspect-square border-b md:border-b-0 md:border-r border-black/5">
                                 <div class="absolute top-4 left-4 z-20 text-slate-500 text-[10px] md:text-xs font-bold uppercase montserrat-caps tracking-widest pointer-events-none" data-case-i18n="label-before">Antes</div>
-                                <img src="https://cortes-design.vercel.app/cases/4llamas/4llamas_before.png" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Antes 4 LLAMAS" onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');">
+                                <img src="https://cortes-design.vercel.app/cases/llamas/llamas_before.png" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Antes 4 LLAMAS" onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');">
                                 <div class="absolute inset-0 flex flex-col justify-between p-8 bg-slate-300/90 hidden text-slate-700">
                                     <span class="text-[10px] montserrat-black-caps text-slate-500 tracking-wider">ANTES / BEFORE</span>
                                     <div class="text-center font-serif italic text-slate-600 text-lg">Identidad anterior de 4 Llamas</div>
@@ -955,10 +961,10 @@
                             <!-- Después (After) -->
                             <div class="relative group overflow-hidden bg-white aspect-square">
                                 <div class="absolute top-4 left-4 z-20 text-slate-500 text-[10px] md:text-xs font-bold uppercase montserrat-caps tracking-widest pointer-events-none" data-case-i18n="label-after">Después</div>
-                                <img src="https://cortes-design.vercel.app/cases/4llamas/4llamas_after.png" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Después 4 LLAMAS" onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');">
+                                <img src="https://cortes-design.vercel.app/cases/llamas/llamas_after.png" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Después 4 LLAMAS" onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');">
                                 <div class="absolute inset-0 flex flex-col justify-between p-8 bg-slate-300/90 hidden text-slate-700">
                                     <span class="text-[10px] montserrat-black-caps text-slate-500 tracking-wider">DESPUÉS / AFTER</span>
-                                    <div class="text-center font-serif italic text-slate-600 text-lg">Rediseño unificado 4 Llamas</div>
+                                    <div class="text-center font-serif italic text-slate-600 text-lg">Rediseño 4 Llamas</div>
                                 </div>
                             </div>
                         </div>
@@ -971,7 +977,7 @@
                             <!-- Columna Izquierda: Dos Cuadradas Apiladas (02_4llamas_Empaques.png y 03_4llamas_cups.png) -->
                             <div class="flex flex-col gap-8">
                                 <div class="bg-slate-300 aspect-square rounded-sm overflow-hidden border border-black/5 relative group hover:bg-slate-400/50 transition-colors">
-                                    <img src="https://cortes-design.vercel.app/cases/4llamas/02_4llamas_Empaques.png" class="w-full h-full object-cover" alt="4 Llamas Packaging" onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');">
+                                    <img src="https://cortes-design.vercel.app/cases/llamas/02_llamas_empaques.png" class="w-full h-full object-cover" alt="4 Llamas Packaging" onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');">
                                     <div class="absolute inset-0 flex flex-col justify-between p-8 bg-slate-300/90 hidden text-slate-700">
                                         <span class="text-[10px] montserrat-black-caps text-slate-500 tracking-wider" data-case-i18n="mock-label-1">MOCKUP #01</span>
                                         <div class="text-center font-serif italic text-slate-600 text-lg" data-case-i18n="fourllamas-mock1"></div>
@@ -979,7 +985,7 @@
                                     </div>
                                 </div>
                                 <div class="bg-slate-300 aspect-square rounded-sm overflow-hidden border border-black/5 relative group hover:bg-slate-400/50 transition-colors">
-                                    <img src="https://cortes-design.vercel.app/cases/4llamas/03_4llamas_cups.png" class="w-full h-full object-cover" alt="4 Llamas Cups" onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');">
+                                    <img src="https://cortes-design.vercel.app/cases/llamas/03_llamas_cups.png" class="w-full h-full object-cover" alt="4 Llamas Cups" onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');">
                                     <div class="absolute inset-0 flex flex-col justify-between p-8 bg-slate-300/90 hidden text-slate-700">
                                         <span class="text-[10px] montserrat-black-caps text-slate-500 tracking-wider" data-case-i18n="mock-label-2">MOCKUP #02</span>
                                         <div class="text-center font-serif italic text-slate-600 text-lg" data-case-i18n="fourllamas-mock2"></div>
@@ -989,7 +995,7 @@
                             </div>
                             <!-- Columna Derecha: Una Vertical de 1080x1920 (04_4llamas_story.png) -->
                             <div class="bg-slate-300 aspect-[9/16] rounded-sm overflow-hidden border border-black/5 relative group hover:bg-slate-400/50 transition-colors">
-                                <img src="https://cortes-design.vercel.app/cases/4llamas/04_4llamas_story.png" class="w-full h-full object-cover" alt="4 Llamas Story" onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');">
+                                <img src="https://cortes-design.vercel.app/cases/llamas/04_llamas_story.png" class="w-full h-full object-cover" alt="4 Llamas Story" onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');">
                                 <div class="absolute inset-0 flex flex-col justify-between p-8 bg-slate-300/90 hidden text-slate-700">
                                     <span class="text-[10px] montserrat-black-caps text-slate-500 tracking-wider" data-case-i18n="mock-label-3">MOCKUP #03 (VERTICAL)</span>
                                     <div class="text-center font-serif italic text-white text-lg" data-case-i18n="fourllamas-mock3"></div>
@@ -1140,7 +1146,7 @@
                 'simp3l-mock2': 'Señalética comercial integrada con geometría de marca limpia',
                 'simp3l-mock3': 'Identidad verbal y dirección de tono minimalista Danés',
 
-                // QUANTUM MOTORS
+                // QUANTUM MOTORS (TRADUCCIONES EXACTAS SEGÚN FOTO)
                 'quantum-challenge': 'En octubre de 2018 un equipo de emprendedores se preparaba para lanzar al mercado la <strong class="font-bold text-slate-900"> primera marca de automóviles eléctricos ensamblados en Bolivia</strong>, confiando en el diseño como herramienta para construir su identidad desde el inicio.<br><br>El desafío consistía en proyectar una marca capaz de comunicar de manera clara y consistente sus atributos differentials en un contexto donde la movilidad eléctrica aún no estaba completamente instalada en el imaginario local.',
                 'quantum-system': 'El trabajo se abordó desde la definición integral de la marca, comenzando por el naming hasta la construcción de su lenguaje visual, buscando traducir lo técnico en una propuesta accesible, reconocible y con carácter propio. La pieza clave fue usar el enfoque <strong class="font-bold text-slate-900">"small (and smart) is beautiful"</strong>.',
                 'quantum-loc': 'Origen en Bolivia, alcance regional Paraguay, México, El Salvador & Perú',
@@ -1151,7 +1157,7 @@
                 'quantum-mock2': 'Señalética limpia y minimalista para estaciones de carga y showrooms de venta',
                 'quantum-mock3': 'Dirección tipográfica, especificaciones técnicas y hoja comercial de marca',
 
-                // PROEZA FINANCIERA
+                // PROEZA FINANCIERA (NUEVO CASO SEGÚN DETALLE DE IMAGEN DE REFERENCIA)
                 'proeza-challenge': 'El año 2022 la financiera PROEZA en función a expandir su alcance a nivel nacional y relanzar la marca tomaron contacto conmigo para cumplir este objetivo.<br><br>El desafío constaba en construir una identidad que represente el quehacer de la empresa —<strong class="font-bold text-slate-900">ofrecer microcréditos a pequeños empresarios y comerciantes</strong>—. Para cumplir con ello se debía conocer el punto de vista de estos clientes. En función a ello se realizaron encuestas tanto al cliente interno como al externo sobre los valores relacionados a la marca y su representación visual en el identificador.',
                 'proeza-system': 'Al concluir el proceso se obtuvo una marca y estrategia hecha a medida a insights de estos clientes que necesitaban sentirse valorados y que eran dignos de apoyo, <strong class="font-bold text-slate-900">dignos de que se le dé crédito a sus sueños</strong>.',
                 'proeza-loc': 'Origen Cochabamba, con alcance nacional',
@@ -1162,7 +1168,7 @@
                 'proeza-mock2': 'Plantillas estructuradas de identidad verbal y voz para canales y redes sociales',
                 'proeza-mock3': 'Testigos reales de testeo de usabilidad, insights y credos de marca con usuarios',
 
-                // 4 LLAMAS (NUEVO CASO)
+                // 4 LLAMAS
                 'fourllamas-challenge': 'Los emprendedores de 4 Llamas buscaron rediseñar su marca para potenciarse en el mercado nacional e internacional, con el objetivo de que su identidad refleje la alta calidad y el cuidado a detalle del proceso.',
                 'fourllamas-system': 'La inspiración del concepto nace de la clásica leyenda del descubrimiento del café tras observar el baile de 4 cabras, reinterpretada localmente como el redescubrimiento al ver bailar a 4 llamas en los Andes. Fue un gusto trabajar de forma colaborativa con Xavier Sarabia y con el equipo de 4 Llamas para lograr una marca que hoy en día es altamente significativa en el mundo del café de especialidad.',
                 'fourllamas-loc': 'La Paz - Bolivia, con presencia internacional.',
@@ -1427,13 +1433,11 @@
                 if (lang === 'en') {
                     fixedWordContainer.classList.replace('order-1', 'order-2');
                     viewport.classList.replace('order-2', 'order-1');
-                    fixedWordContainer.style.paddingLeft = '0.02em';
-                    fixedWordContainer.style.paddingRight = '0';
+                    viewport.classList.add('lang-en');
                 } else {
                     fixedWordContainer.classList.replace('order-2', 'order-1');
                     viewport.classList.replace('order-1', 'order-2');
-                    fixedWordContainer.style.paddingLeft = '0';
-                    fixedWordContainer.style.paddingRight = '0.11em';
+                    viewport.classList.remove('lang-en');
                 }
             }
 

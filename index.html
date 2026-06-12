@@ -345,6 +345,39 @@
                         <span class="project-phrase" data-i18n="case-phrase-simp3l"></span>
                     </div>
                 </div>
+
+                <!-- Caso 4: SURI -->
+                <div class="project-card" onclick="openCase('suri')">
+                    <div class="case-image-container">
+                        <img src="https://via.placeholder.com/600/1e293b/ffffff?text=SURI" onerror="this.style.backgroundColor='#1e293b'" alt="SURI">
+                    </div>
+                    <div class="flex flex-col gap-y-1">
+                        <h3 class="project-name" data-i18n="case-name-suri"></h3>
+                        <span class="project-phrase" data-i18n="case-phrase-suri"></span>
+                    </div>
+                </div>
+
+                <!-- Caso 5: AMALAYA -->
+                <div class="project-card" onclick="openCase('amalaya')">
+                    <div class="case-image-container">
+                        <img src="https://via.placeholder.com/600/800020/ffffff?text=AMALAYA" onerror="this.style.backgroundColor='#800020'" alt="AMALAYA">
+                    </div>
+                    <div class="flex flex-col gap-y-1">
+                        <h3 class="project-name" data-i18n="case-name-amalaya"></h3>
+                        <span class="project-phrase" data-i18n="case-phrase-amalaya"></span>
+                    </div>
+                </div>
+
+                <!-- Caso 6: QUANTUM MOTORS -->
+                <div class="project-card" onclick="openCase('quantum')">
+                    <div class="case-image-container">
+                        <img src="https://cortes-design.vercel.app/cases/quantum/00_quan_cover.png" alt="Quantum Motors" onerror="this.src='https://via.placeholder.com/600/334155/ffffff?text=QUANTUM'">
+                    </div>
+                    <div class="flex flex-col gap-y-1">
+                        <h3 class="project-name" data-i18n="case-name-quantum"></h3>
+                        <span class="project-phrase" data-i18n="case-phrase-quantum"></span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -410,7 +443,6 @@
             
             <!-- WIST'UPIKU -->
             <div id="case-wistupiku" class="case-detail-container hidden">
-                <!-- Hero Image (Proporción 16:9 en móvil para mostrar los 4/6 centrales de la imagen de 1920x720, y 1920x720 en escritorio) -->
                 <div class="w-full bg-slate-300 relative overflow-hidden flex items-center justify-center border-b border-black/5 aspect-[16/9] md:aspect-[1920/720]">
                     <img src="https://cortes-design.vercel.app/cases/wistupiku/01_wp_hero.png" class="absolute inset-0 w-full h-full object-cover object-center" onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');" alt="Wist'upiku Hero">
                     <div class="absolute inset-0 flex flex-col justify-between p-12 bg-slate-300/90 hidden text-slate-700">
@@ -419,11 +451,9 @@
                             <i class="fa-solid fa-image text-4xl mb-4 text-slate-400"></i>
                             <h4 class="font-serif italic text-2xl">Wist'upiku &mdash; Identidad de marca y expresión cultural</h4>
                         </div>
-                        <span class="text-[10px] font-mono tracking-widest">PROPORCIÓN RECOMENDADA: 8:3 (1920x720)</span>
                     </div>
                 </div>
 
-                <!-- Detalles y Rejilla de Contenido -->
                 <div class="max-w-7xl mx-auto px-10 md:px-16 lg:px-24 py-24">
                     <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
                         <div class="lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
@@ -461,111 +491,55 @@
                         </div>
                     </div>
 
-                    <!-- SECCIÓN: EVOLUCIÓN ANTES Y DESPUÉS (ETIQUETAS GRISES SIN FONDO, MANTENIENDO PROPORCIÓN CUADRADA) -->
                     <div class="mt-24 pt-16 border-t border-black/10">
                         <h3 class="text-xs montserrat-black-caps text-slate-400 tracking-[0.3em] uppercase mb-12" data-case-i18n="before-after-title">Evolución: Antes y Después</h3>
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-0 rounded-sm overflow-hidden border border-black/5 shadow-md relative">
-                            <!-- Antes (Before) -->
                             <div class="relative group overflow-hidden bg-white aspect-square border-b md:border-b-0 md:border-r border-black/5">
-                                <div class="absolute top-4 left-4 z-20 text-slate-500 text-[10px] md:text-xs font-bold uppercase montserrat-caps tracking-widest pointer-events-none" data-case-i18n="label-before">
-                                    Antes
-                                </div>
-                                <img src="https://cortes-design.vercel.app/cases/wistupiku/wp_before.png" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" onerror="if(!this.src.endsWith('.png')){this.src=this.src.replace('.jpg','.png');}else{this.style.display='none'; this.nextElementSibling.classList.remove('hidden');}" alt="Antes">
-                                <div class="absolute inset-0 flex flex-col justify-between p-8 bg-slate-300/90 hidden text-slate-700">
-                                    <span class="text-[10px] montserrat-black-caps text-slate-500 tracking-wider">ANTES / BEFORE</span>
-                                    <div class="text-center font-serif italic text-slate-600 text-lg">Wist'upiku Antes</div>
-                                    <span class="text-[11px] font-mono text-slate-500">PROPORCIÓN: ANTES</span>
-                                </div>
+                                <div class="absolute top-4 left-4 z-20 text-slate-500 text-[10px] md:text-xs font-bold uppercase montserrat-caps tracking-widest pointer-events-none" data-case-i18n="label-before">Antes</div>
+                                <img src="https://cortes-design.vercel.app/cases/wistupiku/wp_before.png" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Antes">
                             </div>
-                            <!-- Después (After) -->
                             <div class="relative group overflow-hidden bg-white aspect-square">
-                                <div class="absolute top-4 left-4 z-20 text-slate-500 text-[10px] md:text-xs font-bold uppercase montserrat-caps tracking-widest pointer-events-none" data-case-i18n="label-after">
-                                    Después
-                                </div>
-                                <img src="https://cortes-design.vercel.app/cases/wistupiku/wp_after.png" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" onerror="if(!this.src.endsWith('.png')){this.src=this.src.replace('.jpg','.png');}else{this.style.display='none'; this.nextElementSibling.classList.remove('hidden');}" alt="Después">
-                                <div class="absolute inset-0 flex flex-col justify-between p-8 bg-slate-300/90 hidden text-slate-700">
-                                    <span class="text-[10px] montserrat-black-caps text-slate-500 tracking-wider">DESPUÉS / AFTER</span>
-                                    <div class="text-center font-serif italic text-slate-600 text-lg">Wist'upiku Después</div>
-                                    <span class="text-[11px] font-mono text-slate-500">PROPORCIÓN: DESPUÉS</span>
-                                </div>
+                                <div class="absolute top-4 left-4 z-20 text-slate-500 text-[10px] md:text-xs font-bold uppercase montserrat-caps tracking-widest pointer-events-none" data-case-i18n="label-after">Después</div>
+                                <img src="https://cortes-design.vercel.app/cases/wistupiku/wp_after.png" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Después">
                             </div>
                         </div>
                     </div>
 
-                    <!-- Primera Tanda Visual (Normal Grid) -->
                     <div class="mt-24 pt-16 border-t border-black/10">
-                        <h3 class="text-xs montserrat-black-caps text-slate-400 tracking-[0.3em] uppercase mb-12" data-case-i18n="gallery-title">Fachada de muestra & Tono de voz</h3>
+                        <h3 class="text-xs montserrat-black-caps text-slate-400 tracking-[0.3em] uppercase mb-12" data-case-i18n="gallery-title">Despliegue Visual & Embalajes</h3>
                         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                            <!-- Columna Izquierda: Dos Cuadradas Apiladas (02 y 03) -->
                             <div class="flex flex-col gap-8">
                                 <div class="bg-slate-300 aspect-square rounded-sm overflow-hidden border border-black/5 relative group hover:bg-slate-400/50 transition-colors">
-                                    <img src="https://cortes-design.vercel.app/cases/wistupiku/02_wp_bocetos_personaje.png" class="w-full h-full object-cover" onerror="if(!this.src.endsWith('.png')){this.src=this.src.replace('.jpg','.png');}else{this.style.display='none'; this.nextElementSibling.classList.remove('hidden');}" alt="Bocetos de personaje">
-                                    <div class="absolute inset-0 flex flex-col justify-between p-8 bg-slate-300/90 hidden text-slate-700">
-                                        <span class="text-[10px] montserrat-black-caps text-slate-500 tracking-wider" data-case-i18n="mock-label-1">MOCKUP #01</span>
-                                        <div class="text-center font-serif italic text-slate-600 text-lg" data-case-i18n="wistupiku-mock1">Bocetos conceptuales del personaje</div>
-                                        <span class="text-[11px] font-mono text-slate-500" data-case-i18n="mock-format-square">PROPORCIÓN: 1:1 CUADRADA</span>
-                                    </div>
+                                    <img src="https://cortes-design.vercel.app/cases/wistupiku/02_wp_bocetos_personaje.png" class="w-full h-full object-cover" alt="Bocetos de personaje">
                                 </div>
                                 <div class="bg-slate-300 aspect-square rounded-sm overflow-hidden border border-black/5 relative group hover:bg-slate-400/50 transition-colors">
-                                    <img src="https://cortes-design.vercel.app/cases/wistupiku/03_wp_personaje.png" class="w-full h-full object-cover" onerror="if(!this.src.endsWith('.png')){this.src=this.src.replace('.jpg','.png');}else{this.style.display='none'; this.nextElementSibling.classList.remove('hidden');}" alt="Empaque Wist'upiku">
-                                    <div class="absolute inset-0 flex flex-col justify-between p-8 bg-slate-300/90 hidden text-slate-700">
-                                        <span class="text-[10px] montserrat-black-caps text-slate-500 tracking-wider" data-case-i18n="mock-label-2">MOCKUP #02</span>
-                                        <div class="text-center font-serif italic text-slate-600 text-lg" data-case-i18n="wistupiku-mock2">Diseño y desarrollo de empaques</div>
-                                        <span class="text-[11px] font-mono text-slate-500" data-case-i18n="mock-format-square">PROPORCIÓN: 1:1 CUADRADA</span>
-                                    </div>
+                                    <img src="https://cortes-design.vercel.app/cases/wistupiku/03_wp_personaje.png" class="w-full h-full object-cover" alt="Empaque Wist'upiku">
                                 </div>
                             </div>
-                            <!-- Columna Derecha: Una Vertical de 1080x1920 (aspect 9/16) (04) -->
                             <div class="bg-slate-300 aspect-[9/16] rounded-sm overflow-hidden border border-black/5 relative group hover:bg-slate-400/50 transition-colors">
-                                <img src="https://cortes-design.vercel.app/cases/wistupiku/04_wp_packaging.png" class="w-full h-full object-cover" onerror="if(!this.src.endsWith('.png')){this.src=this.src.replace('.jpg','.png');}else{this.style.display='none'; this.nextElementSibling.classList.remove('hidden');}" alt="Personaje finalizado">
-                                <div class="absolute inset-0 flex flex-col justify-between p-8 bg-slate-300/90 hidden text-slate-700">
-                                    <span class="text-[10px] montserrat-black-caps text-slate-500 tracking-wider" data-case-i18n="mock-label-3">MOCKUP #03 (VERTICAL)</span>
-                                    <div class="text-center font-serif italic text-slate-600 text-lg" data-case-i18n="wistupiku-mock3">Ilustración final del personaje</div>
-                                    <span class="text-[11px] font-mono text-slate-500" data-case-i18n="mock-format-vertical">PROPORCIÓN: 9:16 (1080x1920)</span>
-                                </div>
+                                <img src="https://cortes-design.vercel.app/cases/wistupiku/04_wp_packaging.png" class="w-full h-full object-cover" alt="Personaje finalizado">
                             </div>
                         </div>
                     </div>
 
-                    <!-- Explicación del impacto en TikTok -->
                     <div class="mt-24 pt-16 border-t border-black/10">
                         <div class="max-w-3xl">
-                            <h3 class="text-lg md:text-xl font-black uppercase font-montserrat text-slate-900 tracking-[0.1em] mb-4" data-case-i18n="wistupiku-tiktok-heading">Impacto en TikTok & Nuevas Plataformas</h3>
-                            <p class="text-lg md:text-xl text-slate-700 font-light leading-relaxed" data-case-i18n="wistupiku-tiktok-text">
-                                El impacto de la marca se consolidó de manera orgánica en plataformas contemporáneas como TikTok, donde la combinación de humor local, orgullo cochabambino y un sistema de identidad sumamente dinámico conectó con una nueva generación de consumidores. El diseño de empaques y la ambientación de los espacios físicos se convirtieron en generadores de contenido espontáneo, amplificando el alcance cultural de Wist'upiku más allá de los soportes tradicionales.
-                            </p>
+                            <h3 class="text-lg md:text-xl font-black uppercase font-montserrat text-slate-900 tracking-[0.1em] mb-4" data-case-i18n="wistupiku-tiktok-heading"></h3>
+                            <p class="text-lg md:text-xl text-slate-700 font-light leading-relaxed" data-case-i18n="wistupiku-tiktok-text"></p>
                         </div>
                     </div>
 
-                    <!-- Segunda Tanda Visual (Mirrored Grid - Espejo) -->
                     <div class="mt-16">
                         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                            <!-- Columna Izquierda: Una Vertical de 1080x1920 (aspect 9/16) (05) -->
                             <div class="bg-slate-300 aspect-[9/16] rounded-sm overflow-hidden border border-black/5 relative group hover:bg-slate-400/50 transition-colors">
-                                <img src="https://cortes-design.vercel.app/cases/wistupiku/05_wp_virales.png" class="w-full h-full object-cover" onerror="if(!this.src.endsWith('.png')){this.src=this.src.replace('.jpg','.png');}else{this.style.display='none'; this.nextElementSibling.classList.remove('hidden');}" alt="Resultados analíticos en TikTok">
-                                <div class="absolute inset-0 flex flex-col justify-between p-8 bg-slate-300/90 hidden text-slate-700">
-                                    <span class="text-[10px] montserrat-black-caps text-slate-500 tracking-wider" data-case-i18n="mock-label-6">MOCKUP #06 (VERTICAL)</span>
-                                    <div class="text-center font-serif italic text-slate-600 text-lg" data-case-i18n="wistupiku-mock6">Métricas y desempeño orgánico de video</div>
-                                    <span class="text-[11px] font-mono text-slate-500" data-case-i18n="mock-format-vertical">PROPORCIÓN: 9:16 (1080x1920)</span>
-                                </div>
+                                <img src="https://cortes-design.vercel.app/cases/wistupiku/05_wp_virales.png" class="w-full h-full object-cover" alt="Resultados analíticos en TikTok">
                             </div>
-                            <!-- Columna Derecha: Dos Cuadradas Apiladas (06 y 07) -->
                             <div class="flex flex-col gap-8">
                                 <div class="bg-slate-300 aspect-square rounded-sm overflow-hidden border border-black/5 relative group hover:bg-slate-400/50 transition-colors">
-                                    <img src="https://cortes-design.vercel.app/cases/wistupiku/06_wp_empanadas_parlantes.png" class="w-full h-full object-cover" onerror="if(!this.src.endsWith('.png')){this.src=this.src.replace('.jpg','.png');}else{this.style.display='none'; this.nextElementSibling.classList.remove('hidden');}" alt="Campañas virales de redes sociales">
-                                    <div class="absolute inset-0 flex flex-col justify-between p-8 bg-slate-300/90 hidden text-slate-700">
-                                        <span class="text-[10px] montserrat-black-caps text-slate-500 tracking-wider" data-case-i18n="mock-label-4">MOCKUP #04</span>
-                                        <div class="text-center font-serif italic text-slate-600 text-lg" data-case-i18n="wistupiku-mock4">Estrategias y plantillas visuales virales</div>
-                                        <span class="text-[11px] font-mono text-slate-500" data-case-i18n="mock-format-square">PROPORCIÓN: 1:1 CUADRADA</span>
-                                    </div>
+                                    <img src="https://cortes-design.vercel.app/cases/wistupiku/06_wp_empanadas_parlantes.png" class="w-full h-full object-cover" alt="Campañas virales de redes sociales">
                                 </div>
                                 <div class="bg-slate-300 aspect-square rounded-sm overflow-hidden border border-black/5 relative group hover:bg-slate-400/50 transition-colors">
-                                    <img src="https://cortes-design.vercel.app/cases/wistupiku/07_wp_resultados_tiktok.png" class="w-full h-full object-cover" onerror="if(!this.src.endsWith('.png')){this.src=this.src.replace('.jpg','.png');}else{this.style.display='none'; this.nextElementSibling.classList.remove('hidden');}" alt="Campaña interactiva Empanadas Parlantes">
-                                    <div class="absolute inset-0 flex flex-col justify-between p-8 bg-slate-300/90 hidden text-slate-700">
-                                        <span class="text-[10px] montserrat-black-caps text-slate-500 tracking-wider" data-case-i18n="mock-label-5">MOCKUP #05</span>
-                                        <div class="text-center font-serif italic text-slate-600 text-lg" data-case-i18n="wistupiku-mock5">Desarrollo y diseño de Empanadas Parlantes</div>
-                                        <span class="text-[11px] font-mono text-slate-500" data-case-i18n="mock-format-square">PROPORCIÓN: 1:1 CUADRADA</span>
-                                    </div>
+                                    <img src="https://cortes-design.vercel.app/cases/wistupiku/07_wp_resultados_tiktok.png" class="w-full h-full object-cover" alt="Campaña interactiva Empanadas Parlantes">
                                 </div>
                             </div>
                         </div>
@@ -575,16 +549,11 @@
 
             <!-- COBOCE COOP -->
             <div id="case-coboce" class="case-detail-container hidden">
-                <!-- Hero Image (Adaptable en Móviles sin Recortes, 1920x720 en Escritorio) -->
                 <div class="w-full bg-slate-300 relative overflow-hidden flex items-center justify-center border-b border-black/5 aspect-[16/9] md:aspect-[1920/720]">
                     <img src="https://cortes-design.vercel.app/cases/coboce/01_cbc_hero.png" class="absolute inset-0 w-full h-full object-cover object-center" onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');" alt="COBOCE Hero">
                     <div class="absolute inset-0 flex flex-col justify-between p-12 bg-slate-300/90 hidden text-slate-700">
                         <span class="text-[10px] montserrat-black-caps tracking-widest text-[#009a82]" data-case-i18n="hero-label">PORTADA PRINCIPAL</span>
-                        <div class="text-center">
-                            <i class="fa-solid fa-image text-4xl mb-4 text-slate-400"></i>
-                            <h4 class="font-serif italic text-2xl">COBOCE &mdash; Arquitectura marcaría e industrial</h4>
-                        </div>
-                        <span class="text-[10px] font-mono tracking-widest">PROPORCIÓN RECOMENDADA: 8:3 (1920x720)</span>
+                        <div class="text-center font-serif italic text-2xl">COBOCE &mdash; Arquitectura marcaría e industrial</div>
                     </div>
                 </div>
 
@@ -622,71 +591,37 @@
                         </div>
                     </div>
 
-                    <!-- SECCIÓN: EVOLUCIÓN ANTES Y DESPUÉS (COBOCE, MANTENIENDO PROPORCIÓN CUADRADA) -->
                     <div class="mt-24 pt-16 border-t border-black/10">
                         <h3 class="text-xs montserrat-black-caps text-slate-400 tracking-[0.3em] uppercase mb-12" data-case-i18n="before-after-title">Evolución: Antes y Después</h3>
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-0 rounded-sm overflow-hidden border border-black/5 shadow-md relative">
-                            <!-- Antes (Before) -->
                             <div class="relative group overflow-hidden bg-white aspect-square border-b md:border-b-0 md:border-r border-black/5">
-                                <div class="absolute top-4 left-4 z-20 text-slate-500 text-[10px] md:text-xs font-bold uppercase montserrat-caps tracking-widest pointer-events-none" data-case-i18n="label-before">
-                                    Antes
-                                </div>
-                                <img src="https://cortes-design.vercel.app/cases/coboce/cbc_before.png" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" onerror="if(!this.src.endsWith('.png')){this.src=this.src.replace('.png','.jpg');}else{this.style.display='none'; this.nextElementSibling.classList.remove('hidden');}" alt="Antes COBOCE">
-                                <div class="absolute inset-0 flex flex-col justify-between p-8 bg-slate-300/90 hidden text-slate-700">
-                                    <span class="text-[10px] montserrat-black-caps text-slate-500 tracking-wider">ANTES / BEFORE</span>
-                                    <div class="text-center font-serif italic text-slate-600 text-lg">Identidad histórica de COBOCE</div>
-                                </div>
+                                <div class="absolute top-4 left-4 z-20 text-slate-500 text-[10px] md:text-xs font-bold uppercase montserrat-caps tracking-widest pointer-events-none" data-case-i18n="label-before">Antes</div>
+                                <img src="https://cortes-design.vercel.app/cases/coboce/cbc_before.png" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Antes COBOCE">
                             </div>
-                            <!-- Después (After) -->
                             <div class="relative group overflow-hidden bg-white aspect-square">
-                                <div class="absolute top-4 left-4 z-20 text-slate-500 text-[10px] md:text-xs font-bold uppercase montserrat-caps tracking-widest pointer-events-none" data-case-i18n="label-after">
-                                    Después
-                                </div>
-                                <img src="https://cortes-design.vercel.app/cases/coboce/cbc_after.png" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" onerror="if(!this.src.endsWith('.png')){this.src=this.src.replace('.png','.jpg');}else{this.style.display='none'; this.nextElementSibling.classList.remove('hidden');}" alt="Después COBOCE">
-                                <div class="absolute inset-0 flex flex-col justify-between p-8 bg-slate-300/90 hidden text-slate-700">
-                                    <span class="text-[10px] montserrat-black-caps text-slate-500 tracking-wider">DESPUÉS / AFTER</span>
-                                    <div class="text-center font-serif italic text-slate-600 text-lg">Sistema de marca unificado</div>
-                                </div>
+                                <div class="absolute top-4 left-4 z-20 text-slate-500 text-[10px] md:text-xs font-bold uppercase montserrat-caps tracking-widest pointer-events-none" data-case-i18n="label-after">Después</div>
+                                <img src="https://cortes-design.vercel.app/cases/coboce/cbc_after.png" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Después COBOCE">
                             </div>
                         </div>
                     </div>
 
-                    <!-- Primera Tanda Visual (Mockups de COBOCE) -->
                     <div class="mt-24 pt-16 border-t border-black/10">
                         <h3 class="text-xs montserrat-black-caps text-slate-400 tracking-[0.3em] uppercase mb-12" data-case-i18n="gallery-title">Despliegue Visual & Embalajes</h3>
                         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                            <!-- Columna Izquierda: Dos Cuadradas Apiladas (02 y 03) -->
                             <div class="flex flex-col gap-8">
                                 <div class="bg-slate-300 aspect-square rounded-sm overflow-hidden border border-black/5 relative group hover:bg-slate-400/50 transition-colors">
-                                    <img src="https://cortes-design.vercel.app/cases/coboce/02_cbc_empaques_redesign.png" class="w-full h-full object-cover" onerror="if(!this.src.endsWith('.png')){this.src=this.src.replace('.png','.jpg');}else{this.style.display='none'; this.nextElementSibling.classList.remove('hidden');}" alt="COBOCE Camión">
-                                    <div class="absolute inset-0 flex flex-col justify-between p-8 bg-slate-300/90 hidden text-slate-700">
-                                        <span class="text-[10px] montserrat-black-caps text-slate-500 tracking-wider" data-case-i18n="mock-label-1">MOCKUP #01</span>
-                                        <div class="text-center font-serif italic text-slate-600 text-lg" data-case-i18n="coboce-mock1"></div>
-                                        <span class="text-[11px] font-mono text-slate-500" data-case-i18n="mock-format-square">PROPORCIÓN: 1:1 CUADRADA</span>
-                                    </div>
+                                    <img src="https://cortes-design.vercel.app/cases/coboce/02_cbc_empaques_redesign.png" class="w-full h-full object-cover" alt="COBOCE Camión">
                                 </div>
                                 <div class="bg-slate-300 aspect-square rounded-sm overflow-hidden border border-black/5 relative group hover:bg-slate-400/50 transition-colors">
-                                    <img src="https://cortes-design.vercel.app/cases/coboce/03_cbc_isotipo_redesign.png" class="w-full h-full object-cover" onerror="if(!this.src.endsWith('.png')){this.src=this.src.replace('.png','.jpg');}else{this.style.display='none'; this.nextElementSibling.classList.remove('hidden');}" alt="COBOCE Uniforme">
-                                    <div class="absolute inset-0 flex flex-col justify-between p-8 bg-slate-300/90 hidden text-slate-700">
-                                        <span class="text-[10px] montserrat-black-caps text-slate-500 tracking-wider" data-case-i18n="mock-label-2">MOCKUP #02</span>
-                                        <div class="text-center font-serif italic text-slate-600 text-lg" data-case-i18n="coboce-mock2"></div>
-                                        <span class="text-[11px] font-mono text-slate-500" data-case-i18n="mock-format-square">PROPORCIÓN: 1:1 CUADRADA</span>
-                                    </div>
+                                    <img src="https://cortes-design.vercel.app/cases/coboce/03_cbc_isotipo_redesign.png" class="w-full h-full object-cover" alt="COBOCE Uniforme">
                                 </div>
                             </div>
-                            <!-- Columna Derecha: Una Vertical de 1080x1920 (04) -->
                             <div class="bg-slate-300 aspect-[9/16] rounded-sm overflow-hidden border border-black/5 relative group hover:bg-slate-400/50 transition-colors">
-                                <img src="https://cortes-design.vercel.app/cases/coboce/04_cbc_personajes-bolivianos.png" class="w-full h-full object-cover" onerror="if(!this.src.endsWith('.png')){this.src=this.src.replace('.png','.jpg');}else{this.style.display='none'; this.nextElementSibling.classList.remove('hidden');}" alt="COBOCE Editorial">
-                                <div class="absolute inset-0 flex flex-col justify-between p-8 bg-slate-300/90 hidden text-slate-700">
-                                    <span class="text-[10px] montserrat-black-caps text-slate-500 tracking-wider" data-case-i18n="mock-label-3">MOCKUP #03 (VERTICAL)</span>
-                                    <div class="text-center font-serif italic text-slate-600 text-lg" data-case-i18n="coboce-mock3"></div>
-                                    <span class="text-[11px] font-mono text-slate-500" data-case-i18n="mock-format-vertical">PROPORCIÓN: 9:16 (1080x1920)</span>
-                                </div>
+                                <img src="https://cortes-design.vercel.app/cases/coboce/04_cbc_personajes-bolivianos.png" class="w-full h-full object-cover" alt="COBOCE Editorial">
                             </div>
                         </div>
                     </div>
 
-                    <!-- Explicación de la expansión industrial -->
                     <div class="mt-24 pt-16 border-t border-black/10">
                         <div class="max-w-3xl">
                             <h3 class="text-lg md:text-xl font-black uppercase font-montserrat text-slate-900 tracking-[0.1em] mb-4" data-case-i18n="coboce-expansion-heading"></h3>
@@ -694,35 +629,17 @@
                         </div>
                     </div>
 
-                    <!-- Segunda Tanda Visual de COBOCE (Mirrored Grid - Espejo) -->
                     <div class="mt-16">
                         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                            <!-- Columna Izquierda: Una Vertical (05_cbc_familia de marcas.png) -->
                             <div class="bg-slate-300 aspect-[9/16] rounded-sm overflow-hidden border border-black/5 relative group hover:bg-slate-400/50 transition-colors">
-                                <img src="https://cortes-design.vercel.app/cases/coboce/05_cbc_familia de marcas.png" class="w-full h-full object-cover" onerror="if(!this.src.endsWith('.png')){this.src=this.src.replace('.png','.jpg');}else{this.style.display='none'; this.nextElementSibling.classList.remove('hidden');}" alt="COBOCE Hormigón">
-                                <div class="absolute inset-0 flex flex-col justify-between p-8 bg-slate-300/90 hidden text-slate-700">
-                                    <span class="text-[10px] montserrat-black-caps text-slate-500 tracking-wider" data-case-i18n="mock-label-6">MOCKUP #04 (VERTICAL)</span>
-                                    <div class="text-center font-serif italic text-slate-600 text-lg" data-case-i18n="coboce-mock4">COBOCE Hormigón - Mixer y Silos</div>
-                                    <span class="text-[11px] font-mono text-slate-500" data-case-i18n="mock-format-vertical">PROPORCIÓN: 9:16 (1080x1920)</span>
-                                </div>
+                                <img src="https://cortes-design.vercel.app/cases/coboce/05_cbc_familia de marcas.png" class="w-full h-full object-cover" alt="COBOCE Hormigón">
                             </div>
-                            <!-- Columna Derecha: Dos Cuadradas (06_cbc_nueva_linea.png y 07_cbc_submarca.png) -->
                             <div class="flex flex-col gap-8">
                                 <div class="bg-slate-300 aspect-square rounded-sm overflow-hidden border border-black/5 relative group hover:bg-slate-400/50 transition-colors">
-                                    <img src="https://cortes-design.vercel.app/cases/coboce/06_cbc_nueva_linea.png" class="w-full h-full object-cover" onerror="if(!this.src.endsWith('.png')){this.src=this.src.replace('.png','.jpg');}else{this.style.display='none'; this.nextElementSibling.classList.remove('hidden');}" alt="COBOCE Mosaicos">
-                                    <div class="absolute inset-0 flex flex-col justify-between p-8 bg-slate-300/90 hidden text-slate-700">
-                                        <span class="text-[10px] montserrat-black-caps text-slate-500 tracking-wider" data-case-i18n="mock-label-4">MOCKUP #05</span>
-                                        <div class="text-center font-serif italic text-slate-600 text-lg" data-case-i18n="coboce-mock5">Diseño de Catálogos de Mosaico</div>
-                                        <span class="text-[11px] font-mono text-slate-500" data-case-i18n="mock-format-square">PROPORCIÓN: 1:1 CUADRADA</span>
-                                    </div>
+                                    <img src="https://cortes-design.vercel.app/cases/coboce/06_cbc_nueva_linea.png" class="w-full h-full object-cover" alt="COBOCE Mosaicos">
                                 </div>
                                 <div class="bg-slate-300 aspect-square rounded-sm overflow-hidden border border-black/5 relative group hover:bg-slate-400/50 transition-colors">
-                                    <img src="https://cortes-design.vercel.app/cases/coboce/07_cbc_submarca.png" class="w-full h-full object-cover" onerror="if(!this.src.endsWith('.png')){this.src=this.src.replace('.png','.jpg');}else{this.style.display='none'; this.nextElementSibling.classList.remove('hidden');}" alt="COBOCE Cerámica Packaging">
-                                    <div class="absolute inset-0 flex flex-col justify-between p-8 bg-slate-300/90 hidden text-slate-700">
-                                        <span class="text-[10px] montserrat-black-caps text-slate-500 tracking-wider" data-case-i18n="mock-label-5">MOCKUP #06</span>
-                                        <div class="text-center font-serif italic text-slate-600 text-lg" data-case-i18n="coboce-mock6">Sistema de empaques COBOCE Cerámica</div>
-                                        <span class="text-[11px] font-mono text-slate-500" data-case-i18n="mock-format-square">PROPORCIÓN: 1:1 CUADRADA</span>
-                                    </div>
+                                    <img src="https://cortes-design.vercel.app/cases/coboce/07_cbc_submarca.png" class="w-full h-full object-cover" alt="COBOCE Cerámica Packaging">
                                 </div>
                             </div>
                         </div>
@@ -732,16 +649,11 @@
 
             <!-- SIMP3L -->
             <div id="case-simp3l" class="case-detail-container hidden">
-                <!-- Hero Image (Adaptable en Móviles sin Recortes, 1920x720 en Escritorio) -->
                 <div class="w-full bg-slate-300 relative overflow-hidden flex items-center justify-center border-b border-black/5 aspect-[16/9] md:aspect-[1920/720]">
                     <img src="https://cortes-design.vercel.app/cases/simp3l/01_s3l_hero.png" class="absolute inset-0 w-full h-full object-cover object-center" onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');" alt="SIMP3L Hero">
                     <div class="absolute inset-0 flex flex-col justify-between p-12 bg-slate-300/90 hidden text-slate-700">
                         <span class="text-[10px] montserrat-black-caps tracking-widest text-[#009a82]" data-case-i18n="hero-label">PORTADA PRINCIPAL</span>
-                        <div class="text-center">
-                            <i class="fa-solid fa-image text-4xl mb-4 text-slate-400"></i>
-                            <h4 class="font-serif italic text-2xl">SIMP3L &mdash; Simplicidad, contraste y diseño asimétrico</h4>
-                        </div>
-                        <span class="text-[10px] font-mono tracking-widest">PROPORCIÓN RECOMENDADA: 8:3 (1920x720)</span>
+                        <div class="text-center font-serif italic text-2xl">SIMP3L &mdash; Simplicidad, contraste y diseño asimétrico</div>
                     </div>
                 </div>
 
@@ -779,35 +691,266 @@
                         </div>
                     </div>
 
-                    <!-- Grilla de Imágenes SIMP3L (Esquema de parilla de mockups del caso) -->
                     <div class="mt-24 pt-16 border-t border-black/10">
                         <h3 class="text-xs montserrat-black-caps text-slate-400 tracking-[0.3em] uppercase mb-12" data-case-i18n="gallery-title">Despliegue Visual & Embalajes</h3>
                         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                            <!-- Columna Izquierda: Dos Cuadradas Apiladas (Facade & Signage) -->
                             <div class="flex flex-col gap-8">
                                 <div class="bg-slate-300 aspect-square rounded-sm overflow-hidden border border-black/5 relative group hover:bg-slate-400/50 transition-colors">
-                                    <img src="https://cortes-design.vercel.app/cases/simp3l/02_s3l_facade.png" class="w-full h-full object-cover" onerror="if(!this.src.endsWith('.png')){this.src=this.src.replace('.png','.jpg');}else{this.style.display='none'; this.nextElementSibling.classList.remove('hidden');}" alt="SIMP3L Facade">
+                                    <img src="https://cortes-design.vercel.app/cases/simp3l/02_s3l_facade.png" class="w-full h-full object-cover" alt="SIMP3L Facade">
+                                </div>
+                                <div class="bg-slate-300 aspect-square rounded-sm overflow-hidden border border-black/5 relative group hover:bg-slate-400/50 transition-colors">
+                                    <img src="https://cortes-design.vercel.app/cases/simp3l/03_s3l_signage.png" class="w-full h-full object-cover" alt="SIMP3L Signage">
+                                </div>
+                            </div>
+                            <div class="bg-slate-300 aspect-[9/16] rounded-sm overflow-hidden border border-black/5 relative group hover:bg-slate-400/50 transition-colors">
+                                <img src="https://cortes-design.vercel.app/cases/simp3l/04_s3l_voice.png" class="w-full h-full object-cover" alt="SIMP3L Brand Voice">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SURI -->
+            <div id="case-suri" class="case-detail-container hidden">
+                <div class="w-full bg-[#1e293b] relative overflow-hidden flex items-center justify-center border-b border-black/5 aspect-[16/9] md:aspect-[1920/720]">
+                    <div class="absolute inset-0 flex flex-col justify-between p-12 bg-slate-900/40 text-white">
+                        <span class="text-[10px] montserrat-black-caps tracking-widest text-[#009a82]" data-case-i18n="hero-label">PORTADA PRINCIPAL</span>
+                        <div class="text-center">
+                            <i class="fa-solid fa-image text-4xl mb-4 text-slate-400"></i>
+                            <h4 class="font-serif italic text-2xl">SURI &mdash; Vestir el viento de los Andes</h4>
+                        </div>
+                        <span class="text-[10px] font-mono tracking-widest">SURI BOUTIQUE LUXURY ALPACA</span>
+                    </div>
+                </div>
+
+                <div class="max-w-7xl mx-auto px-10 md:px-16 lg:px-24 py-24">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+                        <div class="lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+                            <div class="md:col-span-2">
+                                <span class="text-[11px] montserrat-black-caps text-[#009a82] tracking-[0.2em] block mb-2" data-case-i18n="case-label">CASO:</span>
+                                <h2 class="text-4xl md:text-5xl lg:text-6xl font-black uppercase font-montserrat text-slate-900 tracking-tight mb-8">SURI</h2>
+                            </div>
+                            <div class="space-y-6 text-slate-800 font-light text-lg md:text-xl leading-relaxed">
+                                <p data-case-i18n="suri-challenge"></p>
+                            </div>
+                            <div class="space-y-6 text-slate-800 font-light text-lg md:text-xl leading-relaxed">
+                                <p data-case-i18n="suri-system"></p>
+                            </div>
+                        </div>
+                        <div class="lg:col-span-4 border-l-2 border-[#009a82] pl-8 py-2 space-y-8">
+                            <div>
+                                <span class="text-[11px] montserrat-black-caps text-[#009a82] tracking-[0.15em] block mb-2" data-case-i18n="label-location">UBICACIÓN:</span>
+                                <p class="text-lg font-serif italic text-slate-800 leading-snug" data-case-i18n="suri-loc"></p>
+                            </div>
+                            <div>
+                                <span class="text-[11px] montserrat-black-caps text-[#009a82] tracking-[0.15em] block mb-2" data-case-i18n="label-strategy">ESTRATEGIA:</span>
+                                <p class="text-lg font-serif italic text-slate-800 leading-snug" data-case-i18n="suri-strat"></p>
+                            </div>
+                            <div>
+                                <span class="text-[11px] montserrat-black-caps text-[#009a82] tracking-[0.15em] block mb-2" data-case-i18n="label-results">RESULTADOS:</span>
+                                <p class="text-lg font-serif italic text-slate-800 leading-snug" data-case-i18n="suri-res"></p>
+                            </div>
+                            <div>
+                                <span class="text-[11px] montserrat-black-caps text-[#009a82] tracking-[0.15em] block mb-2" data-case-i18n="label-team">EQUIPO:</span>
+                                <p class="text-lg font-serif italic text-slate-800 leading-snug" data-case-i18n="suri-team"></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-24 pt-16 border-t border-black/10">
+                        <h3 class="text-xs montserrat-black-caps text-slate-400 tracking-[0.3em] uppercase mb-12" data-case-i18n="before-after-title">Evolución: Antes y Después</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-0 rounded-sm overflow-hidden border border-black/5 shadow-md relative">
+                            <div class="relative group overflow-hidden bg-white aspect-square border-b md:border-b-0 md:border-r border-black/5 flex items-center justify-center">
+                                <div class="absolute top-4 left-4 z-20 text-slate-500 text-[10px] md:text-xs font-bold uppercase montserrat-caps tracking-widest pointer-events-none" data-case-i18n="label-before">Antes</div>
+                                <span class="text-xl font-serif text-slate-300 italic">Identidad Artesanal Genérica</span>
+                            </div>
+                            <div class="relative group overflow-hidden bg-slate-900 aspect-square flex items-center justify-center">
+                                <div class="absolute top-4 left-4 z-20 text-slate-500 text-[10px] md:text-xs font-bold uppercase montserrat-caps tracking-widest pointer-events-none" data-case-i18n="label-after">Después</div>
+                                <span class="text-xl font-serif text-white tracking-widest uppercase">SURI LUXURY SYSTEM</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-24 pt-16 border-t border-black/10">
+                        <h3 class="text-xs montserrat-black-caps text-slate-400 tracking-[0.3em] uppercase mb-12" data-case-i18n="gallery-title">Despliegue Visual & Embalajes</h3>
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                            <div class="flex flex-col gap-8">
+                                <div class="bg-slate-800 aspect-square rounded-sm overflow-hidden border border-black/5 relative group hover:bg-slate-700 transition-colors flex items-center justify-center p-8">
+                                    <span class="text-[10px] absolute top-4 left-4 montserrat-black-caps text-slate-400 tracking-wider" data-case-i18n="mock-label-1">MOCKUP #01</span>
+                                    <div class="text-center font-serif italic text-white text-lg" data-case-i18n="suri-mock1"></div>
+                                </div>
+                                <div class="bg-slate-800 aspect-square rounded-sm overflow-hidden border border-black/5 relative group hover:bg-slate-700 transition-colors flex items-center justify-center p-8">
+                                    <span class="text-[10px] absolute top-4 left-4 montserrat-black-caps text-slate-400 tracking-wider" data-case-i18n="mock-label-2">MOCKUP #02</span>
+                                    <div class="text-center font-serif italic text-white text-lg" data-case-i18n="suri-mock2"></div>
+                                </div>
+                            </div>
+                            <div class="bg-slate-900 aspect-[9/16] rounded-sm overflow-hidden border border-black/5 relative group hover:bg-slate-800 transition-colors flex flex-col justify-between p-8">
+                                <span class="text-[10px] montserrat-black-caps text-slate-400 tracking-wider" data-case-i18n="mock-label-3">MOCKUP #03 (VERTICAL)</span>
+                                <div class="text-center font-serif italic text-white text-lg" data-case-i18n="suri-mock3"></div>
+                                <span class="text-[11px] font-mono text-slate-500" data-case-i18n="mock-format-vertical">PROPORCIÓN: 9:16 (1080x1920)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- AMALAYA -->
+            <div id="case-amalaya" class="case-detail-container hidden">
+                <div class="w-full bg-[#800020] relative overflow-hidden flex items-center justify-center border-b border-black/5 aspect-[16/9] md:aspect-[1920/720]">
+                    <div class="absolute inset-0 flex flex-col justify-between p-12 bg-black/40 text-white">
+                        <span class="text-[10px] montserrat-black-caps tracking-widest text-white" data-case-i18n="hero-label">PORTADA PRINCIPAL</span>
+                        <div class="text-center">
+                            <i class="fa-solid fa-wine-glass text-4xl mb-4 text-white"></i>
+                            <h4 class="font-serif italic text-2xl">AMALAYA &mdash; Vino biodinámico de altura extrema</h4>
+                        </div>
+                        <span class="text-[10px] font-mono tracking-widest">AMALAYA VINEYARDS</span>
+                    </div>
+                </div>
+
+                <div class="max-w-7xl mx-auto px-10 md:px-16 lg:px-24 py-24">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+                        <div class="lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+                            <div class="md:col-span-2">
+                                <span class="text-[11px] montserrat-black-caps text-[#009a82] tracking-[0.2em] block mb-2" data-case-i18n="case-label">CASO:</span>
+                                <h2 class="text-4xl md:text-5xl lg:text-6xl font-black uppercase font-montserrat text-slate-900 tracking-tight mb-8">AMALAYA</h2>
+                            </div>
+                            <div class="space-y-6 text-slate-800 font-light text-lg md:text-xl leading-relaxed">
+                                <p data-case-i18n="amalaya-challenge"></p>
+                            </div>
+                            <div class="space-y-6 text-slate-800 font-light text-lg md:text-xl leading-relaxed">
+                                <p data-case-i18n="amalaya-system"></p>
+                            </div>
+                        </div>
+                        <div class="lg:col-span-4 border-l-2 border-[#009a82] pl-8 py-2 space-y-8">
+                            <div>
+                                <span class="text-[11px] montserrat-black-caps text-[#009a82] tracking-[0.15em] block mb-2" data-case-i18n="label-location">UBICACIÓN:</span>
+                                <p class="text-lg font-serif italic text-slate-800 leading-snug" data-case-i18n="amalaya-loc"></p>
+                            </div>
+                            <div>
+                                <span class="text-[11px] montserrat-black-caps text-[#009a82] tracking-[0.15em] block mb-2" data-case-i18n="label-strategy">ESTRATEGIA:</span>
+                                <p class="text-lg font-serif italic text-slate-800 leading-snug" data-case-i18n="amalaya-strat"></p>
+                            </div>
+                            <div>
+                                <span class="text-[11px] montserrat-black-caps text-[#009a82] tracking-[0.15em] block mb-2" data-case-i18n="label-results">RESULTADOS:</span>
+                                <p class="text-lg font-serif italic text-slate-800 leading-snug" data-case-i18n="amalaya-res"></p>
+                            </div>
+                            <div>
+                                <span class="text-[11px] montserrat-black-caps text-[#009a82] tracking-[0.15em] block mb-2" data-case-i18n="label-team">EQUIPO:</span>
+                                <p class="text-lg font-serif italic text-slate-800 leading-snug" data-case-i18n="amalaya-team"></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-24 pt-16 border-t border-black/10">
+                        <h3 class="text-xs montserrat-black-caps text-slate-400 tracking-[0.3em] uppercase mb-12" data-case-i18n="before-after-title">Evolución: Antes y Después</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-0 rounded-sm overflow-hidden border border-black/5 shadow-md relative">
+                            <div class="relative group overflow-hidden bg-white aspect-square border-b md:border-b-0 md:border-r border-black/5 flex items-center justify-center">
+                                <div class="absolute top-4 left-4 z-20 text-slate-500 text-[10px] md:text-xs font-bold uppercase montserrat-caps tracking-widest pointer-events-none" data-case-i18n="label-before">Antes</div>
+                                <span class="text-xl font-serif text-slate-300 italic">Etiquetado Comercial Genérico</span>
+                            </div>
+                            <div class="relative group overflow-hidden bg-[#2a0813] aspect-square flex items-center justify-center">
+                                <div class="absolute top-4 left-4 z-20 text-slate-500 text-[10px] md:text-xs font-bold uppercase montserrat-caps tracking-widest pointer-events-none" data-case-i18n="label-after">Después</div>
+                                <span class="text-xl font-serif text-white tracking-widest uppercase">AMALAYA RESERVA BIODINÁMICA</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-24 pt-16 border-t border-black/10">
+                        <h3 class="text-xs montserrat-black-caps text-slate-400 tracking-[0.3em] uppercase mb-12" data-case-i18n="gallery-title">Despliegue Visual & Embalajes</h3>
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                            <div class="flex flex-col gap-8">
+                                <div class="bg-[#2a0813] aspect-square rounded-sm overflow-hidden border border-black/5 relative group hover:bg-[#3d0b1b] transition-colors flex items-center justify-center p-8">
+                                    <span class="text-[10px] absolute top-4 left-4 montserrat-black-caps text-slate-400 tracking-wider" data-case-i18n="mock-label-1">MOCKUP #01</span>
+                                    <div class="text-center font-serif italic text-white text-lg" data-case-i18n="amalaya-mock1"></div>
+                                </div>
+                                <div class="bg-[#2a0813] aspect-square rounded-sm overflow-hidden border border-black/5 relative group hover:bg-[#3d0b1b] transition-colors flex items-center justify-center p-8">
+                                    <span class="text-[10px] absolute top-4 left-4 montserrat-black-caps text-slate-400 tracking-wider" data-case-i18n="mock-label-2">MOCKUP #02</span>
+                                    <div class="text-center font-serif italic text-white text-lg" data-case-i18n="amalaya-mock2"></div>
+                                </div>
+                            </div>
+                            <div class="bg-[#1e020c] aspect-[9/16] rounded-sm overflow-hidden border border-black/5 relative group hover:bg-[#2e0413] transition-colors flex flex-col justify-between p-8">
+                                <span class="text-[10px] montserrat-black-caps text-slate-400 tracking-wider" data-case-i18n="mock-label-3">MOCKUP #03 (VERTICAL)</span>
+                                <div class="text-center font-serif italic text-white text-lg" data-case-i18n="amalaya-mock3"></div>
+                                <span class="text-[11px] font-mono text-slate-500" data-case-i18n="mock-format-vertical">PROPORCIÓN: 9:16 (1080x1920)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- QUANTUM MOTORS -->
+            <div id="case-quantum" class="case-detail-container hidden">
+                <div class="w-full bg-[#1e293b] relative overflow-hidden flex items-center justify-center border-b border-black/5 aspect-[16/9] md:aspect-[1920/720]">
+                    <img src="https://cortes-design.vercel.app/cases/quantum/01_quan_hero.png" class="absolute inset-0 w-full h-full object-cover object-center" onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');" alt="Quantum Motors Hero">
+                    <div class="absolute inset-0 flex flex-col justify-between p-12 bg-black/40 text-white hidden">
+                        <span class="text-[10px] montserrat-black-caps tracking-widest text-white" data-case-i18n="hero-label">PORTADA PRINCIPAL</span>
+                        <div class="text-center font-serif italic text-2xl">Quantum Motors &mdash; Movilidad Eléctrica Andina</div>
+                    </div>
+                </div>
+
+                <div class="max-w-7xl mx-auto px-10 md:px-16 lg:px-24 py-24">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+                        <div class="lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+                            <div class="md:col-span-2">
+                                <span class="text-[11px] montserrat-black-caps text-[#009a82] tracking-[0.2em] block mb-2" data-case-i18n="case-label">CASO:</span>
+                                <h2 class="text-4xl md:text-5xl lg:text-6xl font-black uppercase font-montserrat text-slate-900 tracking-tight mb-8">QUANTUM MOTORS</h2>
+                            </div>
+                            <div class="space-y-6 text-slate-800 font-light text-lg md:text-xl leading-relaxed">
+                                <p data-case-i18n="quantum-challenge"></p>
+                            </div>
+                            <div class="space-y-6 text-slate-800 font-light text-lg md:text-xl leading-relaxed">
+                                <p data-case-i18n="quantum-system"></p>
+                            </div>
+                        </div>
+                        <div class="lg:col-span-4 border-l-2 border-[#009a82] pl-8 py-2 space-y-8">
+                            <div>
+                                <span class="text-[11px] montserrat-black-caps text-[#009a82] tracking-[0.15em] block mb-2" data-case-i18n="label-location">UBICACIÓN:</span>
+                                <p class="text-lg font-serif italic text-slate-800 leading-snug" data-case-i18n="quantum-loc"></p>
+                            </div>
+                            <div>
+                                <span class="text-[11px] montserrat-black-caps text-[#009a82] tracking-[0.15em] block mb-2" data-case-i18n="label-strategy">ESTRATEGIA:</span>
+                                <p class="text-lg font-serif italic text-slate-800 leading-snug" data-case-i18n="quantum-strat"></p>
+                            </div>
+                            <div>
+                                <span class="text-[11px] montserrat-black-caps text-[#009a82] tracking-[0.15em] block mb-2" data-case-i18n="label-results">RESULTADOS:</span>
+                                <p class="text-lg font-serif italic text-slate-800 leading-snug" data-case-i18n="quantum-res"></p>
+                            </div>
+                            <div>
+                                <span class="text-[11px] montserrat-black-caps text-[#009a82] tracking-[0.15em] block mb-2" data-case-i18n="label-team">EQUIPO:</span>
+                                <p class="text-lg font-serif italic text-slate-800 leading-snug" data-case-i18n="quantum-team"></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Parrilla de Imágenes de Quantum compatible con Lightbox (Sin Antes/Después y con título corregido) -->
+                    <div class="mt-24 pt-16 border-t border-black/10">
+                        <h3 class="text-xs montserrat-black-caps text-slate-400 tracking-[0.3em] uppercase mb-12" data-case-i18n="quantum-gallery-title">Despliegue Visual</h3>
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                            <!-- Columna Izquierda: Dos Cuadradas Apiladas (02_quan_lpz.png y 03_quan_sign.png) -->
+                            <div class="flex flex-col gap-8">
+                                <div class="bg-slate-300 aspect-square rounded-sm overflow-hidden border border-black/5 relative group hover:bg-slate-400/50 transition-colors">
+                                    <img src="https://cortes-design.vercel.app/cases/quantum/02_quan_lpz.png" class="w-full h-full object-cover" alt="Quantum Motors La Paz" onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');">
                                     <div class="absolute inset-0 flex flex-col justify-between p-8 bg-slate-300/90 hidden text-slate-700">
                                         <span class="text-[10px] montserrat-black-caps text-slate-500 tracking-wider" data-case-i18n="mock-label-1">MOCKUP #01</span>
-                                        <div class="text-center font-serif italic text-slate-600 text-lg" data-case-i18n="simp3l-mock1"></div>
+                                        <div class="text-center font-serif italic text-slate-600 text-lg" data-case-i18n="quantum-mock1"></div>
                                         <span class="text-[11px] font-mono text-slate-500" data-case-i18n="mock-format-square">PROPORCIÓN: 1:1 CUADRADA</span>
                                     </div>
                                 </div>
                                 <div class="bg-slate-300 aspect-square rounded-sm overflow-hidden border border-black/5 relative group hover:bg-slate-400/50 transition-colors">
-                                    <img src="https://cortes-design.vercel.app/cases/simp3l/03_s3l_signage.png" class="w-full h-full object-cover" onerror="if(!this.src.endsWith('.png')){this.src=this.src.replace('.png','.jpg');}else{this.style.display='none'; this.nextElementSibling.classList.remove('hidden');}" alt="SIMP3L Signage">
+                                    <img src="https://cortes-design.vercel.app/cases/quantum/03_quan_sign.png" class="w-full h-full object-cover" alt="Quantum Motors Signage" onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');">
                                     <div class="absolute inset-0 flex flex-col justify-between p-8 bg-slate-300/90 hidden text-slate-700">
                                         <span class="text-[10px] montserrat-black-caps text-slate-500 tracking-wider" data-case-i18n="mock-label-2">MOCKUP #02</span>
-                                        <div class="text-center font-serif italic text-slate-600 text-lg" data-case-i18n="simp3l-mock2"></div>
+                                        <div class="text-center font-serif italic text-slate-600 text-lg" data-case-i18n="quantum-mock2"></div>
                                         <span class="text-[11px] font-mono text-slate-500" data-case-i18n="mock-format-square">PROPORCIÓN: 1:1 CUADRADA</span>
                                     </div>
                                 </div>
                             </div>
-                            <!-- Columna Derecha: Una Vertical de 1080x1920 (Voice / Tono de Marca) -->
+                            <!-- Columna Derecha: Una Vertical de 1080x1920 (04_quan_spec.png) -->
                             <div class="bg-slate-300 aspect-[9/16] rounded-sm overflow-hidden border border-black/5 relative group hover:bg-slate-400/50 transition-colors">
-                                <img src="https://cortes-design.vercel.app/cases/simp3l/04_s3l_voice.png" class="w-full h-full object-cover" onerror="if(!this.src.endsWith('.png')){this.src=this.src.replace('.png','.jpg');}else{this.style.display='none'; this.nextElementSibling.classList.remove('hidden');}" alt="SIMP3L Brand Voice">
+                                <img src="https://cortes-design.vercel.app/cases/quantum/04_quan_spec.png" class="w-full h-full object-cover" alt="Quantum Motors Spec" onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');">
                                 <div class="absolute inset-0 flex flex-col justify-between p-8 bg-slate-300/90 hidden text-slate-700">
                                     <span class="text-[10px] montserrat-black-caps text-slate-500 tracking-wider" data-case-i18n="mock-label-3">MOCKUP #03 (VERTICAL)</span>
-                                    <div class="text-center font-serif italic text-slate-600 text-lg" data-case-i18n="simp3l-mock3"></div>
+                                    <div class="text-center font-serif italic text-white text-lg" data-case-i18n="quantum-mock3"></div>
                                     <span class="text-[11px] font-mono text-slate-500" data-case-i18n="mock-format-vertical">PROPORCIÓN: 9:16 (1080x1920)</span>
                                 </div>
                             </div>
@@ -877,6 +1020,12 @@
                 'case-phrase-wistupiku': 'del rescate cultural, su divertido',
                 'case-name-simp3l': 'SIMP3L',
                 'case-phrase-simp3l': 'iguales, pero tampoco tanto',
+                'case-name-suri': 'SURI',
+                'case-phrase-suri': 'vestir el viento con fibra noble',
+                'case-name-amalaya': 'AMALAYA',
+                'case-phrase-amalaya': 'la tierra que habla en tarija',
+                'case-name-quantum': 'QUANTUM MOTORS',
+                'case-phrase-quantum': 'el primer carro eléctrico boliviano',
                 'contact-title': 'Hablemos de <br><span class="garamond-bold-italic text-slate-800 lowercase">sentido y permanencia</span>.',
                 
                 // Traducciones internas del Visor de Casos
@@ -887,6 +1036,7 @@
                 'label-results': 'RESULTADOS:',
                 'label-team': 'EQUIPO:',
                 'gallery-title': 'Despliegue Visual & Embalajes',
+                'quantum-gallery-title': 'Despliegue Visual',
                 'hero-label': 'PORTADA PRINCIPAL',
                 'mock-label-1': 'MOCKUP #01',
                 'mock-label-2': 'MOCKUP #02',
@@ -920,7 +1070,7 @@
                 'wistupiku-tiktok-heading': 'Impacto en TikTok & Nuevas Plataformas',
                 'wistupiku-tiktok-text': 'El impacto de la marca se consolidó de manera orgánica en plataformas contemporáneas como TikTok, donde la combinación de humor local, orgullo cochabambino y un sistema de identidad sumamente dinámico conectó con una nueva generación de consumidores. El diseño de empaques y la ambientación de los espacios físicos se convirtieron en generadores de contenido espontáneo, amplificando el alcance cultural de Wist\'upiku más allá de los soportes tradicionales.',
 
-                // COBOCE (Exacto según imagen provista + nuevos añadidos)
+                // COBOCE
                 'coboce-challenge': 'Organización cooperativa con <strong class="font-bold text-slate-900">múltiples unidades de negocio</strong> que requería fortalecer su identidad para operar de manera coherente en distintos niveles y contextos.<br><br>El proyecto se centró en estructurar un sistema de marca que permita articular su carácter institucional con la diversidad de sus áreas, estableciendo criterios claros de organización, jerarquía y aplicación.',
                 'coboce-system': 'Se desarrolló una identidad capaz de sostener unidad sin perder flexibilidad, facilitando su implementación en comunicación, entornos y piezas operativas.<br><br>El resultado es un sistema que ordena, clarifica y proyecta la marca de manera consistente en toda su estructura, apoyándose en los valores con mayor potencial, como el hecho de representar a la <strong class="font-bold text-slate-900">"industria del pueblo"</strong>.',
                 'coboce-loc': 'Origen en Cochabamba con alcance nacional',
@@ -936,7 +1086,7 @@
                 'coboce-mock5': 'COBOCE Cerámica - Sistema modular de embalajes de cartón y displays para revestimiento',
                 'coboce-mock6': 'COBOCE Mosaicos - Diseño de catálogo comercial de productos y patrones premium',
 
-                // SIMP3L (Exacto según la referencia de Screenshot 2026-06-11)
+                // SIMP3L
                 'simp3l-challenge': 'El 2025 dos emprendedores, uno boliviano y otro peruano decidieron emprender un negocio en Copenhagen - Dinamarca, el objetivo fue <strong class="font-bold text-slate-900">proyectar marca y estrategia valiosa y eficiente para el mercado Danés</strong>.<br><br>El desafío constaba en encontrar cómo reflejar una identidad que atraiga a los turistas y locales daneses, la intención de los emprendedores fue la de separarse de la identidad latina, habiendo diagnosticado que ésta no hace "click" con los usuarios a los que se dirige. Así que se optó por reforzar una propuesta clara de valor: <strong class="font-bold text-slate-900">Puedes encontrar los 3 componentes para un buen refugio, café, helado y bakery</strong>.',
                 'simp3l-system': 'La solución se orientó a utilizar el enfoque cultural de lo minimalista, simple y directo con la propuesta centrada en la oferta concretada y resumida simplemente en "3".',
                 'simp3l-loc': 'Copenhagen - Dinamarca',
@@ -945,7 +1095,40 @@
                 'simp3l-team': 'Francisco Cortés, Director creativo y diseñador senior.',
                 'simp3l-mock1': 'Fachada minimalista exterior y arquitectura física de SIMP3L',
                 'simp3l-mock2': 'Señalética comercial integrada con geometría de marca limpia',
-                'simp3l-mock3': 'Identidad verbal y dirección de tono minimalista Danés'
+                'simp3l-mock3': 'Identidad verbal y dirección de tono minimalista Danés',
+
+                // SURI
+                'suri-challenge': 'Marca boutique de alta costura y moda ética con fibra de alpaca suri. El desafío consistió en reposicionar la fibra de alpaca andina en el mercado de ultra-lujo sostenible europeo.',
+                'suri-system': 'Se estructuró un sistema tipográfico de raíces vernáculas pero con una puesta en página moderna, utilizando papeles de fibras naturales recicladas y empaques minimalistas de carácter escultural.',
+                'suri-loc': 'Sede en La Paz con operaciones en París y Milán.',
+                'suri-strat': 'Unir el misticismo artesanal andino con la sofisticación del lujo silencioso.',
+                'suri-res': 'Introducción en boutiques de alta costura de Europa y Asia.',
+                'suri-team': 'Dirección creativa y diseño: Francisco Cortés Arce. Textiles a cargo: Comunidad de Tejedores del Altiplano.',
+                'suri-mock1': 'Diseño editorial premium del catálogo de fibras nobles SURI',
+                'suri-mock2': 'Diseño de empaque biodegradable con relieve escultural',
+                'suri-mock3': 'Arquitectura de marca aplicada a etiquetas y marquillas de colección',
+
+                // AMALAYA
+                'amalaya-challenge': 'Branding para un viñedo biodinámico ubicado a 2,400 metros de altura en Tarija. El desafío residía en proyectar un vino místico, arraigado al suelo de altura extrema.',
+                'amalaya-system': 'Se concibió un sistema gráfico basado en la alquimia andina y geometría sagrada. Las etiquetas combinan un negro profundo con foil de cobre que representa los minerales de la uva.',
+                'amalaya-loc': 'Valle de Tarija, Bolivia.',
+                'amalaya-strat': 'Astronomía biodinámica: embotellar el pulso astrológico y la altura tarijeña.',
+                'amalaya-res': 'Reconocimiento y galardón en el certamen de etiquetas de vino andinas.',
+                'amalaya-team': 'Director creativo: Francisco Cortés. Ilustración de constelaciones: Daniel Barrientos.',
+                'amalaya-mock1': 'Desarrollo de etiquetado premium con foil de cobre y relieve andino',
+                'amalaya-mock2': 'Diseño de caja de madera tallada para la edición de coleccionista',
+                'amalaya-mock3': 'Sello lacrado comercial y papelería corporativa del viñedo',
+
+                // QUANTUM MOTORS (TRADUCCIONES EXACTAS SEGÚN FOTO)
+                'quantum-challenge': 'En octubre de 2018 un equipo de emprendedores se preparaba para lanzar al mercado la <strong class="font-bold text-slate-900">primera marca de automóviles eléctricos ensamblados en Bolivia</strong>, confiando en el diseño como herramienta para construir su identidad desde el inicio.<br><br>El desafío consistía en proyectar una marca capaz de comunicar de manera clara y consistente sus atributos diferenciales en un contexto donde la movilidad eléctrica aún no estaba completamente instalada en el imaginario local.',
+                'quantum-system': 'El trabajo se abordó desde la definición integral de la marca, comenzando por el naming hasta la construcción de su lenguaje visual, buscando traducir lo técnico en una propuesta accesible, reconocible y con carácter propio. La pieza clave fue usar el enfoque <strong class="font-bold text-slate-900">"small (and smart) is beautiful"</strong>.',
+                'quantum-loc': 'Origen en Bolivia, alcance regional Paraguay, México, El Salvador & Perú',
+                'quantum-strat': 'Competir desde lo pequeño, bajo la estética "cute-tecnológica".',
+                'quantum-res': 'Reconocimiento y memorabilidad de la marca en diversos espacios.',
+                'quantum-team': 'Director creativo y diseñador senior: Francisco Cortés Arce, Diseñador: Daniel Barrientos.',
+                'quantum-mock1': 'Identidad visual de los vehículos compactos Quantum Motors en circulación urbana',
+                'quantum-mock2': 'Señalética limpia y minimalista para estaciones de carga y showrooms de venta',
+                'quantum-mock3': 'Dirección tipográfica, especificaciones técnicas y hoja comercial de marca'
             },
             en: {
                 'nav-manifiesto': 'Manifesto',
@@ -970,6 +1153,12 @@
                 'case-phrase-wistupiku': 'from cultural rescue, its fun side',
                 'case-name-simp3l': 'SIMP3L',
                 'case-phrase-simp3l': 'equal, but not that much',
+                'case-name-suri': 'SURI',
+                'case-phrase-suri': 'wearing the wind with noble alpaca fiber',
+                'case-name-amalaya': 'AMALAYA',
+                'case-phrase-amalaya': 'the speaking earth of Tarija',
+                'case-name-quantum': 'QUANTUM MOTORS',
+                'case-phrase-quantum': 'the first bolivian electric car',
                 'contact-title': 'Let\'s talk about <br><span class="garamond-bold-italic text-slate-800 lowercase">meaning and permanence</span>.',
                 
                 // Visor de Casos en Inglés
@@ -979,7 +1168,8 @@
                 'label-strategy': 'STRATEGY:',
                 'label-results': 'RESULTS:',
                 'label-team': 'TEAM:',
-                'gallery-title': 'Facade & Voice Tone',
+                'gallery-title': 'Visual Deployment & Packaging',
+                'quantum-gallery-title': 'Visual Deployment',
                 'hero-label': 'MAIN HERO BANNER',
                 'mock-label-1': 'MOCKUP #01',
                 'mock-label-2': 'MOCKUP #02',
@@ -1037,14 +1227,47 @@
                 'simp3l-team': 'Francisco Cortés, Director creative and senior designer.',
                 'simp3l-mock1': 'Minimalist exterior facade and physical architecture of SIMP3L',
                 'simp3l-mock2': 'Commercial signage integrated with clean brand geometry',
-                'simp3l-mock3': 'Verbal identity and Danish minimalist tone of voice direction'
+                'simp3l-mock3': 'Verbal identity and Danish minimalist tone of voice direction',
+
+                // SURI EN
+                'suri-challenge': 'High fashion boutique and ethical clothing brand crafted with alpaca Suri wool. The challenge was to reposition Andean alpaca fibers within the sustainable ultra-luxury European fashion market.',
+                'suri-system': 'An editorial identity with vernacular roots but a completely contemporary layout was crafted, making use of raw, recycled fibers and beautifully organic sculptural packaging designs.',
+                'suri-loc': 'Based in La Paz with operative channels in Paris & Milan.',
+                'suri-strat': 'Merging local artisanal mysticism with quiet luxury aesthetics.',
+                'suri-res': 'Launch and placement across premium boutiques in Europe and Asia.',
+                'suri-team': 'Creative Direction & Design: Francisco Cortés Arce. Textiles: Altiplano Weavers Cooperative.',
+                'suri-mock1': 'Premium editorial layout of SURI noble fibers catalog book',
+                'suri-mock2': 'Sculptural biodegradable brand apparel boxes design',
+                'suri-mock3': 'SURI spatial system: premium physical collection labels',
+
+                // AMALAYA EN
+                'amalaya-challenge': 'Branding and spatial packaging design for a biodynamic high-altitude vineyard set at 2,400 meters in Tarija. The goal was to build a mystic, earth-connected wine label.',
+                'amalaya-system': 'The visual system relies on Andean alchemy and sacred geometry. Label layouts blend organic matte-black materials with copper foil reflecting grape-bed minerals.',
+                'amalaya-loc': 'Tarija Valley, Bolivia.',
+                'amalaya-strat': 'Biodynamic wine system: bottling the astro-geological pulse of high Tarija soil.',
+                'amalaya-res': 'First-place award on design aesthetics at Southern Vinewards festival.',
+                'amalaya-team': 'Creative Director: Francisco Cortés. Constellations illustrations: Daniel Barrientos.',
+                'amalaya-mock1': 'Premium copper foil stamping and raw label textures development',
+                'amalaya-mock2': 'Engraved wooden collector packaging and premium physical seal',
+                'amalaya-mock3': 'Custom cellar wax-seal design and executive stationery',
+
+                // QUANTUM MOTORS EN
+                'quantum-challenge': 'In October 2018, a team of entrepreneurs prepared to launch the <strong class="font-bold text-slate-900">first electric car brand assembled in Bolivia</strong>, relying on design as a tool to build its identity from the start.<br><br>The challenge was to project a brand capable of communicating its differential attributes clearly and consistently in a context where electric mobility was not yet fully established in the local imagination.',
+                'quantum-system': 'The work was approached from the overall definition of the brand, starting from the naming to the construction of its visual language, seeking to translate the technical aspect into an accessible, recognizable proposal with its own character. The key piece was using the <strong class="font-bold text-slate-900">"small (and smart) is beautiful"</strong> approach.',
+                'quantum-loc': 'Origin in Bolivia, regional reach Paraguay, Mexico, El Salvador & Peru',
+                'quantum-strat': 'Competing from the small, under the "cute-technological" aesthetics.',
+                'quantum-res': 'Brand recognition and memorability across diverse spaces.',
+                'quantum-team': 'Creative Director & Senior Designer: Francisco Cortés Arce, Designer: Daniel Barrientos.',
+                'quantum-mock1': 'Quantum Motors visual identity on vehicles in active urban circulation',
+                'quantum-mock2': 'Clean and minimalist signage systems for charging stations and sales showrooms',
+                'quantum-mock3': 'Typographic guidelines, specifications sheets and executive commercial brandmarks'
             }
         };
 
         let currentLang = 'es';
         let flipIntervalId = null;
         let activeCaseId = null; // Guardar caso activo globalmente
-        const projectIds = ['coboce', 'wistupiku', 'simp3l'];
+        const projectIds = ['coboce', 'wistupiku', 'simp3l', 'suri', 'amalaya', 'quantum'];
 
         const navToggle = document.getElementById('nav-toggle');
         const mobileMenu = document.getElementById('mobile-menu');

@@ -367,6 +367,17 @@
                         <span class="project-phrase" data-i18n="case-phrase-proeza"></span>
                     </div>
                 </div>
+
+                <!-- Caso 6: 4 LLAMAS (NUEVO) -->
+                <div class="project-card" onclick="openCase('fourllamas')">
+                    <div class="case-image-container">
+                        <img src="https://cortes-design.vercel.app/cases/4llamas/00_4llamas_cover.png" alt="4 Llamas" onerror="this.src='https://via.placeholder.com/600/6f4e37/ffffff?text=4+LLAMAS'">
+                    </div>
+                    <div class="flex flex-col gap-y-1">
+                        <h3 class="project-name" data-i18n="case-name-fourllamas"></h3>
+                        <span class="project-phrase" data-i18n="case-phrase-fourllamas"></span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -883,6 +894,112 @@
                     </div>
                 </div>
             </div>
+
+            <!-- 4 LLAMAS -->
+            <div id="case-fourllamas" class="case-detail-container hidden">
+                <div class="w-full bg-slate-300 relative overflow-hidden flex items-center justify-center border-b border-black/5 aspect-[16/9] md:aspect-[1920/720]">
+                    <img src="https://cortes-design.vercel.app/cases/4llamas/01_4llamas_hero.png" class="absolute inset-0 w-full h-full object-cover object-center" onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');" alt="4 Llamas Hero">
+                    <div class="absolute inset-0 flex flex-col justify-between p-12 bg-slate-300/90 hidden text-slate-700">
+                        <span class="text-[10px] montserrat-black-caps tracking-widest text-[#009a82]" data-case-i18n="hero-label">PORTADA PRINCIPAL</span>
+                        <div class="text-center font-serif italic text-2xl">4 Llamas &mdash; El Arte del Café</div>
+                    </div>
+                </div>
+
+                <div class="max-w-7xl mx-auto px-10 md:px-16 lg:px-24 py-24">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+                        <div class="lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+                            <div class="md:col-span-2">
+                                <span class="text-[11px] montserrat-black-caps text-[#009a82] tracking-[0.2em] block mb-2" data-case-i18n="case-label">CASO:</span>
+                                <h2 class="text-4xl md:text-5xl lg:text-6xl font-black uppercase font-montserrat text-slate-900 tracking-tight mb-8">4 LLAMAS</h2>
+                            </div>
+                            <div class="space-y-6 text-slate-800 font-light text-lg md:text-xl leading-relaxed">
+                                <p data-case-i18n="fourllamas-challenge"></p>
+                            </div>
+                            <div class="space-y-6 text-slate-800 font-light text-lg md:text-xl leading-relaxed">
+                                <p data-case-i18n="fourllamas-system"></p>
+                            </div>
+                        </div>
+                        <div class="lg:col-span-4 border-l-2 border-[#009a82] pl-8 py-2 space-y-8">
+                            <div>
+                                <span class="text-[11px] montserrat-black-caps text-[#009a82] tracking-[0.15em] block mb-2" data-case-i18n="label-location">UBICACIÓN:</span>
+                                <p class="text-lg font-serif italic text-slate-800 leading-snug" data-case-i18n="fourllamas-loc"></p>
+                            </div>
+                            <div>
+                                <span class="text-[11px] montserrat-black-caps text-[#009a82] tracking-[0.15em] block mb-2" data-case-i18n="label-strategy">ESTRATEGIA:</span>
+                                <p class="text-lg font-serif italic text-slate-800 leading-snug" data-case-i18n="fourllamas-strat"></p>
+                            </div>
+                            <div>
+                                <span class="text-[11px] montserrat-black-caps text-[#009a82] tracking-[0.15em] block mb-2" data-case-i18n="label-results">RESULTADOS:</span>
+                                <p class="text-lg font-serif italic text-slate-800 leading-snug" data-case-i18n="fourllamas-res"></p>
+                            </div>
+                            <div>
+                                <span class="text-[11px] montserrat-black-caps text-[#009a82] tracking-[0.15em] block mb-2" data-case-i18n="label-team">EQUIPO:</span>
+                                <p class="text-lg font-serif italic text-slate-800 leading-snug" data-case-i18n="fourllamas-team"></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SECCIÓN: EVOLUCIÓN ANTES Y DESPUÉS (4 LLAMAS, MANTENIENDO PROPORCIÓN CUADRADA) -->
+                    <div class="mt-24 pt-16 border-t border-black/10">
+                        <h3 class="text-xs montserrat-black-caps text-slate-400 tracking-[0.3em] uppercase mb-12" data-case-i18n="before-after-title">Evolución: Antes y Después</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-0 rounded-sm overflow-hidden border border-black/5 shadow-md relative">
+                            <!-- Antes (Before) -->
+                            <div class="relative group overflow-hidden bg-white aspect-square border-b md:border-b-0 md:border-r border-black/5">
+                                <div class="absolute top-4 left-4 z-20 text-slate-500 text-[10px] md:text-xs font-bold uppercase montserrat-caps tracking-widest pointer-events-none" data-case-i18n="label-before">Antes</div>
+                                <img src="https://cortes-design.vercel.app/cases/4llamas/4llamas_before.png" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Antes 4 LLAMAS" onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');">
+                                <div class="absolute inset-0 flex flex-col justify-between p-8 bg-slate-300/90 hidden text-slate-700">
+                                    <span class="text-[10px] montserrat-black-caps text-slate-500 tracking-wider">ANTES / BEFORE</span>
+                                    <div class="text-center font-serif italic text-slate-600 text-lg">Identidad anterior de 4 Llamas</div>
+                                </div>
+                            </div>
+                            <!-- Después (After) -->
+                            <div class="relative group overflow-hidden bg-white aspect-square">
+                                <div class="absolute top-4 left-4 z-20 text-slate-500 text-[10px] md:text-xs font-bold uppercase montserrat-caps tracking-widest pointer-events-none" data-case-i18n="label-after">Después</div>
+                                <img src="https://cortes-design.vercel.app/cases/4llamas/4llamas_after.png" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Después 4 LLAMAS" onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');">
+                                <div class="absolute inset-0 flex flex-col justify-between p-8 bg-slate-300/90 hidden text-slate-700">
+                                    <span class="text-[10px] montserrat-black-caps text-slate-500 tracking-wider">DESPUÉS / AFTER</span>
+                                    <div class="text-center font-serif italic text-slate-600 text-lg">Rediseño unificado 4 Llamas</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Primera Tanda Visual -->
+                    <div class="mt-24 pt-16 border-t border-black/10">
+                        <h3 class="text-xs montserrat-black-caps text-slate-400 tracking-[0.3em] uppercase mb-12" data-case-i18n="gallery-title">Despliegue Visual & Embalajes</h3>
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                            <!-- Columna Izquierda: Dos Cuadradas Apiladas (02_4llamas_Empaques.png y 03_4llamas_cups.png) -->
+                            <div class="flex flex-col gap-8">
+                                <div class="bg-slate-300 aspect-square rounded-sm overflow-hidden border border-black/5 relative group hover:bg-slate-400/50 transition-colors">
+                                    <img src="https://cortes-design.vercel.app/cases/4llamas/02_4llamas_Empaques.png" class="w-full h-full object-cover" alt="4 Llamas Packaging" onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');">
+                                    <div class="absolute inset-0 flex flex-col justify-between p-8 bg-slate-300/90 hidden text-slate-700">
+                                        <span class="text-[10px] montserrat-black-caps text-slate-500 tracking-wider" data-case-i18n="mock-label-1">MOCKUP #01</span>
+                                        <div class="text-center font-serif italic text-slate-600 text-lg" data-case-i18n="fourllamas-mock1"></div>
+                                        <span class="text-[11px] font-mono text-slate-500" data-case-i18n="mock-format-square">PROPORCIÓN: 1:1 CUADRADA</span>
+                                    </div>
+                                </div>
+                                <div class="bg-slate-300 aspect-square rounded-sm overflow-hidden border border-black/5 relative group hover:bg-slate-400/50 transition-colors">
+                                    <img src="https://cortes-design.vercel.app/cases/4llamas/03_4llamas_cups.png" class="w-full h-full object-cover" alt="4 Llamas Cups" onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');">
+                                    <div class="absolute inset-0 flex flex-col justify-between p-8 bg-slate-300/90 hidden text-slate-700">
+                                        <span class="text-[10px] montserrat-black-caps text-slate-500 tracking-wider" data-case-i18n="mock-label-2">MOCKUP #02</span>
+                                        <div class="text-center font-serif italic text-slate-600 text-lg" data-case-i18n="fourllamas-mock2"></div>
+                                        <span class="text-[11px] font-mono text-slate-500" data-case-i18n="mock-format-square">PROPORCIÓN: 1:1 CUADRADA</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Columna Derecha: Una Vertical de 1080x1920 (04_4llamas_story.png) -->
+                            <div class="bg-slate-300 aspect-[9/16] rounded-sm overflow-hidden border border-black/5 relative group hover:bg-slate-400/50 transition-colors">
+                                <img src="https://cortes-design.vercel.app/cases/4llamas/04_4llamas_story.png" class="w-full h-full object-cover" alt="4 Llamas Story" onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');">
+                                <div class="absolute inset-0 flex flex-col justify-between p-8 bg-slate-300/90 hidden text-slate-700">
+                                    <span class="text-[10px] montserrat-black-caps text-slate-500 tracking-wider" data-case-i18n="mock-label-3">MOCKUP #03 (VERTICAL)</span>
+                                    <div class="text-center font-serif italic text-white text-lg" data-case-i18n="fourllamas-mock3"></div>
+                                    <span class="text-[11px] font-mono text-slate-500" data-case-i18n="mock-format-vertical">PROPORCIÓN: 9:16 (1080x1920)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -949,6 +1066,8 @@
                 'case-phrase-quantum': 'el primer carro eléctrico boliviano',
                 'case-name-proeza': 'PROEZA FINANCIERA',
                 'case-phrase-proeza': 'dignos de que se le dé crédito a sus sueños',
+                'case-name-fourllamas': '4 LLAMAS',
+                'case-phrase-fourllamas': 'el arte del café',
                 'contact-title': 'Hablemos de <br><span class="garamond-bold-italic text-slate-800 lowercase">sentido y permanencia</span>.',
                 
                 // Traducciones internas del Visor de Casos
@@ -1021,7 +1140,7 @@
                 'simp3l-mock2': 'Señalética comercial integrada con geometría de marca limpia',
                 'simp3l-mock3': 'Identidad verbal y dirección de tono minimalista Danés',
 
-                // QUANTUM MOTORS (TRADUCCIONES EXACTAS SEGÚN FOTO)
+                // QUANTUM MOTORS
                 'quantum-challenge': 'En octubre de 2018 un equipo de emprendedores se preparaba para lanzar al mercado la <strong class="font-bold text-slate-900"> primera marca de automóviles eléctricos ensamblados en Bolivia</strong>, confiando en el diseño como herramienta para construir su identidad desde el inicio.<br><br>El desafío consistía en proyectar una marca capaz de comunicar de manera clara y consistente sus atributos differentials en un contexto donde la movilidad eléctrica aún no estaba completamente instalada en el imaginario local.',
                 'quantum-system': 'El trabajo se abordó desde la definición integral de la marca, comenzando por el naming hasta la construcción de su lenguaje visual, buscando traducir lo técnico en una propuesta accesible, reconocible y con carácter propio. La pieza clave fue usar el enfoque <strong class="font-bold text-slate-900">"small (and smart) is beautiful"</strong>.',
                 'quantum-loc': 'Origen en Bolivia, alcance regional Paraguay, México, El Salvador & Perú',
@@ -1032,7 +1151,7 @@
                 'quantum-mock2': 'Señalética limpia y minimalista para estaciones de carga y showrooms de venta',
                 'quantum-mock3': 'Dirección tipográfica, especificaciones técnicas y hoja comercial de marca',
 
-                // PROEZA FINANCIERA (NUEVO CASO SEGÚN DETALLE DE IMAGEN DE REFERENCIA)
+                // PROEZA FINANCIERA
                 'proeza-challenge': 'El año 2022 la financiera PROEZA en función a expandir su alcance a nivel nacional y relanzar la marca tomaron contacto conmigo para cumplir este objetivo.<br><br>El desafío constaba en construir una identidad que represente el quehacer de la empresa —<strong class="font-bold text-slate-900">ofrecer microcréditos a pequeños empresarios y comerciantes</strong>—. Para cumplir con ello se debía conocer el punto de vista de estos clientes. En función a ello se realizaron encuestas tanto al cliente interno como al externo sobre los valores relacionados a la marca y su representación visual en el identificador.',
                 'proeza-system': 'Al concluir el proceso se obtuvo una marca y estrategia hecha a medida a insights de estos clientes que necesitaban sentirse valorados y que eran dignos de apoyo, <strong class="font-bold text-slate-900">dignos de que se le dé crédito a sus sueños</strong>.',
                 'proeza-loc': 'Origen Cochabamba, con alcance nacional',
@@ -1041,7 +1160,18 @@
                 'proeza-team': 'Francisco Cortés Arce (Director creativo y diseñador).',
                 'proeza-mock1': 'Diseño de campañas publicitarias urbanas impresas y comunicación offline',
                 'proeza-mock2': 'Plantillas estructuradas de identidad verbal y voz para canales y redes sociales',
-                'proeza-mock3': 'Testigos reales de testeo de usabilidad, insights y credos de marca con usuarios'
+                'proeza-mock3': 'Testigos reales de testeo de usabilidad, insights y credos de marca con usuarios',
+
+                // 4 LLAMAS (NUEVO CASO)
+                'fourllamas-challenge': 'Los emprendedores de 4 Llamas buscaron rediseñar su marca para potenciarse en el mercado nacional e internacional, con el objetivo de que su identidad refleje la alta calidad y el cuidado a detalle del proceso.',
+                'fourllamas-system': 'La inspiración del concepto nace de la clásica leyenda del descubrimiento del café tras observar el baile de 4 cabras, reinterpretada localmente como el redescubrimiento al ver bailar a 4 llamas en los Andes. Fue un gusto trabajar de forma colaborativa con Xavier Sarabia y con el equipo de 4 Llamas para lograr una marca que hoy en día es altamente significativa en el mundo del café de especialidad.',
+                'fourllamas-loc': 'La Paz - Bolivia, con presencia internacional.',
+                'fourllamas-strat': 'Branding narrativo andino y misticismo del café de especialidad.',
+                'fourllamas-res': 'Posicionamiento premium y reconocimiento en la comunidad de baristas.',
+                'fourllamas-team': 'Colaboración creativa y de diseño: Francisco Cortés Arce y Xavier Sarabia.',
+                'fourllamas-mock1': 'Línea de empaques de especialidad y etiquetas de origen',
+                'fourllamas-mock2': 'Diseño de vajilla comercial y tazas grabadas para cafeterías',
+                'fourllamas-mock3': 'Narrativa visual de la leyenda andina del café'
             },
             en: {
                 'nav-manifiesto': 'Manifesto',
@@ -1070,6 +1200,8 @@
                 'case-phrase-quantum': 'the first bolivian electric car',
                 'case-name-proeza': 'PROEZA FINANCIERA',
                 'case-phrase-proeza': 'worthy of giving credit to their dreams',
+                'case-name-fourllamas': '4 LLAMAS',
+                'case-phrase-fourllamas': 'the art of coffee',
                 'contact-title': 'Let\'s talk about <br><span class="garamond-bold-italic text-slate-800 lowercase">meaning and permanence</span>.',
                 
                 // Visor de Casos en Inglés
@@ -1161,14 +1293,25 @@
                 'proeza-team': 'Francisco Cortés Arce (Creative Director & Designer).',
                 'proeza-mock1': 'Urban advertising layouts and printed campaign rollouts',
                 'proeza-mock2': 'Verbal voice architecture, assets and structured templates for social media channels',
-                'proeza-mock3': 'Real qualitative testings, focus-groups, user testing insights and brand beliefs'
+                'proeza-mock3': 'Real qualitative testings, focus-groups, user testing insights and brand beliefs',
+
+                // 4 LLAMAS EN
+                'fourllamas-challenge': 'The founders of 4 Llamas sought a complete brand redesign to scale within the national and international markets, aiming for an identity that reflects the high quality and meticulous attention to detail of their process.',
+                'fourllamas-system': 'The concept is inspired by the classic legend of coffee’s discovery after watching 4 goats dance, locally reinterpreted as the rediscovery upon seeing 4 llamas dance in the Andes. It was a pleasure to work collaboratively with Xavier Sarabia and the 4 Llamas team to build a brand that is highly meaningful in today\'s specialty coffee world.',
+                'fourllamas-loc': 'La Paz - Bolivia, with international reach.',
+                'fourllamas-strat': 'Andean narrative branding and specialty coffee mysticism.',
+                'fourllamas-res': 'Premium positioning and strong recognition within the barista community.',
+                'fourllamas-team': 'Creative collaboration and design: Francisco Cortés Arce and Xavier Sarabia.',
+                'fourllamas-mock1': 'Specialty coffee packaging line and origin labels',
+                'fourllamas-mock2': 'Commercial cupware design and engraved mugs for coffee shops',
+                'fourllamas-mock3': 'Visual narrative of the Andean coffee legend'
             }
         };
 
         let currentLang = 'es';
         let flipIntervalId = null;
         let activeCaseId = null; // Guardar caso activo globalmente
-        const projectIds = ['coboce', 'wistupiku', 'simp3l', 'quantum', 'proeza'];
+        const projectIds = ['coboce', 'wistupiku', 'simp3l', 'quantum', 'proeza', 'fourllamas'];
 
         const navToggle = document.getElementById('nav-toggle');
         const mobileMenu = document.getElementById('mobile-menu');
